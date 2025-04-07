@@ -4,8 +4,8 @@ function ContactSection() {
       <h2 className="text-3xl font-semibold text-center text-black">
         Need a Help ?
       </h2>
-      <div className="flex gap-16 px-20 pt-10 pb-20 bg-white max-md:flex-col max-md:p-10 max-sm:p-5">
-        <div className="flex flex-col gap-10">
+      <div className="flex gap-16 px-20 pt-10 pb-20 bg-white max-md:flex-col max-md:p-10 max-sm:p-5 justify-center">
+        <div className="flex flex-col gap-10 ">
           <h2 className="text-8xl font-extrabold text-black max-sm:text-5xl">
             Contact us
           </h2>

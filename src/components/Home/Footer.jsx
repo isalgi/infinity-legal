@@ -22,11 +22,11 @@ function Footer() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               tincidunt sit amet
             </p>
-            <img
+            {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
               className="h-[44.5px] w-[31.5px]"
               alt="Location icon"
-            />
+            /> */}
           </div>
           <div className="flex flex-col gap-4 pl-16">
             <h3 className="text-xl font-semibold text-cyan-600">Contact us</h3>
@@ -34,11 +34,11 @@ function Footer() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               tincidunt sit amet
             </p>
-            <img
+            {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/536586b7c4fe73f09e464acc5b0f83868388fdad?placeholderIfAbsent=true"
               className="h-[44.5px] w-[31.5px]"
               alt="Contact icon"
-            />
+            /> */}
           </div>
         </div>
         <div className="flex flex-col gap-2.5">

@@ -4,7 +4,7 @@ function Header() {
       <div>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/889e19cd196e3b77ec75c3faa4f6573c74025934?placeholderIfAbsent=true"
-          className="h-[72px] w-[72px]"
+          className="h-[72px] w-[76px] bg-white rounded-lg"
           alt="INFINITY LEGAL"
         />
       </div>
@@ -25,7 +25,7 @@ function Header() {
           Contact
         </a>
       </nav>
-      <button className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] h-[43px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+      <button className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
         Whatsapp Kami
       </button>
     </header>

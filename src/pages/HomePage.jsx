@@ -1,4 +1,3 @@
-import Header from "../components/Home/Header";
 import HeroSection from "../components/Home/HeroSection";
 import ServicesSection from "../components/Home/ServicesSection";
 import AboutSection from "../components/Home/AboutSection";
@@ -15,7 +14,6 @@ function InfinityLegal() {
         rel="stylesheet"
       />
       <div className="relative min-h-screen">
-        <Header />
         <HeroSection />
         <ServicesSection />
         <AboutSection />

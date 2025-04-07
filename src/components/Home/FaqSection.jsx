@@ -31,11 +31,13 @@ function FaqSection() {
   };
 
   return (
-    <section className="flex flex-col gap-10 items-start px-0 py-20 w-full bg-slate-50">
+    <section className="flex flex-col gap-10 items-start px-0 py-20 w-full bg-[#F5FEFF]">
       <div className="px-20 pt-5 pb-0">
         <h3 className="text-3xl font-semibold text-black">FAQ's</h3>
-        <h2 className="text-5xl font-semibold text-black">Any Question?</h2>
-        <p className="text-xl text-black">
+        <h2 className="text-5xl font-semibold text-black mt-2">
+          Any Question?
+        </h2>
+        <p className="text-xl text-black mt-5">
           A few common question that frequently asked.
         </p>
       </div>
@@ -44,7 +46,7 @@ function FaqSection() {
           {tabs.map((tab) => (
             <button
               key={tab}
-              className="text-2xl font-semibold text-white rounded-3xl cursor-pointer border-[none] h-[60px] w-[296px] max-sm:w-full"
+              className="text-2xl font-semibold text-white rounded-3xl cursor-pointer border-[none] h-[60px] w-[296px] max-sm:w-full bg-[#1196A9]"
               onClick={() => setActiveTab(tab)}
             >
               {tab}
