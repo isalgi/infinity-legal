@@ -3,7 +3,7 @@ import infinityLogo from "../../assets/infinity-logo.png";
 
 function Header() {
   return (
-    <header className="flex absolute top-0 justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">
+    <header className="flex justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20 border-b border-black">
       <div>
         <img
           src={infinityLogo}
@@ -13,27 +13,27 @@ function Header() {
       </div>
       <nav className="flex gap-14 items-center max-sm:hidden">
         <Link to={"/"}>
-          <p className="text-base font-bold text-white cursor-pointer underline">
+          <p className="text-base font-bold text-black cursor-pointer hover:underline">
             Home
           </p>
         </Link>
         <Link to={"/article"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
+          <p className="text-base font-bold text-black cursor-pointer underline">
             Services
           </p>
         </Link>
         <Link to={"/"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
+          <p className="text-base font-bold text-black cursor-pointer hover:underline">
             About
           </p>
         </Link>
         <Link to={"/"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
+          <p className="text-base font-bold text-black cursor-pointer hover:underline">
             News
           </p>
         </Link>
         <Link to={"/"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
+          <p className="text-base font-bold text-black cursor-pointer hover:underline">
             Contact
           </p>
         </Link>

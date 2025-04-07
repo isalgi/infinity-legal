@@ -2,13 +2,13 @@ import ReviewsSection from "../components/Home/ReviewsSection";
 import FaqSection from "../components/Home/FaqSection";
 import ContactSection from "../components/Home/ContactSection";
 import Footer from "../components/Home/Footer";
-import Header from "../components/Home/Header";
+import HeaderArticle from "../components/Article/HeaderArticle";
 
 function ArticlePage() {
   return (
     <>
       <div className="relative min-h-screen">
-        <Header />
+        <HeaderArticle />
         <ReviewsSection />
         <FaqSection />
         <ContactSection />
