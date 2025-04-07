@@ -1,3 +1,5 @@
+import icon1 from "../../assets/whatsapp.png";
+
 function Footer() {
   return (
     <footer className="px-20 pt-16 pb-10 bg-sky-50 max-sm:px-5 max-sm:py-10">
@@ -60,7 +62,11 @@ function Footer() {
         </div>
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold text-cyan-600">Ask Now</h3>
-          <img src="wa-icon.png" alt="" className="h-[41px] w-[41px] mt-5" />
+          <img
+            src={icon1}
+            alt=""
+            className="h-[41px] w-[41px] mt-5 cursor-pointer"
+          />
         </div>
       </div>
       <p className="text-xs font-medium text-center text-cyan-600">

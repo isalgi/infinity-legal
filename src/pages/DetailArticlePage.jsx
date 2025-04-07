@@ -2,6 +2,10 @@
 import { useParams, Link } from "react-router-dom";
 import { getArticleBySlug } from "../data/articles";
 import HeaderArticle from "../components/Article/HeaderArticle";
+
+import ReviewsSection from "../components/Home/ReviewsSection";
+import FaqSection from "../components/Home/FaqSection";
+import ContactSection from "../components/Home/ContactSection";
 import Footer from "../components/Home/Footer";
 
 function DetailArticlePage() {
@@ -20,7 +24,6 @@ function DetailArticlePage() {
             Return to articles
           </Link>
         </div>
-        <Footer />
       </>
     );
   }
@@ -47,7 +50,7 @@ function DetailArticlePage() {
           Back
         </Link>
 
-        <h1 className="text-2xl text-cyan-600 mb-6">Article</h1>
+        <h1 className="text-3xl text-cyan-600 mb-6 font-semibold">Article</h1>
 
         <div className="w-full overflow-hidden rounded-lg mb-6">
           <img
@@ -66,6 +69,9 @@ function DetailArticlePage() {
         />
       </div>
 
+      <ReviewsSection />
+      <FaqSection />
+      <ContactSection />
       <Footer />
     </>
   );

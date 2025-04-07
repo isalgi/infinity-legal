@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import ReviewsSection from "../components/Home/ReviewsSection";
 import FaqSection from "../components/Home/FaqSection";
 import ContactSection from "../components/Home/ContactSection";
@@ -67,7 +68,7 @@ function ArticlePage() {
                     className="w-full h-[500px] object-cover"
                   />
                 </div>
-                <div className="flex flex-col gap-1 mt-2">
+                <div className="flex flex-col gap-1 my-6">
                   <h3 className="text-xl font-medium text-black">
                     {newestArticle.title}
                   </h3>
