@@ -2,7 +2,7 @@ import React from "react";
 
 function ArticleCard({ image, title, date }) {
   return (
-    <article className="flex flex-col flex-1 gap-2.5 items-start min-w-[300px]">
+    <article className="flex flex-col flex-1 gap-2.5 items-start min-w-[300px] cursor-pointer">
       <img
         src={image}
         alt="Article"

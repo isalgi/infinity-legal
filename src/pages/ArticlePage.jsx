@@ -52,7 +52,7 @@ function ArticlePage() {
             Newest Article
           </h2>
           <div className="w-full">
-            <article className="flex flex-col gap-5">
+            <article className="flex flex-col gap-5 cursor-pointer">
               <div className="w-full overflow-hidden rounded-lg">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/121aec0d166b3b84d7a2b865128cea36ca0c9c1a"
