@@ -53,7 +53,7 @@ function FaqSection() {
             </button>
           ))}
         </div>
-        <div className="flex flex-col gap-3.5">
+        <div className="flex flex-col gap-3.5 pl-10">
           {questions.map((item, index) => (
             <div
               key={index}

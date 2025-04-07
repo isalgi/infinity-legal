@@ -1,10 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import InfinityLegal from "../pages/HomePage";
+import HomePage from "../pages/HomePage";
+import ArticlePage from "../pages/ArticlePage";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<InfinityLegal />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/article" element={<ArticlePage />} />
     </Routes>
   );
 };
