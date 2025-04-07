@@ -1,8 +1,77 @@
 import { useState } from "react";
 import contact from "../../assets/banner-contact.jpeg";
+import Select from "react-select";
 
 function ContactSection() {
   const [startDate, setStartDate] = useState("");
+  const [selectedService, setSelectedService] = useState(null);
+
+  // Options for the service dropdown
+  const serviceOptions = [
+    { value: "business-formation", label: "Pendirian Perusahaan" },
+    { value: "visa-services", label: "Jasa Visa" },
+    { value: "legal-consultation", label: "Konsultasi Hukum" },
+    { value: "business-licenses", label: "Perizinan Bisnis" },
+    { value: "tax-services", label: "Jasa Perpajakan" },
+  ];
+
+  // Custom styles for react-select
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      border: "none",
+      borderBottom: "1px solid #d1d5db",
+      borderRadius: 0,
+      boxShadow: "none",
+      backgroundColor: "transparent",
+      minHeight: "40px",
+      cursor: "pointer",
+      "&:hover": {
+        borderColor: "#0891b2",
+      },
+    }),
+    indicatorSeparator: () => ({
+      display: "none",
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: "#9ca3af",
+      fontSize: "1.125rem",
+    }),
+    input: (provided) => ({
+      ...provided,
+      color: "#6b7280",
+      fontSize: "1.125rem",
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: "#6b7280",
+      fontSize: "1.125rem",
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      padding: "8px 0",
+    }),
+    menu: (provided) => ({
+      ...provided,
+      borderRadius: "0.375rem",
+      boxShadow:
+        "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isSelected
+        ? "#0891b2"
+        : state.isFocused
+        ? "#e0f2fe"
+        : null,
+      color: state.isSelected ? "white" : "#374151",
+      cursor: "pointer",
+      "&:active": {
+        // backgroundColor: "#0891b2",
+      },
+    }),
+  };
 
   return (
     <section className="py-16">
@@ -33,11 +102,21 @@ function ContactSection() {
               onChange={setStartDate}
             />
 
-            <FormField
-              placeholder="Layanan apa yang Anda cari?"
-              required={true}
-              isDropdown={true}
-            />
+            {/* React Select component for services */}
+            <div className="relative">
+              {/* <label className="text-gray-400 text-lg absolute -top-7 left-0"></label> */}
+              <Select
+                options={serviceOptions}
+                styles={customStyles}
+                value={selectedService}
+                onChange={setSelectedService}
+                placeholder="Layanan apa yang Anda cari?"
+                className="react-select-container"
+                classNamePrefix="react-select"
+                required
+              />
+            </div>
+
             {/* <button
               type="submit"
               className="mt-4 bg-cyan-600 text-white py-3 px-8 rounded-md font-medium self-start hover:bg-cyan-700 transition-colors"
