@@ -18,7 +18,7 @@ function Header() {
           </p>
         </Link>
         <Link to={"/article"}>
-          <p className="text-base font-bold text-black cursor-pointer underline">
+          <p className="text-base font-bold text-[#1196A9] cursor-pointer hover:underline">
             Services
           </p>
         </Link>
@@ -37,9 +37,11 @@ function Header() {
             Contact
           </p>
         </Link>
-        <button className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-cyan-600 transition-colors">
-          Whatsapp Kami
-        </button>
+        <Link to="https://wa.me/yourNumber">
+          <p className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-cyan-600 transition-colors">
+            Whatsapp Kami
+          </p>
+        </Link>
       </nav>
     </header>
   );

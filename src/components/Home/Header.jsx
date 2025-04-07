@@ -13,7 +13,7 @@ function Header() {
       </div>
       <nav className="flex gap-14 items-center max-sm:hidden">
         <Link to={"/"}>
-          <p className="text-base font-bold text-white cursor-pointer underline">
+          <p className="text-base font-bold text-white cursor-pointer hover:underline">
             Home
           </p>
         </Link>
