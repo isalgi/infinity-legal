@@ -8,7 +8,7 @@ function ArticleCard({ image, title, date, slug }) {
         <img
           src={image}
           alt="Article"
-          className="w-[366px] h-auto rounded-[25px] object-cover"
+          className="w-[396px] h-auto rounded-[25px] object-cover"
         />
         <h3 className="text-xl font-medium text-black">{title}</h3>
         <time className="text-base text-black">{date}</time>

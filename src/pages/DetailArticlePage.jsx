@@ -8,9 +8,15 @@ import FaqSection from "../components/Home/FaqSection";
 import ContactSection from "../components/Home/ContactSection";
 import Footer from "../components/Home/Footer";
 
+import { articles, getRecentArticles } from "../data/articles";
+
+import ArticleCard from "../components/Article/ArticleCard";
+
 function DetailArticlePage() {
   const { slug } = useParams();
   const article = getArticleBySlug(slug);
+
+  const recentArticles = getRecentArticles(3);
 
   if (!article) {
     return (
@@ -68,6 +74,34 @@ function DetailArticlePage() {
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
       </div>
+
+      {/* More Articles Section */}
+      <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
+        <h2 className="text-2xl font-medium text-cyan-600 mb-8">
+          More Article
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {recentArticles.map((article) => (
+            <ArticleCard
+              key={article.id}
+              image={article.image}
+              title={article.title}
+              date={article.date}
+              slug={article.slug}
+            />
+          ))}
+        </div>
+
+        <div className="text-right">
+          <a
+            href="#"
+            className="text-sm font-medium text-cyan-600 hover:text-cyan-700"
+          >
+            View More &gt;&gt;
+          </a>
+        </div>
+      </section>
 
       <ReviewsSection />
       <FaqSection />
