@@ -8,8 +8,8 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/article" element={<ArticlePage />} />
-      <Route path="/article/:slug" element={<DetailArticlePage />} />
+      <Route path="/news" element={<ArticlePage />} />
+      <Route path="/news/:slug" element={<DetailArticlePage />} />
     </Routes>
   );
 };

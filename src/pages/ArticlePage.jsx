@@ -3,16 +3,16 @@ import ReviewsSection from "../components/Home/ReviewsSection";
 import FaqSection from "../components/Home/FaqSection";
 import ContactSection from "../components/Home/ContactSection";
 import Footer from "../components/Home/Footer";
-import HeaderArticle from "../components/Article/HeaderArticle";
-import ArticleCard from "../components/Article/ArticleCard";
+import HeaderArticle from "../components/News/HeaderArticle";
+import ArticleCard from "../components/News/ArticleCard";
 
 import { Link } from "react-router-dom";
 
-import { articles, getRecentArticles } from "../data/articles";
+import { article } from "../data/articles";
 
 function ArticlePage() {
-  const recentArticles = getRecentArticles(3);
-  const newestArticle = recentArticles[0];
+  const newestArticle = article[0];
+
   return (
     <>
       <div className="relative min-h-screen">
@@ -60,7 +60,7 @@ function ArticlePage() {
           </h2>
           <div className="w-full">
             <article className="flex flex-col gap-5 cursor-pointer">
-              <Link to={`/article/${newestArticle.slug}`}>
+              <Link to={`/news/${newestArticle.slug}`}>
                 <div className="w-full overflow-hidden rounded-lg">
                   <img
                     src={newestArticle.image}
@@ -116,18 +116,6 @@ function ArticlePage() {
           <h2 className="text-2xl font-medium text-cyan-600 mb-8">
             More Article
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {recentArticles.slice(1).map((article) => (
-              <ArticleCard
-                key={article.id}
-                image={article.image}
-                title={article.title}
-                date={article.date}
-                slug={article.slug}
-              />
-            ))}
-          </div>
 
           <div className="text-right">
             <a

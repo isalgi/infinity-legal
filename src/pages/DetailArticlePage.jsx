@@ -1,22 +1,16 @@
 // DetailArticlePage.jsx
 import { useParams, Link } from "react-router-dom";
 import { getArticleBySlug } from "../data/articles";
-import HeaderArticle from "../components/Article/HeaderArticle";
+import HeaderArticle from "../components/News/HeaderArticle";
 
 import ReviewsSection from "../components/Home/ReviewsSection";
 import FaqSection from "../components/Home/FaqSection";
 import ContactSection from "../components/Home/ContactSection";
 import Footer from "../components/Home/Footer";
 
-import { articles, getRecentArticles } from "../data/articles";
-
-import ArticleCard from "../components/Article/ArticleCard";
-
 function DetailArticlePage() {
   const { slug } = useParams();
   const article = getArticleBySlug(slug);
-
-  const recentArticles = getRecentArticles(3);
 
   if (!article) {
     return (
@@ -26,7 +20,7 @@ function DetailArticlePage() {
           <h1 className="text-2xl font-medium text-gray-700">
             Article not found
           </h1>
-          <Link to="/article" className="text-cyan-600 mt-4 inline-block">
+          <Link to="/news" className="text-cyan-600 mt-4 inline-block">
             Return to articles
           </Link>
         </div>
@@ -39,10 +33,7 @@ function DetailArticlePage() {
       <HeaderArticle />
 
       <div className="container mx-auto px-5 md:px-10 lg:px-20 py-8">
-        <Link
-          to="/article"
-          className="text-cyan-600 flex items-center gap-2 mb-4"
-        >
+        <Link to="/news" className="text-cyan-600 flex items-center gap-2 mb-4">
           <svg
             width="16"
             height="16"
@@ -75,23 +66,11 @@ function DetailArticlePage() {
         />
       </div>
 
-      {/* More Articles Section */}
+      {/* Article Recommendation Section */}
       <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
         <h2 className="text-2xl font-medium text-cyan-600 mb-8">
-          More Article
+          Article Recommendation
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {recentArticles.map((article) => (
-            <ArticleCard
-              key={article.id}
-              image={article.image}
-              title={article.title}
-              date={article.date}
-              slug={article.slug}
-            />
-          ))}
-        </div>
 
         <div className="text-right">
           <a

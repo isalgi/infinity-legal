@@ -1,4 +1,6 @@
 import japanHouse from "../assets/japan-house.jpeg";
+import manTablet from "../assets/man-tablet.jpeg";
+import sakuratosoju from "../assets/sakuratosoju.jpeg";
 
 // articles.js
 export const articles = [
@@ -21,7 +23,7 @@ export const articles = [
     slug: "kepengurusan-visa-australia-2025",
     title: "Kepengurusan Visa Australia 2025",
     date: "8 Januari 2025",
-    image: japanHouse,
+    image: manTablet,
     content: `
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
      
@@ -35,7 +37,7 @@ export const articles = [
     slug: "update-terbaru-biaya-pembuatan-pt-2025",
     title: "Update terbaru biaya pembuatan PT 2025",
     date: "8 Januari 2025",
-    image: japanHouse,
+    image: sakuratosoju,
     content: `
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
      
@@ -55,13 +57,4 @@ export const getArticleBySlug = (slug) => {
 // Helper function to get article by ID
 export const getArticleById = (id) => {
   return articles.find((article) => article.id === id);
-};
-
-// Get recent articles (for "Newest Article" section)
-export const getRecentArticles = (count = 3) => {
-  return [...articles]
-    .sort((a, b) => {
-      return new Date(b.date) - new Date(a.date);
-    })
-    .slice(0, count);
 };

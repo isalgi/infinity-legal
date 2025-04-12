@@ -17,7 +17,7 @@ function Header() {
             Home
           </p>
         </Link>
-        <Link to={"/article"}>
+        <Link to={"/"}>
           <p className="text-base font-bold text-white cursor-pointer hover:underline">
             Services
           </p>
@@ -27,7 +27,7 @@ function Header() {
             About
           </p>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/news"}>
           <p className="text-base font-bold text-white cursor-pointer hover:underline">
             News
           </p>
