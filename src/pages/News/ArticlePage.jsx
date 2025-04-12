@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-import ReviewsSection from "../components/Home/ReviewsSection";
-import FaqSection from "../components/Home/FaqSection";
-import ContactSection from "../components/Home/ContactSection";
-import Footer from "../components/Home/Footer";
-import HeaderArticle from "../components/News/HeaderArticle";
-import ArticleCard from "../components/News/ArticleCard";
+import ReviewsSection from "../../components/Home/ReviewsSection";
+import FaqSection from "../../components/Home/FaqSection";
+import ContactSection from "../../components/Home/ContactSection";
+import Footer from "../../components/Home/Footer";
+import HeaderArticle from "../../components/News/HeaderArticle";
+import ArticleCard from "../../components/News/ArticleCard";
 
 import { Link } from "react-router-dom";
 
-import { articles } from "../data/articles";
+import { articles } from "../../data/articles";
 
 function ArticlePage() {
   const newestArticle = articles[0];

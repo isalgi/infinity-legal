@@ -1,8 +1,8 @@
 // Route.jsx
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import ArticlePage from "../pages/ArticlePage";
-import DetailArticlePage from "../pages/DetailArticlePage";
+import HomePage from "../pages/Home/HomePage";
+import ArticlePage from "../pages/News/ArticlePage";
+import DetailArticlePage from "../pages/News/DetailArticlePage";
 
 const AppRoutes = () => {
   return (

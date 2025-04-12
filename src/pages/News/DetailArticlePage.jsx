@@ -1,12 +1,12 @@
 // DetailArticlePage.jsx
 import { useParams, Link } from "react-router-dom";
-import { getArticleBySlug } from "../data/articles";
-import HeaderArticle from "../components/News/HeaderArticle";
+import { getArticleBySlug } from "../../data/articles";
+import HeaderArticle from "../../components/News/HeaderArticle";
 
-import ReviewsSection from "../components/Home/ReviewsSection";
-import FaqSection from "../components/Home/FaqSection";
-import ContactSection from "../components/Home/ContactSection";
-import Footer from "../components/Home/Footer";
+import ReviewsSection from "../../components/Home/ReviewsSection";
+import FaqSection from "../../components/Home/FaqSection";
+import ContactSection from "../../components/Home/ContactSection";
+import Footer from "../../components/Home/Footer";
 
 function DetailArticlePage() {
   const { slug } = useParams();
