@@ -10,8 +10,10 @@ export default function ContactPage() {
   return (
     <>
       <HeaderContact />
-      <HeroSection />
-      <ContactInfo />
+      <div className="px-12">
+        <HeroSection />
+        <ContactInfo />
+      </div>
       <ReviewsSection />
       <FaqSection />
       <ContactSection />

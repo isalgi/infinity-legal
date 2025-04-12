@@ -55,11 +55,11 @@ function ArticlePage() {
 
         {/* Newest Article Section */}
         <section className="container mx-auto px-5 md:px-10 lg:px-20 pb-12 mt-10">
-          <h2 className="text-3xl font-medium text-cyan-600 mb-12">
+          <h2 className="text-5xl font-semibold text-[#1196A9] mb-12">
             Newest Article
           </h2>
           <div className="w-full">
-            <article className="flex flex-col gap-5">
+            <article className="flex flex-col">
               <div className="w-full overflow-hidden rounded-lg">
                 <Link to={`/news/${newestArticle.slug}`}>
                   <img
@@ -77,7 +77,7 @@ function ArticlePage() {
                   {newestArticle.date}
                 </time>
               </div>
-              <p className="text-base leading-7 text-gray-700 mt-1">
+              <p className="text-base leading-7 text-gray-700">
                 {newestArticle.content
                   .substring(0, 800)
                   .replace(/<[^>]*>/g, "")}
@@ -113,7 +113,7 @@ function ArticlePage() {
 
         {/* More Articles Section */}
         <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
-          <h2 className="text-2xl font-medium text-cyan-600 mb-8">
+          <h2 className="text-5xl font-semibold text-[#1196A9] mb-8">
             More Article
           </h2>
 

@@ -10,7 +10,7 @@ function ContactInfo() {
           <h2 className="gap-2.5 w-full text-2xl font-medium text-black max-md:max-w-full">
             Alamat Kantor
           </h2>
-          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-xl leading-8 basis-0 text-neutral-700 max-md:max-w-full">
+          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg leading-8 basis-0 text-neutral-700 max-md:max-w-full">
             Nulla commodo eros nulla, at sodales elit ultrices sed. Nulla nec
             rutrum risus. Duis eu sapien auctor, tristique nisl sit amet,
             sodales nulla. Pellentesque varius placerat felis sed fermentum.
@@ -21,7 +21,7 @@ function ContactInfo() {
           <h2 className="gap-2.5 w-full text-2xl font-medium text-black max-md:max-w-full">
             Jam kerja
           </h2>
-          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-xl leading-8 basis-0 text-neutral-700 max-md:max-w-full">
+          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg leading-8 basis-0 text-neutral-700 max-md:max-w-full">
             Senin sampai Jumat pukul 09:00 – 18:00 WIB
             <br />
             Sabtu & Minggu libur
@@ -32,7 +32,7 @@ function ContactInfo() {
           <h2 className="gap-2.5 w-full text-2xl font-medium text-black max-md:max-w-full">
             Email
           </h2>
-          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-xl basis-0 text-neutral-700 max-md:max-w-full">
+          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg basis-0 text-neutral-700 max-md:max-w-full">
             sales@goritax.com
           </p>
         </section>
@@ -41,7 +41,7 @@ function ContactInfo() {
           <h2 className="gap-2.5 w-full text-2xl font-medium text-black max-md:max-w-full">
             Nomor Telepon
           </h2>
-          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-xl basis-0 text-neutral-700 max-md:max-w-full">
+          <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg basis-0 text-neutral-700 max-md:max-w-full">
             +62 823-1020-1321
           </p>
         </section>

@@ -36,7 +36,7 @@ function FaqSection() {
 
   return (
     <section className="py-16 w-full bg-[#F5FEFF]">
-      <div className="max-w-6xl mx-auto px-8 max-sm:px-5">
+      <div className="max-w-7xl mx-auto px-8 max-sm:px-5">
         <div className="mb-10">
           <h3 className="text-xl font-semibold text-black">FAQ's</h3>
           <h2 className="text-4xl font-semibold text-black mt-1">
