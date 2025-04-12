@@ -1,6 +1,7 @@
-import japanHouse from "../assets/japan-house.jpeg";
-import manTablet from "../assets/man-tablet.jpeg";
-import sakuratosoju from "../assets/sakuratosoju.jpeg";
+import pic1 from "../assets/pic1.jpeg";
+import pic2 from "../assets/pic2.jpeg";
+import pic3 from "../assets/pic3.jpeg";
+import pic4 from "../assets/pic4.jpeg";
 
 // articles.js
 export const articles = [
@@ -9,7 +10,7 @@ export const articles = [
     slug: "kepengurusan-visa-jepang-2025",
     title: "Kepengurusan Visa Jepang 2025",
     date: "8 Januari 2025",
-    image: japanHouse, // Path to your image
+    image: pic1, // Path to your image
     content: `
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit involuptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est aborum.</p>
      
@@ -23,7 +24,7 @@ export const articles = [
     slug: "kepengurusan-visa-australia-2025",
     title: "Kepengurusan Visa Australia 2025",
     date: "8 Januari 2025",
-    image: manTablet,
+    image: pic2,
     content: `
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
      
@@ -37,7 +38,7 @@ export const articles = [
     slug: "update-terbaru-biaya-pembuatan-pt-2025",
     title: "Update terbaru biaya pembuatan PT 2025",
     date: "8 Januari 2025",
-    image: sakuratosoju,
+    image: pic3,
     content: `
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
      
@@ -47,6 +48,20 @@ export const articles = [
    `,
   },
   // Add more articles as needed
+  {
+    id: 4,
+    slug: "menangani-permasalahan-legal-perusahaan-anda",
+    title: "Menangani permasalahan legal perusahaan anda",
+    date: "8 Desember 2024",
+    image: pic4,
+    content: `
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+     
+     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+     
+     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+   `,
+  },
 ];
 
 // Helper function to get article by slug

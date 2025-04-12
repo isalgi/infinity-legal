@@ -8,10 +8,10 @@ import ArticleCard from "../components/News/ArticleCard";
 
 import { Link } from "react-router-dom";
 
-import { article } from "../data/articles";
+import { articles } from "../data/articles";
 
 function ArticlePage() {
-  const newestArticle = article[0];
+  const newestArticle = articles[0];
 
   return (
     <>
@@ -59,30 +59,30 @@ function ArticlePage() {
             Newest Article
           </h2>
           <div className="w-full">
-            <article className="flex flex-col gap-5 cursor-pointer">
-              <Link to={`/news/${newestArticle.slug}`}>
-                <div className="w-full overflow-hidden rounded-lg">
+            <article className="flex flex-col gap-5">
+              <div className="w-full overflow-hidden rounded-lg">
+                <Link to={`/news/${newestArticle.slug}`}>
                   <img
                     src={newestArticle.image}
                     alt={newestArticle.title}
                     className="w-full h-[500px] object-cover"
                   />
-                </div>
-                <div className="flex flex-col gap-1 my-6">
-                  <h3 className="text-xl font-medium text-black">
-                    {newestArticle.title}
-                  </h3>
-                  <time className="text-sm text-gray-700">
-                    {newestArticle.date}
-                  </time>
-                </div>
-                <p className="text-base leading-7 text-gray-700 mt-1">
-                  {newestArticle.content
-                    .substring(0, 800)
-                    .replace(/<[^>]*>/g, "")}
-                  ...
-                </p>
-              </Link>
+                </Link>
+              </div>
+              <div className="flex flex-col gap-1 my-6">
+                <h3 className="text-xl font-medium text-black">
+                  {newestArticle.title}
+                </h3>
+                <time className="text-sm text-gray-700">
+                  {newestArticle.date}
+                </time>
+              </div>
+              <p className="text-base leading-7 text-gray-700 mt-1">
+                {newestArticle.content
+                  .substring(0, 800)
+                  .replace(/<[^>]*>/g, "")}
+                ...
+              </p>
             </article>
           </div>
         </section>
