@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function ArticleCard({ image, title, date, slug }) {

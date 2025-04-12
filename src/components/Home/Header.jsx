@@ -17,12 +17,12 @@ function Header() {
             Home
           </p>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/services"}>
           <p className="text-base font-bold text-white cursor-pointer hover:underline">
             Services
           </p>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/about"}>
           <p className="text-base font-bold text-white cursor-pointer hover:underline">
             About
           </p>
@@ -32,14 +32,16 @@ function Header() {
             News
           </p>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/contact"}>
           <p className="text-base font-bold text-white cursor-pointer hover:underline">
             Contact
           </p>
         </Link>
-        <button className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-cyan-600 transition-colors">
-          Whatsapp Kami
-        </button>
+        <Link to="https://wa.me/yourNumber">
+          <button className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-cyan-600 transition-colors">
+            Whatsapp Kami
+          </button>
+        </Link>
       </nav>
     </header>
   );

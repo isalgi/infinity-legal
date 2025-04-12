@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import infinityLogo from "../../assets/infinity-logo.png";
 
-function HeaderArticle() {
+function HeaderServices() {
   return (
     <header className="flex justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20 border-b border-black">
       <div>
@@ -18,7 +18,7 @@ function HeaderArticle() {
           </p>
         </Link>
         <Link to={"/services"}>
-          <p className="text-base font-bold  cursor-pointer hover:underline">
+          <p className="text-base font-bold text-[#1196A9] cursor-pointer hover:underline">
             Services
           </p>
         </Link>
@@ -28,7 +28,7 @@ function HeaderArticle() {
           </p>
         </Link>
         <Link to={"/news"}>
-          <p className="text-base font-bold text-[#1196A9] cursor-pointer hover:underline">
+          <p className="text-base font-bold cursor-pointer hover:underline">
             News
           </p>
         </Link>
@@ -47,4 +47,4 @@ function HeaderArticle() {
   );
 }
 
-export default HeaderArticle;
+export default HeaderServices;
