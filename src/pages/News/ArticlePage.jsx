@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import ReviewsSection from "../../components/Home/ReviewsSection";
 import FaqSection from "../../components/Home/FaqSection";
 import ContactSection from "../../components/Home/ContactSection";
