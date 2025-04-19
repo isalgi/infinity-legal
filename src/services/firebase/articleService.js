@@ -7,14 +7,19 @@ import {
   where,
   doc,
   getDoc,
+  limit,
 } from "firebase/firestore";
-import { db } from "../firebase-config"; // Adjust path as needed to your Firebase config
+import { db } from "../firebase-config";
 
-// Get all articles
-export const fetchAllArticles = async () => {
+// Get all articles with pagination - only retrieve what you need
+export const fetchAllArticles = async (pageSize = 10) => {
   try {
     const articlesRef = collection(db, "articles");
-    const articlesQuery = query(articlesRef, orderBy("date", "desc")); // Most recent first
+    const articlesQuery = query(
+      articlesRef,
+      orderBy("date", "desc"),
+      limit(pageSize)
+    );
     const querySnapshot = await getDocs(articlesQuery);
 
     const articles = [];

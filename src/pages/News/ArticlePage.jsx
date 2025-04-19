@@ -1,6 +1,7 @@
 // src/pages/News/ArticlePage.jsx
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import ReviewsSection from "../../components/Home/ReviewsSection";
 import FaqSection from "../../components/Home/FaqSection";
 import ContactSection from "../../components/Home/ContactSection";
@@ -10,35 +11,46 @@ import ArticleCard from "../../components/News/ArticleCard";
 import { fetchAllArticles } from "../../services/firebase/articleService";
 
 function ArticlePage() {
-  const [articles, setArticles] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    let isMounted = true;
+  const {
+    data: articles = [],
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["articles"],
+    queryFn: () => fetchAllArticles(5), // Only fetch 5 articles
+    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+  });
 
-    const getArticles = async () => {
-      try {
-        const articlesData = await fetchAllArticles();
-        if (isMounted) {
-          setArticles(articlesData);
-        }
-      } catch (err) {
-        console.error("Error in component:", err);
-      }
-    };
-
-    getArticles();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  // Filter articles based on search term
+  const filteredArticles = articles.filter((article) =>
+    article.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   // Get the newest article
-  const newestArticle = articles.length > 0 ? articles[0] : null;
+  const newestArticle =
+    filteredArticles.length > 0 ? filteredArticles[0] : null;
 
   // Articles excluding the newest one for the article cards section
-  const remainingArticles = articles.length > 1 ? articles.slice(1, 4) : [];
+  const remainingArticles =
+    filteredArticles.length > 1 ? filteredArticles.slice(1, 4) : [];
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-cyan-600 text-xl">Loading articles...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-red-500 text-xl">Failed to load articles</div>
+      </div>
+    );
+  }
 
   return (
     <>
