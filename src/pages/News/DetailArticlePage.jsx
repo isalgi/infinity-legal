@@ -1,28 +1,38 @@
-// DetailArticlePage.jsx
+// src/pages/News/DetailArticlePage.jsx
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getArticleBySlug } from "../../data/articles";
-import HeaderArticle from "../../components/News/HeaderArticle";
-
 import ReviewsSection from "../../components/Home/ReviewsSection";
 import FaqSection from "../../components/Home/FaqSection";
 import ContactSection from "../../components/Home/ContactSection";
 import Footer from "../../components/Home/Footer";
+import HeaderArticle from "../../components/News/HeaderArticle";
+import { fetchArticleBySlug } from "../../services/firebase/articleService";
 
 function DetailArticlePage() {
   const { slug } = useParams();
-  const article = getArticleBySlug(slug);
+  const [article, setArticle] = useState(null);
+
+  useEffect(() => {
+    const getArticle = async () => {
+      try {
+        const articleData = await fetchArticleBySlug(slug);
+        setArticle(articleData);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    getArticle();
+  }, [slug]);
 
   if (!article) {
     return (
       <>
         <HeaderArticle />
         <div className="container mx-auto px-5 md:px-10 lg:px-20 py-16 text-center">
-          <h1 className="text-2xl font-medium text-gray-700">
-            Article not found
-          </h1>
-          <Link to="/news" className="text-cyan-600 mt-4 inline-block">
+          {/* <Link to="/news" className="text-cyan-600 mt-4 inline-block">
             Return to articles
-          </Link>
+          </Link> */}
         </div>
       </>
     );

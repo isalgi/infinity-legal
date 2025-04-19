@@ -1,16 +1,44 @@
+// src/pages/News/ArticlePage.jsx
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ReviewsSection from "../../components/Home/ReviewsSection";
 import FaqSection from "../../components/Home/FaqSection";
 import ContactSection from "../../components/Home/ContactSection";
 import Footer from "../../components/Home/Footer";
 import HeaderArticle from "../../components/News/HeaderArticle";
 import ArticleCard from "../../components/News/ArticleCard";
-
-import { Link } from "react-router-dom";
-
-import { articles } from "../../data/articles";
+import { fetchAllArticles } from "../../services/firebase/articleService";
 
 function ArticlePage() {
-  const newestArticle = articles[0];
+  const [articles, setArticles] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const getArticles = async () => {
+      try {
+        const articlesData = await fetchAllArticles();
+        if (isMounted) {
+          setArticles(articlesData);
+        }
+      } catch (err) {
+        console.error("Error in component:", err);
+      }
+    };
+
+    getArticles();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Get the newest article
+  const newestArticle = articles.length > 0 ? articles[0] : null;
+
+  // Articles excluding the newest one for the article cards section
+  const remainingArticles = articles.length > 1 ? articles.slice(1, 4) : [];
 
   return (
     <>
@@ -28,6 +56,8 @@ function ArticlePage() {
                 <input
                   type="text"
                   placeholder="Search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full h-12 pl-5 pr-10 text-lg text-gray-500 bg-white rounded-2xl border border-gray-300 focus:outline-none focus:border-cyan-500"
                 />
                 <div className="absolute right-4 top-1/2 -translate-y-1/2">
@@ -53,66 +83,59 @@ function ArticlePage() {
         </section>
 
         {/* Newest Article Section */}
-        <section className="container mx-auto px-5 md:px-10 lg:px-20 pb-12 mt-10">
-          <h2 className="text-5xl font-semibold text-[#1196A9] mb-12">
-            Newest Article
-          </h2>
-          <div className="w-full">
-            <article className="flex flex-col">
-              <div className="w-full overflow-hidden rounded-lg">
-                <Link to={`/news/${newestArticle.slug}`}>
-                  <img
-                    src={newestArticle.image}
-                    alt={newestArticle.title}
-                    className="w-full h-[500px] object-cover"
-                  />
-                </Link>
-              </div>
-              <div className="flex flex-col gap-1 my-6">
-                <h3 className="text-xl font-medium text-black">
-                  {newestArticle.title}
-                </h3>
-                <time className="text-sm text-gray-700">
-                  {newestArticle.date}
-                </time>
-              </div>
-              <p className="text-base leading-7 text-gray-700">
-                {newestArticle.content
-                  .substring(0, 800)
-                  .replace(/<[^>]*>/g, "")}
-                ...
-              </p>
-            </article>
-          </div>
-        </section>
+        {newestArticle && (
+          <section className="container mx-auto px-5 md:px-10 lg:px-20 pb-12 mt-10">
+            <h2 className="text-4xl font-semibold text-[#1196A9] mb-12">
+              Newest Article
+            </h2>
+            <div className="w-full">
+              <article className="flex flex-col">
+                <div className="w-full overflow-hidden rounded-lg">
+                  <Link to={`/news/${newestArticle.slug}`}>
+                    <img
+                      src={newestArticle.image}
+                      alt={newestArticle.title}
+                      className="w-full h-[500px] object-cover"
+                    />
+                  </Link>
+                </div>
+                <div className="flex flex-col gap-1 my-6">
+                  <h3 className="text-xl font-medium text-black">
+                    {newestArticle.title}
+                  </h3>
+                  <time className="text-sm text-gray-700">
+                    {newestArticle.date}
+                  </time>
+                </div>
+                <p className="text-base leading-7 text-gray-700">
+                  {newestArticle.content
+                    .substring(0, 800)
+                    .replace(/<[^>]*>/g, "")}
+                  ...
+                </p>
+              </article>
+            </div>
+          </section>
+        )}
 
         {/* Article Cards Section */}
         <section className="container mx-auto px-5 md:px-10 lg:px-20 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <ArticleCard
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/b6ed540b2fe0d36894c13be0147cf04842d9edd5"
-              title="Kepengurusan Visa Australia 2025"
-              date="8 Januari 2025"
-              slug="kepengurusan-visa-australia-2025"
-            />
-            <ArticleCard
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/8d18a512db57707785625aed26ffa41472b47842"
-              title="Update terbaru biaya pembuatan PT 2025"
-              date="8 Januari 2025"
-              slug="update-terbaru-biaya-pembuatan-pt-2025"
-            />
-            <ArticleCard
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/120b19709eed5b35dda75f3ce8a98d45307f21ed"
-              title="Menangani permasalahan legal perusahaan anda"
-              date="8 Desember 2024"
-              slug="menangani-permasalahan-legal-perusahaan-anda"
-            />
+            {remainingArticles.map((article) => (
+              <ArticleCard
+                key={article.id}
+                image={article.image}
+                title={article.title}
+                date={article.date}
+                slug={article.slug}
+              />
+            ))}
           </div>
         </section>
 
         {/* More Articles Section */}
         <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
-          <h2 className="text-5xl font-semibold text-[#1196A9] mb-8">
+          <h2 className="text-4xl font-semibold text-[#1196A9] mb-8">
             More Article
           </h2>
 
