@@ -1,4 +1,5 @@
 import icon1 from "../../assets/whatsapp.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -62,11 +63,13 @@ function Footer() {
         </div>
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold text-cyan-600">Ask Now</h3>
-          <img
-            src={icon1}
-            alt=""
-            className="h-[41px] w-[41px] mt-5 cursor-pointer"
-          />
+          <Link to="https://wa.me/6282131907575">
+            <img
+              src={icon1}
+              alt=""
+              className="h-[41px] w-[41px] mt-5 cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
       <p className="text-xs font-medium text-center text-cyan-600">
