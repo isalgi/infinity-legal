@@ -6,7 +6,7 @@ function HeroSection() {
     <>
       <Header />
       <section
-        className="flex relative items-center pt-64 pb-48 pl-24 rounded-md pr-[770px] max-md:px-10 max-md:pt-52 max-md:pb-24 max-sm:px-5 max-sm:pt-36 max-sm:pb-20"
+        className="flex relative items-center pt-64 pb-48 pl-24 pr-[770px] max-md:px-10 max-md:pt-52 max-md:pb-24 max-sm:px-5 max-sm:pt-36 max-sm:pb-20"
         style={{
           backgroundImage: `url(${hero})`,
           backgroundRepeat: "no-repeat",

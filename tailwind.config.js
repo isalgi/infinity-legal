@@ -4,5 +4,22 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        // In tailwind.config.js
+        ".scrollbar-hide": {
+          /* Firefox */
+          "scrollbar-width": "none !important",
+          /* Safari and Chrome */
+          "&::-webkit-scrollbar": {
+            display: "none !important",
+          },
+          /* IE and Edge */
+          "-ms-overflow-style": "none !important",
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };

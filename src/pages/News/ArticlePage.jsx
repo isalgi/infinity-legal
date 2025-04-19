@@ -52,23 +52,6 @@ function ArticlePage() {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full h-12 pl-5 pr-10 text-lg text-gray-500 bg-white rounded-2xl border border-gray-300 focus:outline-none focus:border-cyan-500"
                 />
-                <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-gray-400"
-                  >
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  </svg>
-                </div>
               </div>
             </div>
           </div>
@@ -92,10 +75,10 @@ function ArticlePage() {
                   </Link>
                 </div>
                 <div className="flex flex-col gap-1 my-6">
-                  <h3 className="text-xl font-medium text-black">
+                  <h3 className="text-2xl font-medium text-black">
                     {newestArticle.title}
                   </h3>
-                  <time className="text-sm text-gray-700">
+                  <time className="text-base text-gray-700">
                     {newestArticle.date}
                   </time>
                 </div>

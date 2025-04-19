@@ -10,8 +10,10 @@ function ArticleCard({ image, title, date, slug }) {
           className="w-[396px] h-[250px] rounded-[25px] object-cover"
         />
       </Link>
-      <h3 className="text-xl font-medium text-black">{title}</h3>
-      <time className="text-base text-black">{date}</time>
+      <h3 className="text-2xl font-medium text-black">{title}</h3>
+      <div className="flex flex-col justify-end flex-1">
+        <time className="text-base text-black">{date}</time>
+      </div>
     </article>
   );
 }
