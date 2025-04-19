@@ -13,11 +13,7 @@ import { fetchAllArticles } from "../../services/firebase/articleService";
 function ArticlePage() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const {
-    data: articles = [],
-    isLoading,
-    error,
-  } = useQuery({
+  const { data: articles = [] } = useQuery({
     queryKey: ["articles"],
     queryFn: () => fetchAllArticles(5), // Only fetch 5 articles
     staleTime: 5 * 60 * 1000, // Cache for 5 minutes
@@ -35,22 +31,6 @@ function ArticlePage() {
   // Articles excluding the newest one for the article cards section
   const remainingArticles =
     filteredArticles.length > 1 ? filteredArticles.slice(1, 4) : [];
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-cyan-600 text-xl">Loading articles...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-red-500 text-xl">Failed to load articles</div>
-      </div>
-    );
-  }
 
   return (
     <>
