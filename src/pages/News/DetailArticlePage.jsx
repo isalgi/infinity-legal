@@ -6,16 +6,47 @@ import FaqSection from "../../components/Home/FaqSection";
 import ContactSection from "../../components/Home/ContactSection";
 import Footer from "../../components/Home/Footer";
 import HeaderArticle from "../../components/News/HeaderArticle";
-import { fetchArticleBySlug } from "../../services/firebase/articleService";
+import { fetchArticleBySlug } from "../../services/supabase/articleService";
 
 function DetailArticlePage() {
   const { slug } = useParams();
 
-  const { data: article } = useQuery({
+  const {
+    data: article,
+    isLoading,
+    error,
+  } = useQuery({
     queryKey: ["article", slug],
     queryFn: () => fetchArticleBySlug(slug),
     staleTime: 5 * 60 * 1000, // Cache for 5 minutes
   });
+
+  if (isLoading) {
+    return (
+      <>
+        <HeaderArticle />
+        {/* <div className="container mx-auto px-5 md:px-10 lg:px-20 py-16 text-center">
+          <div className="text-cyan-600 text-xl">Loading article...</div>
+        </div> */}
+      </>
+    );
+  }
+
+  if (error || !article) {
+    return (
+      <>
+        <HeaderArticle />
+        <div className="container mx-auto px-5 md:px-10 lg:px-20 py-16 text-center">
+          {/* <h1 className="text-2xl font-medium text-gray-700">
+            {error ? "Failed to load article" : "Article not found"}
+          </h1> */}
+          {/* <Link to="/news" className="text-cyan-600 mt-4 inline-block">
+            Return to articles
+          </Link> */}
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

@@ -8,7 +8,7 @@ import ContactSection from "../../components/Home/ContactSection";
 import Footer from "../../components/Home/Footer";
 import HeaderArticle from "../../components/News/HeaderArticle";
 import ArticleCard from "../../components/News/ArticleCard";
-import { fetchAllArticles } from "../../services/firebase/articleService";
+import { fetchAllArticles } from "../../services/supabase/articleService";
 
 function ArticlePage() {
   const [searchTerm, setSearchTerm] = useState("");
