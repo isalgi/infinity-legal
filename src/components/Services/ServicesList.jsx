@@ -1,5 +1,5 @@
 // src/components/Services/ServicesList.jsx
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchAllServices } from "../../services/supabase/serviceService";
@@ -62,55 +62,48 @@ export default function ServicesList() {
   return (
     <section
       className="bg-white py-16"
-      style={{ height: "800px", overflowY: "auto" }}
+      style={{ height: "1000px", overflowY: "auto" }}
     >
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           {services.map((service, index) => (
             <Link
               to={`/services/${service.slug}`}
               key={service.id}
-              ref={index === services.length - 1 ? lastServiceRef : undefined}
+              ref={
+                index === 3 && services.length <= 4 ? lastServiceRef : undefined
+              }
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 relative group"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-48 overflow-hidden rounded-t-lg">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+              <div className="p-4 ">
+                <h3 className="text-lg text-center font-semibold mb-7 text-[#1196A9]">
+                  {service.title
+                    .toLowerCase()
+                    .replace(/\b\w/g, (l) => l.toUpperCase())
+                    .replace(/\b\w/, (l) => l.toUpperCase())}
+                </h3>
+                <p className="text-gray-600 text-sm group-hover:line-clamp-1 line-clamp-3 transition-all duration-300">
                   {service.description}
                 </p>
 
-                {/* Price overlay that appears on hover */}
-                <div className="absolute bottom-0 left-0 w-full bg-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 border-t border-gray-100">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <span className="text-sm text-gray-500">
-                        Starting from
-                      </span>
-                      <div className="text-cyan-600 font-semibold">
-                        {service.price}
-                      </div>
-                      <span className="text-xs text-gray-400">
-                        *all prices include PPN
-                      </span>
-                    </div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      className="text-cyan-600"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                    </svg>
-                  </div>
+                {/* Price info that shows on hover */}
+                <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-xs text-gray-700 mb-0">Starting From</p>
+                  <p className="text-black text-2xl font-semibold mt-1">
+                    {typeof service.price === "number"
+                      ? service.price.toLocaleString()
+                      : service.price}
+                  </p>
+                  <p className="text-sm text-gray-800 mt-1">
+                    All pricing exclude PPN
+                  </p>
                 </div>
               </div>
             </Link>

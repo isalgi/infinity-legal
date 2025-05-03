@@ -1,4 +1,5 @@
 // src/pages/Services/DetailServicePage.jsx
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import ReviewsSection from "../../components/Home/ReviewsSection";
@@ -7,6 +8,56 @@ import ContactSection from "../../components/Home/ContactSection";
 import Footer from "../../components/Home/Footer";
 import HeaderServices from "../../components/Services/HeaderServices";
 import { fetchServiceBySlug } from "../../services/supabase/serviceService";
+
+// Collapsible Documents Component
+const CollapsibleDocuments = ({ documents }) => {
+  // Initialize all items as expanded by default
+  const initialExpandedState = documents.reduce((acc, _, index) => {
+    acc[index] = true; // Set all to true (expanded) by default
+    return acc;
+  }, {});
+
+  const [expandedItems, setExpandedItems] = useState(initialExpandedState);
+
+  const toggleItem = (index) => {
+    setExpandedItems((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  return (
+    <div className="space-y-4">
+      {documents.map((document, index) => (
+        <div key={index} className="flex items-start">
+          {/* + Icon on the left */}
+          <button
+            onClick={() => toggleItem(index)}
+            className="mt-1 mr-3 text-[#1196A9] focus:outline-none"
+            aria-label={expandedItems[index] ? "Collapse" : "Expand"}
+          >
+            <span className="text-2xl">{expandedItems[index] ? "+" : "+"}</span>
+          </button>
+
+          {/* Document content */}
+          <div className="flex-1">
+            <h3
+              className="text-lg font-medium text-gray-800 cursor-pointer"
+              onClick={() => toggleItem(index)}
+            >
+              {document.name}
+            </h3>
+
+            {/* Collapsible description */}
+            {expandedItems[index] && document.description && (
+              <p className="text-gray-600 mt-1">{document.description}</p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default function DetailServicePage() {
   const { slug } = useParams();
@@ -50,13 +101,6 @@ export default function DetailServicePage() {
     );
   }
 
-  // Safely handle features data structure
-  const featuresList = Array.isArray(service.features)
-    ? service.features
-    : service.features?.features && Array.isArray(service.features.features)
-    ? service.features.features
-    : [];
-
   // Safely handle additionalImages data structure
   const additionalImagesList = Array.isArray(service.additionalImages)
     ? service.additionalImages
@@ -72,17 +116,17 @@ export default function DetailServicePage() {
       {/* Hero Section - Grid Layout with Image on Right */}
       <section className="bg-white pt-10">
         <div className="container mx-auto text-[#1196A9] text-3xl font-semibold">
-          {service.title}
+          {service.title
+            .toLowerCase()
+            .replace(/\b\w/g, (l) => l.toUpperCase())
+            .replace(/\b\w/, (l) => l.toUpperCase())}
         </div>
         <div className="container mx-auto px-5 md:px-10 lg:px-16">
           {/* Hero Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-900 my-[30px]">
-                Best{" "}
-                {service.category.charAt(0).toUpperCase() +
-                  service.category.slice(1)}{" "}
-                services you can get
+                About the {service.category}
               </h1>
               <p className="text-lg text-gray-600 mt-5 mb-10">
                 {service.description}
@@ -103,7 +147,7 @@ export default function DetailServicePage() {
           {/* About Section */}
           <div className="mt-10">
             <h2 className="text-2xl font-semibold text-center text-[#1196A9]">
-              What you get from our services
+              Required Documents
             </h2>
           </div>
         </div>
@@ -114,38 +158,10 @@ export default function DetailServicePage() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <div>
-              {/* Features with + Icons */}
-              <div className="space-y-6">
-                {featuresList.length > 0 &&
-                  featuresList.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="text-[#1196A9] mt-1 flex-shrink-0">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="25"
-                          height="25"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1="12" y1="5" x2="12" y2="19"></line>
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-medium text-gray-800">
-                          {feature.title}
-                        </h3>
-                        <p className="text-gray-600 pr-10">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-              </div>
+              {/* Required Documents with + Icons (Collapsible) */}
+              <CollapsibleDocuments
+                documents={service.required_documents || []}
+              />
 
               {/* Manage Button */}
               <button className="mt-8 border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 text-sm font-medium">
