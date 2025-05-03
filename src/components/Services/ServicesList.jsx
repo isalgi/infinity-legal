@@ -86,10 +86,12 @@ export default function ServicesList() {
               {/* Title with fixed height */}
               <div className="px-5 mt-6 mb-3 h-[60px] flex items-center justify-center">
                 <h3 className="text-xl font-semibold text-center text-cyan-600">
-                  {service.title
-                    .toLowerCase()
-                    .replace(/\b\w/g, (l) => l.toUpperCase())
-                    .replace(/\b\w/, (l) => l.toUpperCase())}
+                  {service.title.includes(" ")
+                    ? service.title
+                        .toLowerCase()
+                        .replace(/\b\w/g, (l) => l.toUpperCase())
+                        .replace(/\b\w/, (l) => l.toUpperCase())
+                    : service.title}
                 </h3>
               </div>
 

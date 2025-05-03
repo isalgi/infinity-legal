@@ -119,10 +119,12 @@ export default function DetailServicePage() {
       {/* Hero Section - Grid Layout with Image on Right */}
       <section className="bg-white pt-10">
         <div className="container mx-auto text-[#1196A9] text-[32px] leading-10 font-semibold">
-          {service.title
-            .toLowerCase()
-            .replace(/\b\w/g, (l) => l.toUpperCase())
-            .replace(/\b\w/, (l) => l.toUpperCase())}
+          {service.title.includes(" ")
+            ? service.title
+                .toLowerCase()
+                .replace(/\b\w/g, (l) => l.toUpperCase())
+                .replace(/\b\w/, (l) => l.toUpperCase())
+            : service.title}
         </div>
         <div className="container mx-auto px-5 md:px-10 lg:px-16">
           {/* Hero Grid Layout */}
@@ -212,7 +214,14 @@ export default function DetailServicePage() {
 
             {/* White Card */}
             <div className="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto w-full">
-              <h3 className="text-md font-semibold mb-2">{service.title}</h3>
+              <h3 className="text-md font-semibold mb-2">
+                {service.title.includes(" ")
+                  ? service.title
+                      .toLowerCase()
+                      .replace(/\b\w/g, (l) => l.toUpperCase())
+                      .replace(/\b\w/, (l) => l.toUpperCase())
+                  : service.title}
+              </h3>
               <p className="text-gray-600 mb-4 text-sm">
                 {service.description}
               </p>
