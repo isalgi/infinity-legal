@@ -1,5 +1,5 @@
 import HeaderServices from "../../components/Services/HeaderServices";
-import VisaServices from "../../components/Services/VisaServices";
+import ServicesList from "../../components/Services/ServicesList";
 import ReviewsSection from "../../components/Home/ReviewsSection";
 import FaqSection from "../../components/Home/FaqSection";
 import ContactSection from "../../components/Home/ContactSection";
@@ -9,7 +9,7 @@ export default function ServicesPage() {
   return (
     <>
       <HeaderServices />
-      <VisaServices />
+      <ServicesList />
       <ReviewsSection />
       <FaqSection />
       <ContactSection />
