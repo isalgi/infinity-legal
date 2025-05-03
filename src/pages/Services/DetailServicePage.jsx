@@ -91,7 +91,7 @@ export default function DetailServicePage() {
                 Contact us
               </button>
             </div>
-            <div className="rounded-xl overflow-hidden">
+            <div className="rounded-xl overflow-hidden ml-10">
               <img
                 src={service.image}
                 alt={service.title}
@@ -213,9 +213,14 @@ export default function DetailServicePage() {
                 Ask us Now
               </button>
 
+              <p className="text-sm text-gray-800 font-semibold mt-4">
+                {service.category.charAt(0).toUpperCase() +
+                  service.category.slice(1)}
+              </p>
+
               {/* Feature List with Checkmarks */}
               {featuresList.length > 0 && (
-                <div className="mt-8 space-y-2">
+                <div className="mt-4 space-y-2">
                   {featuresList.map((feature, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <span
@@ -270,7 +275,7 @@ export default function DetailServicePage() {
                 </div>
               )}
 
-              <p className="text-xs text-gray-500 mt-6 text-center">
+              <p className="text-xs text-gray-500 mt-6">
                 *Includes personal services
               </p>
             </div>
