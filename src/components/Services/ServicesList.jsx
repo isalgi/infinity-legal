@@ -69,7 +69,9 @@ export default function ServicesList() {
                   {service.description}
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-cyan-600 font-medium">Learn more</span>
+                  <span className="text-cyan-600 font-medium">
+                    {service.price}
+                  </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"

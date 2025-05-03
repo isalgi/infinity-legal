@@ -70,18 +70,24 @@ export default function DetailServicePage() {
       <HeaderServices />
 
       {/* Hero Section - Grid Layout with Image on Right */}
-      <section className="bg-white pt-8 pb-12">
-        <div className="container mx-auto px-5 md:px-10 lg:px-20">
+      <section className="bg-white pt-10">
+        <div className="mx-36 text-[#1196A9] text-3xl font-semibold">
+          {service.title}
+        </div>
+        <div className="container mx-auto px-5 md:px-10 lg:px-16">
           {/* Hero Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                {service.title}
+              <h1 className="text-3xl font-bold text-gray-900 my-[30px]">
+                Best{" "}
+                {service.category.charAt(0).toUpperCase() +
+                  service.category.slice(1)}{" "}
+                services you can get
               </h1>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-gray-600 mt-5 mb-10">
                 {service.description}
               </p>
-              <button className="bg-white border border-cyan-500 text-cyan-500 hover:bg-cyan-50 rounded-md px-4 py-2 text-sm font-medium">
+              <button className="bg-white border border-cyan-500 text-cyan-500 hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-sm font-medium">
                 Contact us
               </button>
             </div>
@@ -95,7 +101,7 @@ export default function DetailServicePage() {
           </div>
 
           {/* About Section */}
-          <div className="mt-6 mb-4">
+          <div className="mt-10">
             <h2 className="text-2xl font-semibold text-center text-cyan-500">
               What you get from our services
             </h2>
@@ -105,8 +111,8 @@ export default function DetailServicePage() {
 
       {/* Features Section - Grid Layout with Image on Right */}
       <section className="bg-white py-8">
-        <div className="container mx-auto px-5 md:px-10 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-28 items-center">
             <div>
               {/* Features with + Icons */}
               <div className="space-y-6">
