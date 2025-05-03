@@ -71,7 +71,7 @@ export default function DetailServicePage() {
 
       {/* Hero Section - Grid Layout with Image on Right */}
       <section className="bg-white pt-10">
-        <div className="mx-36 text-[#1196A9] text-3xl font-semibold">
+        <div className="container mx-auto text-[#1196A9] text-3xl font-semibold">
           {service.title}
         </div>
         <div className="container mx-auto px-5 md:px-10 lg:px-16">
@@ -87,7 +87,7 @@ export default function DetailServicePage() {
               <p className="text-lg text-gray-600 mt-5 mb-10">
                 {service.description}
               </p>
-              <button className="bg-white border border-cyan-500 text-cyan-500 hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-sm font-medium">
+              <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-sm font-medium">
                 Contact us
               </button>
             </div>
@@ -102,7 +102,7 @@ export default function DetailServicePage() {
 
           {/* About Section */}
           <div className="mt-10">
-            <h2 className="text-2xl font-semibold text-center text-cyan-500">
+            <h2 className="text-2xl font-semibold text-center text-[#1196A9]">
               What you get from our services
             </h2>
           </div>
@@ -110,24 +110,24 @@ export default function DetailServicePage() {
       </section>
 
       {/* Features Section - Grid Layout with Image on Right */}
-      <section className="bg-white py-8">
+      <section className="bg-white pt-10 pb-8">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-28 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <div>
               {/* Features with + Icons */}
               <div className="space-y-6">
                 {featuresList.length > 0 &&
                   featuresList.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <div className="text-cyan-500 mt-1 flex-shrink-0">
+                      <div className="text-[#1196A9] mt-1 flex-shrink-0">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
+                          width="25"
+                          height="25"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          strokeWidth="2"
+                          strokeWidth="3"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
@@ -139,14 +139,16 @@ export default function DetailServicePage() {
                         <h3 className="text-lg font-medium text-gray-800">
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600">{feature.description}</p>
+                        <p className="text-gray-600 pr-10">
+                          {feature.description}
+                        </p>
                       </div>
                     </div>
                   ))}
               </div>
 
               {/* Manage Button */}
-              <button className="mt-8 border border-cyan-500 text-cyan-500 hover:bg-cyan-50 rounded-md px-4 py-2 text-sm font-medium">
+              <button className="mt-8 border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 text-sm font-medium">
                 Hubungi Kami
               </button>
             </div>
@@ -189,20 +191,21 @@ export default function DetailServicePage() {
             <div className="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto w-full">
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4 text-sm">
-                {service.description}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                tincidunt sit amet lorem quis dignissim.
               </p>
 
               {service.price && (
                 <div className="mb-8">
-                  <div className="flex items-baseline">
-                    <span className="text-lg font-bold text-gray-800">
-                      From
-                    </span>
-                    <span className="text-2xl font-bold text-cyan-600 ml-2">
+                  <div className="flex items-baseline flex-col">
+                    <span className="text-lg">From</span>
+                    <span className="text-2xl font-bold text-black">
                       {service.price}
                     </span>
                   </div>
-                  <p className="text-xs text-gray-500">*Prices include taxes</p>
+                  <p className="text-sm text-gray-800 mt-1">
+                    All pricing exclude PPN
+                  </p>
                 </div>
               )}
 
