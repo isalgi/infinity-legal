@@ -8,7 +8,7 @@ export default function ServicesList() {
   const loaderRef = useRef(null);
   const limit = 8; // Items per page
 
-  // Use useInfiniteQuery instead of useQuery for proper infinite scrolling
+  // Use useInfiniteQuery for proper infinite scrolling
   const { data, isLoading, fetchNextPage, isFetchingNextPage, hasNextPage } =
     useInfiniteQuery({
       queryKey: ["services", "paginated"],
@@ -65,46 +65,53 @@ export default function ServicesList() {
       style={{ height: "1000px", overflowY: "auto" }}
     >
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Link
               to={`/services/${service.slug}`}
               key={service.id}
-              ref={
-                index === 3 && services.length <= 4 ? lastServiceRef : undefined
-              }
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 relative group"
+              ref={index === services.length - 1 ? lastServiceRef : undefined}
+              className="bg-white rounded-3xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden hover:shadow-xl transition-all duration-300 relative group w-[300px] max-sm:w-full flex flex-col"
+              style={{ height: "auto", minHeight: "500px" }}
             >
-              <div className="h-48 overflow-hidden rounded-t-lg">
+              {/* Image container with fixed height */}
+              <div className="px-5 pt-4 flex justify-center">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover"
+                  className="rounded-3xl h-[200px] w-[270px] object-cover"
                 />
               </div>
-              <div className="p-4 ">
-                <h3 className="text-lg text-center font-semibold mb-7 text-[#1196A9]">
+
+              {/* Title with fixed height */}
+              <div className="px-5 mt-6 mb-3 h-[60px] flex items-center justify-center">
+                <h3 className="text-xl font-semibold text-center text-cyan-600">
                   {service.title
                     .toLowerCase()
                     .replace(/\b\w/g, (l) => l.toUpperCase())
                     .replace(/\b\w/, (l) => l.toUpperCase())}
                 </h3>
-                <p className="text-gray-600 text-sm group-hover:line-clamp-1 line-clamp-3 transition-all duration-300">
+              </div>
+
+              {/* Description with fixed padding */}
+              <div className="px-5 flex-grow">
+                <p className="text-base leading-5 text-black group-hover:line-clamp-2 line-clamp-5 transition-all duration-300">
                   {service.description}
                 </p>
+              </div>
 
-                {/* Price info that shows on hover */}
-                <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-xs text-gray-700 mb-0">Starting From</p>
-                  <p className="text-black text-2xl font-semibold mt-1">
-                    {typeof service.price === "number"
-                      ? service.price.toLocaleString()
-                      : service.price}
-                  </p>
-                  <p className="text-sm text-gray-800 mt-1">
-                    All pricing exclude PPN
-                  </p>
-                </div>
+              {/* Price section at the bottom */}
+              <div className="px-5 pb-5 mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-xs text-gray-700 mb-0">Starting From</p>
+                <p className="text-black text-2xl font-semibold mt-1">
+                  IDR{" "}
+                  {typeof service.price === "number"
+                    ? service.price.toLocaleString()
+                    : service.price}
+                </p>
+                <p className="text-sm text-gray-800 mt-1">
+                  All pricing exclude PPN
+                </p>
               </div>
             </Link>
           ))}
