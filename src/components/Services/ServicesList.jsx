@@ -94,14 +94,14 @@ export default function ServicesList() {
               </div>
 
               {/* Description with fixed height */}
-              <div className="px-5">
+              <div className="px-5 mt-2">
                 <p className="text-base leading-5 text-black group-hover:line-clamp-2 line-clamp-5 transition-all duration-300 min-h-[80px] max-h-[120px]">
                   {service.description}
                 </p>
               </div>
 
               {/* Price section with fixed position */}
-              <div className="px-5 pb-5 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="px-5 pb-5 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-0">
                 <p className="text-xs text-gray-700 mb-0">Starting From</p>
                 <p className="text-black text-2xl font-semibold mt-1">
                   {typeof service.price === "number"

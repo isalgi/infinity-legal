@@ -50,7 +50,10 @@ const CollapsibleDocuments = ({ documents }) => {
 
             {/* Collapsible description */}
             {expandedItems[index] && document.description && (
-              <p className="text-gray-600 mt-1">{document.description}</p>
+              <p className="text-gray-600 mt-1">
+                {document.description.charAt(0).toUpperCase() +
+                  document.description.slice(1)}
+              </p>
             )}
           </div>
         </div>
@@ -207,8 +210,7 @@ export default function DetailServicePage() {
             <div className="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto w-full">
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4 text-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                tincidunt sit amet lorem quis dignissim.
+                {service.description}
               </p>
 
               {service.price && (
