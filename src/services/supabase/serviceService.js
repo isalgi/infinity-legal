@@ -1,20 +1,31 @@
 // src/services/supabase/serviceService.js
 import { supabase } from "../supabase-config";
 
-export const fetchAllServices = async (category = null) => {
+// In your serviceService.js
+export const fetchAllServices = async (
+  category = null,
+  page = 1,
+  limit = 8
+) => {
   try {
+    // Calculate range start and end
+    const start = (page - 1) * limit;
+    const end = start + limit - 1;
+
     let query = supabase
       .from("services")
       .select("*")
-      .order("created_at", { ascending: false });
+      .order("created_at", { ascending: false })
+      .range(start, end);
 
-    if (category) {
+    if (category && category !== "all") {
       query = query.eq("category", category);
     }
 
     const { data, error } = await query;
 
     if (error) throw error;
+    console.log(`Fetched page ${page}, got ${data.length} items`);
     return data;
   } catch (error) {
     console.error("Error fetching services:", error);
