@@ -42,7 +42,7 @@ const CollapsibleDocuments = ({ documents }) => {
           {/* Document content */}
           <div className="flex-1">
             <h3
-              className="text-lg font-medium text-gray-800 cursor-pointer"
+              className="text-xl font-medium text-gray-800 cursor-pointer"
               onClick={() => toggleItem(index)}
             >
               {document.name}
@@ -50,7 +50,7 @@ const CollapsibleDocuments = ({ documents }) => {
 
             {/* Collapsible description */}
             {expandedItems[index] && document.description && (
-              <p className="text-gray-600 mt-1">
+              <p className="text-gray-600 mt-1 text-xl">
                 {document.description.charAt(0).toUpperCase() +
                   document.description.slice(1)}
               </p>
@@ -118,7 +118,7 @@ export default function DetailServicePage() {
 
       {/* Hero Section - Grid Layout with Image on Right */}
       <section className="bg-white pt-10">
-        <div className="container mx-auto text-[#1196A9] text-3xl font-semibold">
+        <div className="container mx-auto text-[#1196A9] text-[32px] leading-10 font-semibold">
           {service.title
             .toLowerCase()
             .replace(/\b\w/g, (l) => l.toUpperCase())
@@ -127,14 +127,14 @@ export default function DetailServicePage() {
         <div className="container mx-auto px-5 md:px-10 lg:px-16">
           {/* Hero Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-            <div>
+            <div className="ml-6">
               <h1 className="text-3xl font-bold text-gray-900 my-[30px]">
                 About the {service.category}
               </h1>
-              <p className="text-lg text-gray-600 mt-5 mb-10">
+              <p className="text-xl text-gray-600 mt-5 mb-10">
                 {service.description}
               </p>
-              <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-sm font-medium">
+              <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-md font-medium">
                 Contact us
               </button>
             </div>
@@ -160,14 +160,14 @@ export default function DetailServicePage() {
       <section className="bg-white pt-10 pb-8">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-            <div>
+            <div className="ml-10">
               {/* Required Documents with + Icons (Collapsible) */}
               <CollapsibleDocuments
                 documents={service.required_documents || []}
               />
 
               {/* Manage Button */}
-              <button className="mt-8 border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 text-sm font-medium">
+              <button className="mt-8 border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-5 py-2 text-md font-medium">
                 Hubungi Kami
               </button>
             </div>
