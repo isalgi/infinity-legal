@@ -61,8 +61,8 @@ export default function ServicesList() {
 
   return (
     <section
-      className="bg-white py-16"
-      style={{ height: "1000px", overflowY: "auto" }}
+      className="bg-white py-10"
+      style={{ height: "1150px", overflowY: "auto" }}
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -71,8 +71,8 @@ export default function ServicesList() {
               to={`/services/${service.slug}`}
               key={service.id}
               ref={index === services.length - 1 ? lastServiceRef : undefined}
-              className="bg-white rounded-3xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden hover:shadow-xl transition-all duration-300 relative group w-[300px] max-sm:w-full flex flex-col"
-              style={{ height: "auto", minHeight: "500px" }}
+              className="bg-white rounded-3xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden hover:shadow-xl transition-all duration-300 relative group w-[300px] max-sm:w-full"
+              style={{ height: "auto", minHeight: "450px" }}
             >
               {/* Image container with fixed height */}
               <div className="px-5 pt-4 flex justify-center">
@@ -93,18 +93,17 @@ export default function ServicesList() {
                 </h3>
               </div>
 
-              {/* Description with fixed padding */}
-              <div className="px-5 flex-grow">
-                <p className="text-base leading-5 text-black group-hover:line-clamp-2 line-clamp-5 transition-all duration-300">
+              {/* Description with fixed height */}
+              <div className="px-5">
+                <p className="text-base leading-5 text-black group-hover:line-clamp-2 line-clamp-5 transition-all duration-300 min-h-[80px] max-h-[120px]">
                   {service.description}
                 </p>
               </div>
 
-              {/* Price section at the bottom */}
-              <div className="px-5 pb-5 mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* Price section with fixed position */}
+              <div className="px-5 pb-5 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="text-xs text-gray-700 mb-0">Starting From</p>
                 <p className="text-black text-2xl font-semibold mt-1">
-                  IDR{" "}
                   {typeof service.price === "number"
                     ? service.price.toLocaleString()
                     : service.price}
