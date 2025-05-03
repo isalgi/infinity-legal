@@ -50,175 +50,224 @@ export default function DetailServicePage() {
     );
   }
 
+  // Safely handle features data structure
+  const featuresList = Array.isArray(service.features)
+    ? service.features
+    : service.features?.features && Array.isArray(service.features.features)
+    ? service.features.features
+    : [];
+
+  // Safely handle additionalImages data structure
+  const additionalImagesList = Array.isArray(service.additionalImages)
+    ? service.additionalImages
+    : service.additionalImages?.additionalImages &&
+      Array.isArray(service.additionalImages.additionalImages)
+    ? service.additionalImages.additionalImages
+    : [];
+
   return (
     <>
       <HeaderServices />
 
-      <div className="bg-white py-12">
-        <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <div className="mb-8">
-            <Link
-              to="/services"
-              className="text-cyan-600 flex items-center gap-2 mb-4"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M19 12H5M12 19l-7-7 7-7"></path>
-              </svg>
-              Back to Services
-            </Link>
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
-              {service.title}
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">{service.description}</p>
+      {/* Hero Section - Grid Layout with Image on Right */}
+      <section className="bg-white pt-8 pb-12">
+        <div className="container mx-auto px-5 md:px-10 lg:px-20">
+          {/* Hero Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                {service.title}
+              </h1>
+              <p className="text-lg text-gray-600 mb-6">
+                {service.description}
+              </p>
+              <button className="bg-white border border-cyan-500 text-cyan-500 hover:bg-cyan-50 rounded-md px-4 py-2 text-sm font-medium">
+                Contact us
+              </button>
+            </div>
+            <div className="rounded-xl overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <div className="mb-8">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-auto rounded-lg object-cover mb-6"
-                />
-                <div
-                  className="prose max-w-none"
-                  dangerouslySetInnerHTML={{ __html: service.content }}
-                />
+          {/* About Section */}
+          <div className="mt-6 mb-4">
+            <h2 className="text-2xl font-semibold text-center text-cyan-500">
+              What you get from our services
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section - Grid Layout with Image on Right */}
+      <section className="bg-white py-8">
+        <div className="container mx-auto px-5 md:px-10 lg:px-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              {/* Features with + Icons */}
+              <div className="space-y-6">
+                {featuresList.length > 0 &&
+                  featuresList.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="text-cyan-500 mt-1 flex-shrink-0">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium text-gray-800">
+                          {feature.title}
+                        </h3>
+                        <p className="text-gray-600">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
               </div>
 
-              {service.features && service.features.length > 0 && (
-                <div className="mt-12">
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-                    What you get from our services
-                  </h2>
-                  <div className="space-y-4">
-                    {service.features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <div className="text-cyan-500 mt-1">
+              {/* Manage Button */}
+              <button className="mt-8 border border-cyan-500 text-cyan-500 hover:bg-cyan-50 rounded-md px-4 py-2 text-sm font-medium">
+                Hubungi Kami
+              </button>
+            </div>
+
+            {/* First Additional Image on Right */}
+            {additionalImagesList[0] && (
+              <div className="rounded-xl overflow-hidden h-full">
+                <img
+                  src={additionalImagesList[0]}
+                  alt={`${service.title} process`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Let's Get Started Section with Background Image */}
+      <section className="py-16 relative">
+        {/* Background Image - Second Additional Image */}
+        {additionalImagesList[1] && (
+          <div className="absolute inset-0 z-0">
+            <img
+              src={additionalImagesList[1]}
+              alt="Background"
+              className="w-full h-full object-cover"
+              style={{ filter: "brightness(0.8)" }}
+            />
+          </div>
+        )}
+
+        <div className="container mx-auto px-5 md:px-10 lg:px-20 relative z-10">
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-2xl font-bold text-white text-center mb-8">
+              Let's get you started
+            </h2>
+
+            {/* White Card */}
+            <div className="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto w-full">
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-gray-600 mb-4 text-sm">
+                {service.description}
+              </p>
+
+              {service.price && (
+                <div className="mb-8">
+                  <div className="flex items-baseline">
+                    <span className="text-lg font-bold text-gray-800">
+                      From
+                    </span>
+                    <span className="text-2xl font-bold text-cyan-600 ml-2">
+                      {service.price}
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-500">*Prices include taxes</p>
+                </div>
+              )}
+
+              <button className="w-full bg-cyan-600 text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
+                Ask us Now
+              </button>
+
+              {/* Feature List with Checkmarks */}
+              {featuresList.length > 0 && (
+                <div className="mt-8 space-y-2">
+                  {featuresList.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <span
+                        className={
+                          feature.included !== false
+                            ? "text-green-500"
+                            : "text-red-500"
+                        }
+                      >
+                        {feature.included !== false ? (
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
+                            width="16"
+                            height="16"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
                             strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           >
-                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path>
-                            <path d="M7.5 12.5L10.5 15.5L16 10"></path>
+                            <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-medium text-gray-800">
-                            {feature.title}
-                          </h3>
-                          <p className="text-gray-600">{feature.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 sticky top-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  Let's get you started
-                </h2>
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                </div>
-
-                {service.price && (
-                  <div className="mb-8">
-                    <div className="flex items-baseline">
-                      <span className="text-3xl font-bold text-gray-800">
-                        From
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                          </svg>
+                        )}
                       </span>
-                      <span className="text-4xl font-bold text-cyan-600 ml-2">
-                        {service.price}
+                      <span
+                        className={
+                          feature.included !== false
+                            ? "text-gray-700 text-sm"
+                            : "text-gray-400 text-sm"
+                        }
+                      >
+                        Lorem ipsum dolor sit amet, consectetur
                       </span>
                     </div>
-                    <p className="text-sm text-gray-500">
-                      *Prices include taxes
-                    </p>
-                  </div>
-                )}
+                  ))}
+                </div>
+              )}
 
-                <button className="w-full bg-cyan-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-cyan-700 transition-colors">
-                  Ask us Now
-                </button>
-
-                {service.features && service.features.length > 0 && (
-                  <div className="mt-8 space-y-3">
-                    {service.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <span
-                          className={
-                            feature.included !== false
-                              ? "text-green-500"
-                              : "text-red-500"
-                          }
-                        >
-                          {feature.included !== false ? (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <path d="M20 6L9 17L4 12"></path>
-                            </svg>
-                          ) : (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <path d="M18 6L6 18M6 6l12 12"></path>
-                            </svg>
-                          )}
-                        </span>
-                        <span
-                          className={
-                            feature.included !== false
-                              ? "text-gray-700"
-                              : "text-gray-400"
-                          }
-                        >
-                          {feature.title}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                <p className="text-sm text-gray-500 mt-6">
-                  *Includes personal service
-                </p>
-              </div>
+              <p className="text-xs text-gray-500 mt-6 text-center">
+                *Includes personal services
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <ReviewsSection />
       <FaqSection />
