@@ -17,6 +17,9 @@ function ArticlePage() {
     queryKey: ["articles"],
     queryFn: () => fetchAllArticles(5), // Only fetch 5 articles
     staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+    cacheTime: 30 * 60 * 1000,
+    refetchOnWindowFocus: false,
+    keepPreviousData: true,
   });
 
   // Filter articles based on search term
@@ -30,7 +33,7 @@ function ArticlePage() {
 
   // Articles excluding the newest one for the article cards section
   const remainingArticles =
-    filteredArticles.length > 1 ? filteredArticles.slice(1, 4) : [];
+    filteredArticles.length > 1 ? filteredArticles.slice(1) : [];
 
   return (
     <>
@@ -71,6 +74,7 @@ function ArticlePage() {
                       src={newestArticle.image}
                       alt={newestArticle.title}
                       className="w-full h-[500px] object-cover"
+                      loading="lazy"
                     />
                   </Link>
                 </div>
@@ -105,22 +109,6 @@ function ArticlePage() {
                 slug={article.slug}
               />
             ))}
-          </div>
-        </section>
-
-        {/* More Articles Section */}
-        <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
-          <h2 className="text-4xl font-semibold text-[#1196A9] mb-8">
-            More Article
-          </h2>
-
-          <div className="text-right">
-            <a
-              href="#"
-              className="text-sm font-medium text-cyan-600 hover:text-cyan-700"
-            >
-              View More &gt;&gt;
-            </a>
           </div>
         </section>
 

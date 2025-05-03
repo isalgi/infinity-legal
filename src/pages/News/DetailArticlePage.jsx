@@ -1,15 +1,29 @@
 // src/pages/News/DetailArticlePage.jsx
 import { useParams, Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect } from "react";
 import ReviewsSection from "../../components/Home/ReviewsSection";
 import FaqSection from "../../components/Home/FaqSection";
 import ContactSection from "../../components/Home/ContactSection";
 import Footer from "../../components/Home/Footer";
 import HeaderArticle from "../../components/News/HeaderArticle";
-import { fetchArticleBySlug } from "../../services/supabase/articleService";
+import {
+  fetchArticleBySlug,
+  fetchAllArticles,
+} from "../../services/supabase/articleService";
+import ArticleCard from "../../components/News/ArticleCard";
 
 function DetailArticlePage() {
   const { slug } = useParams();
+  const queryClient = useQueryClient();
+
+  // Prefetch additional articles for recommendations
+  useEffect(() => {
+    queryClient.prefetchQuery({
+      queryKey: ["articles", 1, 3],
+      queryFn: () => fetchAllArticles(3, 1),
+    });
+  }, [queryClient]);
 
   const {
     data: article,
@@ -19,15 +33,39 @@ function DetailArticlePage() {
     queryKey: ["article", slug],
     queryFn: () => fetchArticleBySlug(slug),
     staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+    cacheTime: 30 * 60 * 1000, // 30 minutes cache
+    refetchOnWindowFocus: false,
+    retry: 1,
   });
+
+  // Query for recommended articles
+  const { data: recommendedArticles = [] } = useQuery({
+    queryKey: ["articles", 1, 3],
+    queryFn: () => fetchAllArticles(3, 1),
+    staleTime: 5 * 60 * 1000,
+    enabled: !isLoading && !!article, // Only run after the main article is loaded
+  });
+
+  // Filter out the current article from recommendations
+  const filteredRecommendations = recommendedArticles
+    .filter((rec) => rec.slug !== slug)
+    .slice(0, 3);
 
   if (isLoading) {
     return (
       <>
         <HeaderArticle />
-        {/* <div className="container mx-auto px-5 md:px-10 lg:px-20 py-16 text-center">
-          <div className="text-cyan-600 text-xl">Loading article...</div>
-        </div> */}
+        <div className="container mx-auto px-5 md:px-10 lg:px-20 py-16 flex justify-center items-center">
+          <div className="animate-pulse flex flex-col items-center">
+            <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
+            <div className="h-64 bg-gray-200 rounded w-full mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-2/3 mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/2 mb-6"></div>
+            <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          </div>
+        </div>
       </>
     );
   }
@@ -37,12 +75,12 @@ function DetailArticlePage() {
       <>
         <HeaderArticle />
         <div className="container mx-auto px-5 md:px-10 lg:px-20 py-16 text-center">
-          {/* <h1 className="text-2xl font-medium text-gray-700">
+          <h1 className="text-2xl font-medium text-gray-700">
             {error ? "Failed to load article" : "Article not found"}
-          </h1> */}
-          {/* <Link to="/news" className="text-cyan-600 mt-4 inline-block">
+          </h1>
+          <Link to="/news" className="text-cyan-600 mt-4 inline-block">
             Return to articles
-          </Link> */}
+          </Link>
         </div>
       </>
     );
@@ -74,6 +112,7 @@ function DetailArticlePage() {
             src={article.image}
             alt={article.title}
             className="w-full max-h-[400px] object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -92,13 +131,29 @@ function DetailArticlePage() {
           Article Recommendation
         </h2>
 
-        <div className="text-right">
-          <a
-            href="#"
+        {filteredRecommendations.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {filteredRecommendations.map((rec) => (
+              <ArticleCard
+                key={rec.id}
+                image={rec.image}
+                title={rec.title}
+                date={rec.date}
+                slug={rec.slug}
+              />
+            ))}
+          </div>
+        ) : (
+          <p>No recommendations available at this time.</p>
+        )}
+
+        <div className="text-right mt-8">
+          <Link
+            to="/news"
             className="text-sm font-medium text-cyan-600 hover:text-cyan-700"
           >
             View More &gt;&gt;
-          </a>
+          </Link>
         </div>
       </section>
 
