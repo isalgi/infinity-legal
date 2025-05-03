@@ -218,19 +218,19 @@ export default function DetailServicePage() {
                   service.category.slice(1)}
               </p>
 
-              {/* Feature List with Checkmarks */}
-              {featuresList.length > 0 && (
-                <div className="mt-4 space-y-2">
-                  {featuresList.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <span
-                        className={
-                          feature.included !== false
-                            ? "text-green-500"
-                            : "text-red-500"
-                        }
+              {/* Features List with Checkmarks and Crosses */}
+              <div className="mt-4">
+                {/* Combined List of Can Do and Cannot Do */}
+                <div className="space-y-2">
+                  {/* Can Do Items (with green checks) */}
+                  {service.canDo &&
+                    service.canDo.length > 0 &&
+                    service.canDo.map((item, index) => (
+                      <div
+                        key={`can-${index}`}
+                        className="flex items-start gap-2"
                       >
-                        {feature.included !== false ? (
+                        <span className="text-green-500 flex-shrink-0">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -244,7 +244,20 @@ export default function DetailServicePage() {
                           >
                             <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
-                        ) : (
+                        </span>
+                        <span className="text-gray-700 text-sm">{item}</span>
+                      </div>
+                    ))}
+
+                  {/* Cannot Do Items (with red crosses) */}
+                  {service.cannotDo &&
+                    service.cannotDo.length > 0 &&
+                    service.cannotDo.map((item, index) => (
+                      <div
+                        key={`cannot-${index}`}
+                        className="flex items-start gap-2"
+                      >
+                        <span className="text-red-500 flex-shrink-0">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -259,21 +272,12 @@ export default function DetailServicePage() {
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                           </svg>
-                        )}
-                      </span>
-                      <span
-                        className={
-                          feature.included !== false
-                            ? "text-gray-700 text-sm"
-                            : "text-gray-400 text-sm"
-                        }
-                      >
-                        Lorem ipsum dolor sit amet, consectetur
-                      </span>
-                    </div>
-                  ))}
+                        </span>
+                        <span className="text-gray-700 text-sm">{item}</span>
+                      </div>
+                    ))}
                 </div>
-              )}
+              </div>
 
               <p className="text-xs text-gray-500 mt-6">
                 *Includes personal services

@@ -17,7 +17,6 @@ export default function ServicesList() {
     { id: "visa", label: "Visa" },
     { id: "legal", label: "Legal" },
     { id: "business", label: "Business" },
-    { id: "other", label: "Other" },
   ];
 
   if (isLoading) {
