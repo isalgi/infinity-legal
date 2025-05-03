@@ -134,9 +134,11 @@ export default function DetailServicePage() {
               <p className="text-xl text-gray-600 mt-5 mb-10">
                 {service.description}
               </p>
-              <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-md font-medium">
-                Contact us
-              </button>
+              <Link to="https://wa.me/6282131907575">
+                <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-md font-medium">
+                  Contact us
+                </button>
+              </Link>
             </div>
             <div className="rounded-xl overflow-hidden ml-10">
               <img
@@ -157,7 +159,7 @@ export default function DetailServicePage() {
       </section>
 
       {/* Features Section - Grid Layout with Image on Right */}
-      <section className="bg-white pt-10 pb-8">
+      <section className="bg-white pt-10 pb-10">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <div className="ml-10">
@@ -167,9 +169,11 @@ export default function DetailServicePage() {
               />
 
               {/* Manage Button */}
-              <button className="mt-8 border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-5 py-2 text-md font-medium">
-                Hubungi Kami
-              </button>
+              <Link to="https://wa.me/6282131907575">
+                <button className="mt-8 border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-5 py-2 text-md font-medium">
+                  Hubungi Kami
+                </button>
+              </Link>
             </div>
 
             {/* First Additional Image on Right */}
@@ -208,7 +212,7 @@ export default function DetailServicePage() {
 
             {/* White Card */}
             <div className="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto w-full">
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <h3 className="text-md font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4 text-sm">
                 {service.description}
               </p>
@@ -227,9 +231,11 @@ export default function DetailServicePage() {
                 </div>
               )}
 
-              <button className="w-full bg-cyan-600 text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
-                Ask us Now
-              </button>
+              <Link to="https://wa.me/6282131907575">
+                <button className="w-full bg-cyan-600 text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
+                  Ask us Now
+                </button>
+              </Link>
 
               <p className="text-sm text-gray-800 font-semibold mt-4">
                 {service.category.charAt(0).toUpperCase() +
@@ -248,7 +254,7 @@ export default function DetailServicePage() {
                         key={`can-${index}`}
                         className="flex items-start gap-2"
                       >
-                        <span className="text-green-500 flex-shrink-0">
+                        <span className="text-[#1196A9] flex-shrink-0">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -256,7 +262,7 @@ export default function DetailServicePage() {
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            strokeWidth="2"
+                            strokeWidth="4"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           >
@@ -283,7 +289,7 @@ export default function DetailServicePage() {
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            strokeWidth="2"
+                            strokeWidth="4"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           >
