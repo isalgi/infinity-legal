@@ -137,7 +137,7 @@ export default function ServicesList() {
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-gray-600 mb-4 line-clamp-3 min-h-[60px] flex-grow">
+        <p className="text-sm text-gray-600 mb-4 line-clamp-3 min-h-[60px]">
           {service.description}
         </p>
 
