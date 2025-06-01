@@ -1,5 +1,5 @@
 import Header from "./Header";
-import hero from "../../assets/banner-hero.jpeg";
+import hero from "../../assets/new-banner-hero.jpg";
 
 function HeroSection() {
   return (

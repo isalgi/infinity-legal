@@ -1,4 +1,4 @@
-import about from "../../assets/banner-about.jpeg";
+import about from "../../assets/new-banner-about.jpg";
 
 function AboutSection() {
   return (
