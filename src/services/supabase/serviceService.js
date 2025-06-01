@@ -12,11 +12,7 @@ export const fetchAllServices = async (
     const start = (page - 1) * limit;
     const end = start + limit - 1;
 
-    let query = supabase
-      .from("services")
-      .select("*")
-      .order("created_at", { ascending: false })
-      .range(start, end);
+    let query = supabase.from("services").select("*").range(start, end);
 
     if (category && category !== "all") {
       query = query.eq("category", category);

@@ -11,9 +11,8 @@ import { fetchServiceBySlug } from "../../services/supabase/serviceService";
 
 // Collapsible Documents Component
 const CollapsibleDocuments = ({ documents }) => {
-  // Initialize all items as expanded by default
   const initialExpandedState = documents.reduce((acc, _, index) => {
-    acc[index] = true; // Set all to true (expanded) by default
+    acc[index] = true;
     return acc;
   }, {});
 
@@ -30,27 +29,22 @@ const CollapsibleDocuments = ({ documents }) => {
     <div className="space-y-4">
       {documents.map((document, index) => (
         <div key={index} className="flex items-start">
-          {/* + Icon on the left */}
           <button
             onClick={() => toggleItem(index)}
             className="mt-1 mr-3 text-[#1196A9] focus:outline-none"
             aria-label={expandedItems[index] ? "Collapse" : "Expand"}
           >
-            <span className="text-2xl">{expandedItems[index] ? "+" : "+"}</span>
+            <span className="text-2xl font-bold">+</span>
           </button>
-
-          {/* Document content */}
           <div className="flex-1">
             <h3
-              className="text-xl font-medium text-gray-800 cursor-pointer"
+              className="text-lg font-medium text-gray-800 cursor-pointer"
               onClick={() => toggleItem(index)}
             >
               {document.name}
             </h3>
-
-            {/* Collapsible description */}
             {expandedItems[index] && document.description && (
-              <p className="text-gray-600 mt-1 text-xl">
+              <p className="text-gray-600 mt-1 text-sm">
                 {document.description.charAt(0).toUpperCase() +
                   document.description.slice(1)}
               </p>
@@ -58,6 +52,151 @@ const CollapsibleDocuments = ({ documents }) => {
           </div>
         </div>
       ))}
+    </div>
+  );
+};
+
+// Integrated Pricing Display Component
+const PricingDisplay = ({ pricingData, serviceName }) => {
+  let pricing;
+  try {
+    pricing =
+      typeof pricingData === "string" ? JSON.parse(pricingData) : pricingData;
+  } catch (error) {
+    console.error("Error parsing pricing data:", error);
+    return (
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
+        <p className="text-gray-600">Pricing information unavailable</p>
+      </div>
+    );
+  }
+
+  // Handle consultation-based pricing
+  if (pricing.pricing_type === "consultation") {
+    return (
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
+        <div className="text-center py-8">
+          <p className="text-gray-600 mb-4">{pricing.consultation_note}</p>
+          <Link to="https://wa.me/6282131907575">
+            <button className="bg-[#1196A9] text-white px-6 py-3 rounded-md hover:bg-cyan-700 transition-colors w-full">
+              Ask us Now
+            </button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Render pricing options
+  const renderPricingOptions = () => {
+    const options = [];
+
+    Object.entries(pricing.pricing).forEach(([key, value]) => {
+      if (key === "breakdown") return;
+
+      if (typeof value === "object" && value !== null) {
+        Object.entries(value).forEach(([serviceLevel, price]) => {
+          if (serviceLevel !== "breakdown") {
+            const processingTime =
+              pricing.processing_time?.[serviceLevel] || "";
+            const serviceLevelDisplay =
+              serviceLevel.charAt(0).toUpperCase() + serviceLevel.slice(1);
+            const keyDisplay = key
+              .replace(/_/g, " ")
+              .replace(/\b\w/g, (l) => l.toUpperCase());
+
+            options.push({
+              title: `${serviceLevelDisplay} ${keyDisplay}`,
+              price: price,
+              processingTime: processingTime,
+              breakdown: value.breakdown,
+            });
+          }
+        });
+      } else {
+        const processingTime = pricing.processing_time?.standard || "";
+        const keyDisplay = key
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (l) => l.toUpperCase());
+
+        options.push({
+          title: keyDisplay,
+          price: value,
+          processingTime: processingTime,
+        });
+      }
+    });
+
+    return options;
+  };
+
+  const pricingOptions = renderPricingOptions();
+
+  return (
+    <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
+      <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
+
+      {/* Important Notes */}
+      {pricing.important_notes && pricing.important_notes.length > 0 && (
+        <div className="mb-6 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+          {pricing.important_notes.map((note, index) => (
+            <p key={index} className="text-sm text-blue-700">
+              {note}
+            </p>
+          ))}
+        </div>
+      )}
+
+      <div className="space-y-4">
+        {pricingOptions.map((option, index) => (
+          <div key={index} className="space-y-2">
+            {/* Service Name */}
+            <div className="font-medium text-gray-800">{option.title}</div>
+
+            {/* Price and Processing Time */}
+            <div className="flex justify-between items-center">
+              <span className="text-2xl font-bold text-gray-900">
+                {option.price}
+              </span>
+              {option.processingTime && (
+                <span className="text-sm text-gray-600">
+                  {option.processingTime}
+                </span>
+              )}
+            </div>
+
+            {/* Breakdown if available */}
+            {option.breakdown && (
+              <div className="text-xs text-gray-500 space-y-1 mt-2">
+                {Object.entries(option.breakdown).map(([key, value]) => (
+                  <div key={key} className="flex justify-between">
+                    <span>
+                      {key
+                        .replace(/_/g, " ")
+                        .replace(/\b\w/g, (l) => l.toUpperCase())}
+                      :
+                    </span>
+                    <span>{value}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Separator line except for last item */}
+            {index < pricingOptions.length - 1 && (
+              <hr className="border-gray-200 mt-4" />
+            )}
+          </div>
+        ))}
+      </div>
+
+      <Link to="https://wa.me/6282131907575">
+        <button className="w-full mt-auto bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
+          Ask us Now
+        </button>
+      </Link>
     </div>
   );
 };
@@ -72,7 +211,7 @@ export default function DetailServicePage() {
   } = useQuery({
     queryKey: ["service", slug],
     queryFn: () => fetchServiceBySlug(slug),
-    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+    staleTime: 5 * 60 * 1000,
   });
 
   if (isLoading) {
@@ -104,7 +243,6 @@ export default function DetailServicePage() {
     );
   }
 
-  // Safely handle additionalImages data structure
   const additionalImagesList = Array.isArray(service.additionalImages)
     ? service.additionalImages
     : service.additionalImages?.additionalImages &&
@@ -112,32 +250,39 @@ export default function DetailServicePage() {
     ? service.additionalImages.additionalImages
     : [];
 
+  const formatTitle = (title) => {
+    return title.toUpperCase();
+  };
+
   return (
     <>
       <HeaderServices />
 
       {/* Hero Section - Grid Layout with Image on Right */}
       <section className="bg-white pt-10">
-        <div className="container mx-auto text-[#1196A9] text-[32px] leading-10 font-semibold">
-          {service.title.includes(" ")
-            ? service.title
-                .toLowerCase()
-                .replace(/\b\w/g, (l) => l.toUpperCase())
-                .replace(/\b\w/, (l) => l.toUpperCase())
-            : service.title}
-        </div>
         <div className="container mx-auto px-5 md:px-10 lg:px-16">
+          <div className="container mx-auto text-[#1196A9] text-[40px] leading-10 font-bold mb-14">
+            {service.title.includes(" ")
+              ? service.title
+                  .toLowerCase()
+                  .replace(/\b\w/g, (l) => l.toUpperCase())
+                  .replace(/\b\w/, (l) => l.toUpperCase())
+              : service.title}
+          </div>
           {/* Hero Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-            <div className="ml-6">
-              <h1 className="text-3xl font-bold text-gray-900 my-[30px]">
-                About the {service.category}
+            <div className="h-full">
+              <h1 className="text-2xl font-bold text-gray-900">
+                Best{" "}
+                {service.category.charAt(0).toUpperCase() +
+                  service.category.slice(1)}{" "}
+                services you can get
               </h1>
               <p className="text-xl text-gray-600 mt-5 mb-10">
                 {service.description}
               </p>
               <Link to="https://wa.me/6282131907575">
-                <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-4 text-md font-medium">
+                <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-auto text-md font-medium">
                   Contact us
                 </button>
               </Link>
@@ -146,175 +291,125 @@ export default function DetailServicePage() {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-auto object-cover"
+                className="w-full h-[290px] object-cover"
               />
             </div>
           </div>
 
-          {/* About Section */}
-          <div className="mt-10">
-            <h2 className="text-2xl font-semibold text-center text-[#1196A9]">
-              Required Documents
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section - Grid Layout with Image on Right */}
-      <section className="bg-white pt-10 pb-10">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-            <div className="ml-10">
-              {/* Required Documents with + Icons (Collapsible) */}
-              <CollapsibleDocuments
-                documents={service.required_documents || []}
-              />
-
-              {/* Manage Button */}
-              <Link to="https://wa.me/6282131907575">
-                <button className="mt-8 border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-5 py-2 text-md font-medium">
-                  Hubungi Kami
-                </button>
-              </Link>
-            </div>
-
-            {/* First Additional Image on Right */}
-            {additionalImagesList[0] && (
-              <div className="rounded-xl overflow-hidden h-full">
-                <img
-                  src={additionalImagesList[0]}
-                  alt={`${service.title} process`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Let's Get Started Section with Background Image */}
-      <section className="py-16 relative">
-        {/* Background Image - Second Additional Image */}
-        {additionalImagesList[1] && (
-          <div className="absolute inset-0 z-0">
-            <img
-              src={additionalImagesList[1]}
-              alt="Background"
-              className="w-full h-full object-cover"
-              style={{ filter: "brightness(0.8)" }}
-            />
-          </div>
-        )}
-
-        <div className="container mx-auto px-5 md:px-10 lg:px-20 relative z-10">
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="text-2xl font-bold text-white text-center mb-8">
-              Let's get you started
-            </h2>
-
-            {/* White Card */}
-            <div className="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto w-full">
-              <h3 className="text-md font-semibold mb-2">
-                {service.title.includes(" ")
-                  ? service.title
-                      .toLowerCase()
-                      .replace(/\b\w/g, (l) => l.toUpperCase())
-                      .replace(/\b\w/, (l) => l.toUpperCase())
-                  : service.title}
+          {/* Two Column Layout - Service Details and Pricing */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 mt-16 px-32">
+            {/* Left Column - Service Details */}
+            <div className="bg-white rounded-lg border border-gray-200 p-12 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
+              <h3 className="text-xl font-medium text-[#1196A9] mb-6">
+                {formatTitle(service.title)}
               </h3>
-              <p className="text-gray-600 mb-4 text-sm">
-                {service.description}
-              </p>
 
-              {service.price && (
-                <div className="mb-8">
-                  <div className="flex items-baseline flex-col">
-                    <span className="text-lg">From</span>
-                    <span className="text-2xl font-bold text-black">
-                      {service.price}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-800 mt-1">
-                    All pricing exclude PPN
-                  </p>
-                </div>
-              )}
+              {/* Service Category */}
+              <div className="mb-4">
+                <span className="text-sm font-medium text-gray-600">
+                  {service.category.charAt(0).toUpperCase() +
+                    service.category.slice(1)}
+                </span>
+              </div>
+
+              {/* Features List with Checkmarks and Crosses */}
+              <div className="space-y-3 mb-6">
+                {/* Can Do Items (with cyan checks) */}
+                {service.canDo &&
+                  service.canDo.length > 0 &&
+                  service.canDo.map((item, index) => (
+                    <div
+                      key={`can-${index}`}
+                      className="flex items-start gap-3"
+                    >
+                      <span className="text-[#1196A9] flex-shrink-0 mt-0.5">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span className="text-gray-700 text-sm leading-relaxed">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+
+                {/* Cannot Do Items (with red crosses) */}
+                {service.cannotDo &&
+                  service.cannotDo.length > 0 &&
+                  service.cannotDo.map((item, index) => (
+                    <div
+                      key={`cannot-${index}`}
+                      className="flex items-start gap-3"
+                    >
+                      <span className="text-red-500 flex-shrink-0 mt-0.5">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </span>
+                      <span className="text-gray-700 text-sm leading-relaxed">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+              </div>
 
               <Link to="https://wa.me/6282131907575">
-                <button className="w-full bg-cyan-600 text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
+                <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
                   Ask us Now
                 </button>
               </Link>
+            </div>
 
-              <p className="text-sm text-gray-800 font-semibold mt-4">
-                {service.category.charAt(0).toUpperCase() +
-                  service.category.slice(1)}
-              </p>
+            {/* Right Column - Pricing */}
+            <PricingDisplay
+              pricingData={service.price}
+              serviceName={service.title}
+            />
+          </div>
 
-              {/* Features List with Checkmarks and Crosses */}
-              <div className="mt-4">
-                {/* Combined List of Can Do and Cannot Do */}
-                <div className="space-y-2">
-                  {/* Can Do Items (with green checks) */}
-                  {service.canDo &&
-                    service.canDo.length > 0 &&
-                    service.canDo.map((item, index) => (
-                      <div
-                        key={`can-${index}`}
-                        className="flex items-start gap-2"
-                      >
-                        <span className="text-[#1196A9] flex-shrink-0">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                        </span>
-                        <span className="text-gray-700 text-sm">{item}</span>
-                      </div>
-                    ))}
-
-                  {/* Cannot Do Items (with red crosses) */}
-                  {service.cannotDo &&
-                    service.cannotDo.length > 0 &&
-                    service.cannotDo.map((item, index) => (
-                      <div
-                        key={`cannot-${index}`}
-                        className="flex items-start gap-2"
-                      >
-                        <span className="text-red-500 flex-shrink-0">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                          </svg>
-                        </span>
-                        <span className="text-gray-700 text-sm">{item}</span>
-                      </div>
-                    ))}
+          {/* Required Documents Section */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Left Column - Additional Image */}
+              {additionalImagesList[0] && (
+                <div className=" overflow-hidden">
+                  <img
+                    src={additionalImagesList[0]}
+                    alt={`${service.title} documents`}
+                    className="rounded-2xl w-full h-[360px] object-cover"
+                  />
                 </div>
+              )}
+              {/* Right Column - Documents List */}
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-800 mb-8">
+                  Required Document
+                </h2>
+                <CollapsibleDocuments
+                  documents={service.required_documents || []}
+                />
               </div>
-
-              <p className="text-xs text-gray-500 mt-6">
-                *Includes personal services
-              </p>
             </div>
           </div>
         </div>
