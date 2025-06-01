@@ -263,12 +263,7 @@ export default function DetailServicePage() {
       <section className="bg-white pt-10">
         <div className="container mx-auto px-5 md:px-10 lg:px-16 mt-6">
           <div className="container mx-auto text-[#1196A9] text-[40px] leading-10 font-bold mb-14">
-            {service.title.includes(" ")
-              ? service.title
-                  .toLowerCase()
-                  .replace(/\b\w/g, (l) => l.toUpperCase())
-                  .replace(/\b\w/, (l) => l.toUpperCase())
-              : service.title}
+            {service.title}
           </div>
           {/* Hero Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
@@ -302,9 +297,7 @@ export default function DetailServicePage() {
             {/* Left Column - Service Details */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)] flex flex-col h-full">
               <h3 className="text-xl font-medium text-[#1196A9] mb-6">
-                {service.title
-                  .toLowerCase()
-                  .replace(/(?:^|\s)\S/g, (l) => l.toUpperCase())}
+                {service.title}
               </h3>
 
               {/* Service Category */}
