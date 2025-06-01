@@ -302,7 +302,9 @@ export default function DetailServicePage() {
             {/* Left Column - Service Details */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)] flex flex-col h-full">
               <h3 className="text-xl font-medium text-[#1196A9] mb-6">
-                {formatTitle(service.title)}
+                {service.title
+                  .toLowerCase()
+                  .replace(/(?:^|\s)\S/g, (l) => l.toUpperCase())}
               </h3>
 
               {/* Service Category */}
