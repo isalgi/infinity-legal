@@ -66,7 +66,7 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
     console.error("Error parsing pricing data:", error);
     return (
       <div className="bg-white rounded-2xl border border-gray-200 p-6">
-        <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
+        <h3 className="text-xl font-medium text-[#1196A9] mb-6">Pricing</h3>
         <p className="text-gray-600">Pricing information unavailable</p>
       </div>
     );
@@ -76,7 +76,7 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
   if (pricing.pricing_type === "consultation") {
     return (
       <div className="bg-white rounded-2xl border border-gray-200 p-6">
-        <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
+        <h3 className="text-xl font-medium text-[#1196A9] mb-6">Pricing</h3>
         <div className="text-center py-8">
           <p className="text-gray-600 mb-4">{pricing.consultation_note}</p>
           <Link to="https://wa.me/6282131907575">
@@ -135,8 +135,8 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
   const pricingOptions = renderPricingOptions();
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
-      <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
+    <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)] flex flex-col h-full">
+      <h3 className="text-xl font-medium text-[#1196A9] mb-6">Pricing</h3>
 
       {/* Important Notes */}
       {pricing.important_notes && pricing.important_notes.length > 0 && (
@@ -149,21 +149,22 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
         </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-4 flex-grow">
         {pricingOptions.map((option, index) => (
           <div key={index} className="space-y-2">
             {/* Service Name */}
             <div className="font-medium text-gray-800">{option.title}</div>
 
             {/* Price and Processing Time */}
-            <div className="flex justify-between items-center">
+            <div>
               <span className="text-2xl font-bold text-gray-900">
                 {option.price}
               </span>
+              {/* Processing Time below price */}
               {option.processingTime && (
-                <span className="text-sm text-gray-600">
+                <div className="text-sm text-gray-600 mt-1">
                   {option.processingTime}
-                </span>
+                </div>
               )}
             </div>
 
@@ -193,7 +194,7 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
       </div>
 
       <Link to="https://wa.me/6282131907575">
-        <button className="w-full mt-auto bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
+        <button className="w-full mt-6 bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
           Ask us Now
         </button>
       </Link>
@@ -260,7 +261,7 @@ export default function DetailServicePage() {
 
       {/* Hero Section - Grid Layout with Image on Right */}
       <section className="bg-white pt-10">
-        <div className="container mx-auto px-5 md:px-10 lg:px-16">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 mt-6">
           <div className="container mx-auto text-[#1196A9] text-[40px] leading-10 font-bold mb-14">
             {service.title.includes(" ")
               ? service.title
@@ -297,9 +298,9 @@ export default function DetailServicePage() {
           </div>
 
           {/* Two Column Layout - Service Details and Pricing */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 mt-16 px-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 mt-16 px-32 items-stretch">
             {/* Left Column - Service Details */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-12 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)] flex flex-col h-full">
               <h3 className="text-xl font-medium text-[#1196A9] mb-6">
                 {formatTitle(service.title)}
               </h3>
@@ -313,7 +314,7 @@ export default function DetailServicePage() {
               </div>
 
               {/* Features List with Checkmarks and Crosses */}
-              <div className="space-y-3 mb-6">
+              <div className="space-y-3 mb-6 flex-grow">
                 {/* Can Do Items (with cyan checks) */}
                 {service.canDo &&
                   service.canDo.length > 0 &&
