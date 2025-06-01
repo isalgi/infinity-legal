@@ -65,7 +65,7 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
   } catch (error) {
     console.error("Error parsing pricing data:", error);
     return (
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-2xl border border-gray-200 p-6">
         <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
         <p className="text-gray-600">Pricing information unavailable</p>
       </div>
@@ -75,7 +75,7 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
   // Handle consultation-based pricing
   if (pricing.pricing_type === "consultation") {
     return (
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-2xl border border-gray-200 p-6">
         <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
         <div className="text-center py-8">
           <p className="text-gray-600 mb-4">{pricing.consultation_note}</p>
@@ -135,12 +135,12 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
   const pricingOptions = renderPricingOptions();
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
+    <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
       <h3 className="text-xl font-medium text-[#1196A9] mb-4">Pricing</h3>
 
       {/* Important Notes */}
       {pricing.important_notes && pricing.important_notes.length > 0 && (
-        <div className="mb-6 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+        <div className="mb-6 p-3 bg-blue-50 rounded-2xl border-l-4 border-blue-400">
           {pricing.important_notes.map((note, index) => (
             <p key={index} className="text-sm text-blue-700">
               {note}
@@ -299,7 +299,7 @@ export default function DetailServicePage() {
           {/* Two Column Layout - Service Details and Pricing */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 mt-16 px-32">
             {/* Left Column - Service Details */}
-            <div className="bg-white rounded-lg border border-gray-200 p-12 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
+            <div className="bg-white rounded-2xl border border-gray-200 p-12 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)]">
               <h3 className="text-xl font-medium text-[#1196A9] mb-6">
                 {formatTitle(service.title)}
               </h3>
@@ -330,7 +330,7 @@ export default function DetailServicePage() {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          strokeWidth="3"
+                          strokeWidth="5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
@@ -363,8 +363,8 @@ export default function DetailServicePage() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
-                          <line x1="18" y1="6" x2="6" y2="18"></line>
-                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                          <line x1="22" y1="4" x2="2" y2="20"></line>
+                          <line x1="2" y1="4" x2="22" y2="20"></line>
                         </svg>
                       </span>
                       <span className="text-gray-700 text-sm leading-relaxed">
