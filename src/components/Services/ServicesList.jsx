@@ -61,7 +61,7 @@ export default function ServicesList() {
 
   return (
     <section
-      className="bg-white py-10"
+      className="bg-[#FAFAFA] py-10"
       style={{ height: "1150px", overflowY: "auto" }}
     >
       <div className="container mx-auto px-4">
