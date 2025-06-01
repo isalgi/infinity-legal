@@ -132,7 +132,7 @@ export default function ServicesList() {
       {/* Content container */}
       <div className="px-4 pb-4 flex flex-col flex-grow">
         {/* Title */}
-        <h3 className="text-lg font-semibold text-[#1196A9] mb-3 min-h-[50px] flex items-center">
+        <h3 className="text-lg font-semibold text-[#1196A9] mb-3 min-h-[50px] flex items-start">
           {service.title}
         </h3>
 

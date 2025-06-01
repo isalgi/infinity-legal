@@ -22,7 +22,7 @@ function Header() {
             Services
           </p>
         </Link>
-        <Link to={"/about"}>
+        <Link to="/#about">
           <p className="text-base font-bold text-white cursor-pointer hover:underline">
             About
           </p>

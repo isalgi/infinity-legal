@@ -3,7 +3,7 @@ import infinityLogo from "../../assets/infinity-logo.png";
 
 function HeaderArticle() {
   return (
-    <header className="flex justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20 border-b border-black">
+    <header className="flex justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">
       <div>
         <img
           src={infinityLogo}
@@ -22,7 +22,7 @@ function HeaderArticle() {
             Services
           </p>
         </Link>
-        <Link to={"/about"}>
+        <Link to="/#about">
           <p className="text-base font-bold text-black cursor-pointer hover:underline">
             About
           </p>
