@@ -3,7 +3,7 @@ import about from "../../assets/new-banner-about.jpg";
 function AboutSection() {
   return (
     <section
-      className="flex flex-col justify-center items-center px-20 py-0 w-full h-[648px] max-sm:px-5 max-sm:py-16 max-sm:h-auto"
+      className="flex flex-col justify-center items-center px-20 py-0 w-full min-h-screen max-sm:px-5 max-sm:py-16"
       style={{
         backgroundImage: `url(${about})`,
         backgroundRepeat: "no-repeat",

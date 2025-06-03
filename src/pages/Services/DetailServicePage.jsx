@@ -28,13 +28,15 @@ const CollapsibleDocuments = ({ documents }) => {
   return (
     <div className="space-y-4">
       {documents.map((document, index) => (
-        <div key={index} className="flex items-start">
+        <div key={index} className="flex">
           <button
             onClick={() => toggleItem(index)}
-            className="mt-1 mr-3 text-[#1196A9] focus:outline-none"
+            className="mr-3 text-[#1196A9] focus:outline-none flex items-center justify-center w-6 h-6"
             aria-label={expandedItems[index] ? "Collapse" : "Expand"}
           >
-            <span className="text-2xl font-bold">+</span>
+            <span className="text-2xl font-bold">
+              {expandedItems[index] ? "-" : "+"}
+            </span>
           </button>
           <div className="flex-1">
             <h3
