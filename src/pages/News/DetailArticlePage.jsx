@@ -120,7 +120,7 @@ function DetailArticlePage() {
         <p className="text-gray-600 text-sm mb-6">{article.date}</p>
 
         <div
-          className="prose max-w-none"
+          className="prose max-w-none [&>p]:mb-6 [&>p]:leading-relaxed [&>h1]:mt-8 [&>h1]:mb-4 [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:mt-6 [&>h3]:mb-3 [&>h1]:font-semibold [&>h2]:font-semibold [&>h3]:font-semibold [&>h1]:text-gray-800 [&>h2]:text-gray-800 [&>h3]:text-gray-800"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
       </div>
