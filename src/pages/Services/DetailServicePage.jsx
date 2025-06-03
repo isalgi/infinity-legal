@@ -75,18 +75,23 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
   }
 
   // Handle consultation-based pricing
+  // Handle consultation-based pricing
   if (pricing.pricing_type === "consultation") {
     return (
-      <div className="bg-white rounded-2xl border border-gray-200 p-6">
+      <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)] flex flex-col h-full">
         <h3 className="text-xl font-medium text-[#1196A9] mb-6">Pricing</h3>
-        <div className="text-center py-8">
-          <p className="text-gray-600 mb-4">{pricing.consultation_note}</p>
-          <Link to="https://wa.me/6282131907575">
-            <button className="bg-[#1196A9] text-white px-6 py-3 rounded-md hover:bg-cyan-700 transition-colors w-full">
-              Ask us Now
-            </button>
-          </Link>
+
+        <div className="flex-grow flex flex-col justify-center items-center text-center py-8">
+          <p className="text-gray-600 text-lg mb-8">
+            {pricing.consultation_note}
+          </p>
         </div>
+
+        <Link to="https://wa.me/6282131907575">
+          <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
+            Ask us Now
+          </button>
+        </Link>
       </div>
     );
   }
