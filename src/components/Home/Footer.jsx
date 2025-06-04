@@ -51,18 +51,12 @@ function Footer() {
         <div className="flex flex-col gap-2.5">
           <h3 className="text-xl font-semibold text-cyan-600">Services</h3>
           <div className="flex flex-col gap-4">
-            <a href="#" className="text-sm font-semibold text-black">
-              Visa
-            </a>
-            <a href="#" className="text-sm font-semibold text-black">
+            <a className="text-sm font-semibold text-black">Visa</a>
+            <a className="text-sm font-semibold text-black">
               Limited Stay Permit
             </a>
-            <a href="#" className="text-sm font-semibold text-black">
-              Company Setup
-            </a>
-            <a href="#" className="text-sm font-semibold text-black">
-              Legal Services
-            </a>
+            <a className="text-sm font-semibold text-black">Company Setup</a>
+            <a className="text-sm font-semibold text-black">Legal Services</a>
           </div>
         </div>
         <div className="flex flex-col">
