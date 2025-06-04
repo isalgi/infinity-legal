@@ -6,17 +6,21 @@ import ArticlePage from "../pages/News/ArticlePage";
 import DetailArticlePage from "../pages/News/DetailArticlePage";
 import ContactPage from "../pages/Contact/ContactPage";
 import DetailServicePage from "../pages/Services/DetailServicePage";
+import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/services/:slug" element={<DetailServicePage />} />
-      <Route path="/news" element={<ArticlePage />} />
-      <Route path="/news/:slug" element={<DetailArticlePage />} />
-      <Route path="/contact" element={<ContactPage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<DetailServicePage />} />
+        <Route path="/news" element={<ArticlePage />} />
+        <Route path="/news/:slug" element={<DetailArticlePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </>
   );
 };
 
