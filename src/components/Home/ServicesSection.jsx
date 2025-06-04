@@ -145,6 +145,7 @@ function ServicesSection() {
 
       return {
         ...cheapestService,
+        title: categoryMapping.title, // Use category title instead of service title
         price: getLowestPrice(cheapestService.price),
       };
     });
@@ -196,11 +197,9 @@ function ServicesSection() {
         ))}
       </div>
       <div>
-        <Link to="/services">
-          <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer bg-[#1196A9] hover:bg-cyan-700 transition-colors">
-            View All Services
-          </button>
-        </Link>
+        <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer bg-[#1196A9] hover:bg-cyan-700 transition-colors">
+          Contact us
+        </button>
       </div>
     </section>
   );

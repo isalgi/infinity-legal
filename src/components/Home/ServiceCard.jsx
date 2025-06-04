@@ -19,7 +19,7 @@ function ServiceCard({ image, title, description, price, slug }) {
       {/* Content container */}
       <div className="px-4 pb-4 flex flex-col flex-grow">
         {/* Title */}
-        <h3 className="text-lg font-semibold text-[#1196A9] mb-3 min-h-[50px] flex items-start">
+        <h3 className="text-lg font-semibold text-[#1196A9] mb-3 min-h-[50px] flex items-center mx-auto">
           {title}
         </h3>
 
