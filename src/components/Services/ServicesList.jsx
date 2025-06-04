@@ -106,11 +106,14 @@ export default function ServicesList() {
   const visaServices = services.filter(
     (service) => service.category === "visa"
   );
-  const kitasServices = services.filter(
-    (service) => service.category === "kitas"
+  const permitServices = services.filter(
+    (service) => service.category === "limited stay permit"
   );
-  const businessServices = services.filter(
-    (service) => service.category === "business"
+  const companyServices = services.filter(
+    (service) => service.category === "company set up"
+  );
+  const legalServices = services.filter(
+    (service) => service.category === "legal services"
   );
 
   const renderServiceCard = (service, index, isLast = false) => (
@@ -155,7 +158,7 @@ export default function ServicesList() {
 
   return (
     <section className="bg-gray-50 py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-24">
         {/* Visa Services Section */}
         {visaServices.length > 0 && (
           <div className="mb-16">
@@ -173,17 +176,38 @@ export default function ServicesList() {
           </div>
         )}
 
-        {/* KITAS Services Section */}
-        {kitasServices.length > 0 && (
+        {/* Limited Stay Permit Services Section */}
+        {permitServices.length > 0 && (
           <div className="mb-16">
             {/* Category Header */}
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-[#1196A9] mb-4">KITAS</h2>
+              <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
+                Limited Stay Permit
+              </h2>
             </div>
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {kitasServices.map((service, index) =>
+              {permitServices.map((service, index) =>
+                renderServiceCard(service, index, false)
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Company Set Up Services Section */}
+        {companyServices.length > 0 && (
+          <div className="mb-16">
+            {/* Category Header */}
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
+                Company Set Up
+              </h2>
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {companyServices.map((service, index) =>
                 renderServiceCard(service, index, false)
               )}
             </div>
@@ -191,22 +215,22 @@ export default function ServicesList() {
         )}
 
         {/* Business Services Section */}
-        {businessServices.length > 0 && (
+        {legalServices.length > 0 && (
           <div className="mb-16">
             {/* Category Header */}
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
-                Business
+                Legal Services
               </h2>
             </div>
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {businessServices.map((service, index) =>
+              {legalServices.map((service, index) =>
                 renderServiceCard(
                   service,
                   index,
-                  index === businessServices.length - 1 // Last service for infinite scroll
+                  index === legalServices.length - 1 // Last service for infinite scroll
                 )
               )}
             </div>
