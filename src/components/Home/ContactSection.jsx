@@ -1,6 +1,7 @@
 import { useState } from "react";
 import contact from "../../assets/banner-contact.jpeg";
 import Select from "react-select";
+import { Link } from "react-router-dom";
 
 function ContactSection() {
   const [startDate, setStartDate] = useState("");
@@ -80,9 +81,11 @@ function ContactSection() {
       </h2>
       <div className="flex gap-12 px-16 pb-16 max-w-7xl mx-auto bg-white max-md:flex-col max-md:p-10 max-sm:p-5">
         <div className="flex flex-col gap-8 flex-1">
-          <h2 className="text-7xl font-extrabold text-black max-sm:text-5xl">
-            Contact us
-          </h2>
+          <Link to={"/contact"}>
+            <h2 className="text-7xl font-extrabold text-black max-sm:text-5xl">
+              Contact us
+            </h2>
+          </Link>
           <p className="text-base text-black max-w-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             tincidunt sit amet lorem quis dignissim. Vivamus facilisis venenatis

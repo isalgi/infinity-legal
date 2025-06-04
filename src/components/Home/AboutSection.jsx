@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function AboutSection() {
   return (
     <section className="flex flex-col justify-center items-center px-20 py-0 w-full min-h-screen max-sm:px-5 max-sm:py-16 overflow-hidden relative">
@@ -37,9 +39,11 @@ function AboutSection() {
           metus id, bibendum urna. Duis rutrum condimentum tellus in viverra.
         </p>
         <div className="flex justify-between items-center mt-5">
-          <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer">
-            Contact us
-          </button>
+          <Link to={"/contact"}>
+            <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer">
+              Contact us
+            </button>
+          </Link>
         </div>
       </div>
     </section>

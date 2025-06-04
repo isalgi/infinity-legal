@@ -32,7 +32,11 @@ function Footer() {
             /> */}
           </div>
           <div className="flex flex-col gap-4 pl-16">
-            <h3 className="text-xl font-semibold text-cyan-600">Contact us</h3>
+            <Link to={"/contact"}>
+              <h3 className="text-xl font-semibold text-cyan-600">
+                Contact us
+              </h3>
+            </Link>
             <p className="text-sm text-black">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               tincidunt sit amet

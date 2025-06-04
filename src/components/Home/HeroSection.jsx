@@ -1,4 +1,5 @@
 import Header from "./Header";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
@@ -28,9 +29,11 @@ function HeroSection() {
           <h1 className="text-4xl font-bold leading-10 text-white max-sm:text-3xl max-sm:leading-8">
             Expert Solutions for Business and Visa Needs in Indonesia
           </h1>
-          <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-1/3 mt-5">
-            Contact us
-          </button>
+          <Link to={"/contact"}>
+            <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-1/3 mt-5">
+              Contact us
+            </button>
+          </Link>
         </div>
       </section>
     </>

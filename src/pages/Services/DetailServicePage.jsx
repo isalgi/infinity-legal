@@ -284,7 +284,7 @@ export default function DetailServicePage() {
               <p className="text-xl text-gray-600 mt-5 mb-10">
                 {service.description}
               </p>
-              <Link to="https://wa.me/6282131907575">
+              <Link to={"/contact"}>
                 <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-auto text-md font-medium">
                   Contact us
                 </button>
