@@ -69,19 +69,19 @@ function ArticlePage() {
             <div className="w-full">
               <article className="flex flex-col">
                 <div className="w-full overflow-hidden rounded-lg">
-                  <Link to={`/news/${newestArticle.slug}`}>
-                    <img
-                      src={newestArticle.image}
-                      alt={newestArticle.title}
-                      className="w-full h-[500px] object-cover"
-                      loading="lazy"
-                    />
-                  </Link>
+                  <img
+                    src={newestArticle.image}
+                    alt={newestArticle.title}
+                    className="w-full h-[500px] object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="flex flex-col gap-1 my-6">
-                  <h3 className="text-2xl font-medium text-black">
-                    {newestArticle.title}
-                  </h3>
+                <div className="flex flex-col gap-1 my-6 hover:underline">
+                  <Link to={`/news/${newestArticle.slug}`}>
+                    <h3 className="text-2xl font-medium text-black">
+                      {newestArticle.title}
+                    </h3>
+                  </Link>
                   <time className="text-base text-gray-700">
                     {newestArticle.date}
                   </time>
