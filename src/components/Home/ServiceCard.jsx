@@ -5,7 +5,7 @@ function ServiceCard({ image, title, description, price, slug }) {
   return (
     <Link
       to={slug === "contact" ? "/contact" : `/services/${slug}`}
-      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col w-[270px] max-sm:w-full"
+      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-[500px]"
     >
       {/* Image container */}
       <div className="p-4">
@@ -19,25 +19,27 @@ function ServiceCard({ image, title, description, price, slug }) {
       {/* Content container */}
       <div className="px-4 pb-4 flex flex-col flex-grow">
         {/* Title */}
-        <h3 className="text-lg font-semibold text-[#1196A9] mb-3 min-h-[50px] flex items-center mx-auto">
+        <h3 className="text-lg font-semibold text-[#1196A9] mb-3 text-center">
           {title}
         </h3>
 
-        {/* Description */}
-        <p
-          className="text-sm text-gray-600 mb-4 flex-grow overflow-hidden text-ellipsis"
-          style={{
-            display: "-webkit-box",
-            WebkitLineClamp: 3,
-            WebkitBoxOrient: "vertical",
-            maxHeight: "4.5rem",
-            lineHeight: "1.5rem",
-          }}
-        >
-          {description}
-        </p>
+        {/* Description - Fixed height container */}
+        <div className="flex-grow mb-4">
+          <p
+            className="text-sm text-gray-600 text-justify leading-relaxed overflow-hidden"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 6,
+              WebkitBoxOrient: "vertical",
+              height: "9rem", // Fixed height for 6 lines
+              lineHeight: "1.5rem",
+            }}
+          >
+            {description}
+          </p>
+        </div>
 
-        {/* Price section */}
+        {/* Price section - Always at bottom */}
         <div className="mt-auto">
           <p className="text-xs text-gray-500 mb-1">Starting From</p>
           <p className="text-xl font-bold text-gray-900">{price}</p>

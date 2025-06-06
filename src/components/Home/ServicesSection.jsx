@@ -56,21 +56,29 @@ function ServicesSection() {
       {
         key: "visa",
         title: "Visa",
+        description:
+          "PT Infinity Legal offers a complete range of visa services to support your business, travel, or investment plans in Indonesia. As an official legal partner, we're here to help you with Single Entry Visas, Visitor Visas, and Multiple Entry Visas, all while ensuring full compliance with Indonesian immigration laws. Our experienced team is ready to guide you in choosing the right visa, preparing the necessary documents, and handling the application process whether through the electronic system (e-Visa) or the conventional route.",
         filter: (service) => service.category === "visa",
       },
       {
         key: "limited-stay-permit",
         title: "Limited Stay Permit",
+        description:
+          "PT Infinity Legal provides comprehensive Limited Stay Permit (KITAS) solutions. Our expert legal team assists with all types of KITAS, including Family KITAS, Digital Nomad Visa, Investor KITAS, Working KITAS, and Retirement KITAS. We ensure full compliance with Indonesia's immigration laws, while offering efficient processing tailored to your needs whether in Bali, or other key destinations. PT Infinity Legal simplifies your KITAS application with end to end professional support.",
         filter: (service) => service.category === "limited stay permit",
       },
       {
         key: "company-setup",
         title: "Company Setup",
+        description:
+          "PT Infinity Legal offers end-to-end solutions for Company Setup and business-related services in Indonesia. As an official legal partner, we help clients handle all legal aspects of their business from incorporation to dissolution ensuring full compliance with Indonesian regulations. Our expert team is here to support you with setting up a company PT PMA, Virtual Office services, LKPM reporting, Accounting & Tax services, and Company Dissolution. We understand the complexity of Indonesia's bureaucracy, so we focus on delivering a process that's efficient, transparent, and tailored to your business needs.",
         filter: (service) => service.category === "company set up",
       },
       {
         key: "legal-services",
         title: "Legal Services",
+        description:
+          "PT Infinity Legal provides comprehensive legal services to protect your business interests and ensure your company's legal compliance in Indonesia. As a trusted legal partner, we offer practical, tailored legal solutions for corporate clients and foreign investors always in line with Indonesian laws and regulations. Our experienced team is here to support you with Agreement Review & Drafting, Legal Consultation & Assistance, and Notarial Services. We make sure your documents and business transactions are legally sound, helping you safeguard company assets and reduce the risk of disputes.",
         filter: (service) => service.category === "legal services",
       },
     ];
@@ -83,8 +91,7 @@ function ServicesSection() {
         return {
           id: `${categoryMapping.key}-placeholder`,
           title: categoryMapping.title,
-          description:
-            "Professional services tailored to your needs. Contact us for detailed information and personalized consultation.",
+          description: categoryMapping.description,
           image:
             "https://jxtylpahapimibfnchjt.supabase.co/storage/v1/object/public/images/services/default.jpg",
           price: "Contact us",
@@ -105,7 +112,6 @@ function ServicesSection() {
               : service.price;
 
           if (pricing.pricing_type === "consultation") {
-            // For consultation services, we'll pick one but it won't be "cheapest"
             return;
           }
 
@@ -145,7 +151,8 @@ function ServicesSection() {
 
       return {
         ...cheapestService,
-        title: categoryMapping.title, // Use category title instead of service title
+        title: categoryMapping.title, // Use category title
+        description: categoryMapping.description, // Use category description
         price: getLowestPrice(cheapestService.price),
       };
     });
