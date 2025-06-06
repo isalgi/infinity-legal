@@ -191,7 +191,7 @@ function ServicesSection() {
   return (
     <section className="flex flex-col gap-10 items-center p-16 bg-neutral-50 max-sm:px-5 max-sm:py-10">
       <h2 className="text-3xl font-bold text-cyan-600">Our Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
         {featuredServices.map((service, index) => (
           <ServiceCard
             key={service.id}
