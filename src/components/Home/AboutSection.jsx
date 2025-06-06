@@ -25,18 +25,13 @@ function AboutSection() {
       <div className="flex flex-col gap-5 max-w-[1264px] relative z-20">
         <h2 className="text-3xl font-semibold text-white">About us</h2>
         <p className="text-base font-medium leading-5 text-white mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          tincidunt sit amet lorem quis dignissim. Vivamus facilisis venenatis
-          eros, id fringilla dolor iaculis quis. Donec quis purus leo. Maecenas
-          convallis congue pretium. Maecenas ac interdum tortor, sed ultricies
-          lorem. Morbi congue, quam blandit elementum venenatis, quam quam
-          cursus urna, in rhoncus nunc metus ut ligula. Curabitur vehicula
-          iaculis iaculis. Aliquam nec rutrum mauris. Curabitur ullamcorper in
-          velit sit amet ullamcorper.
-          <br />
-          mollis, urna id rutrum sollicitudin, enim justo porta turpis, et
-          finibus nibh est eget eros. Cras sit amet velit accumsan, volutpat
-          metus id, bibendum urna. Duis rutrum condimentum tellus in viverra.
+          PT Invinity Legal is a trusted corporate law firm based in Bali. We
+          specialize in visa services and business law for both local and
+          international clients. Backed by an experienced legal team, we offer
+          integrated and practical solutions from visa and limited stay permit
+          processing to company formation and a wide range of corporate legal
+          services helping you stay compliant and invest with confidence in
+          Indonesia.
         </p>
         <div className="flex justify-between items-center mt-5">
           <Link to={"/contact"}>
