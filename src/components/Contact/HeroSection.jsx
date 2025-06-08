@@ -20,7 +20,7 @@ function HeroSection() {
                 </p>
                 <div className="flex gap-10 items-start self-start mt-10 text-base font-bold leading-snug text-center text-white">
                   <button className="gap-2 self-stretch px-8 py-3 rounded-md border border-white border-solid min-h-[43px] max-md:px-5">
-                    Hubungi Kami
+                    Contact us
                   </button>
                 </div>
               </div>

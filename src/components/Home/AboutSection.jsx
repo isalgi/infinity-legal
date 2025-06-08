@@ -25,7 +25,7 @@ function AboutSection() {
       <div className="flex flex-col gap-5 max-w-[1264px] relative z-20">
         <h2 className="text-3xl font-semibold text-white">About us</h2>
         <p className="text-base font-medium leading-5 text-white mt-5">
-          PT Invinity Legal is a trusted corporate law firm based in Bali. We
+          PT Infinity Legal is a trusted corporate law firm based in Bali. We
           specialize in visa services and business law for both local and
           international clients. Backed by an experienced legal team, we offer
           integrated and practical solutions from visa and limited stay permit

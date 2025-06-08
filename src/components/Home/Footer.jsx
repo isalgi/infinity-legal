@@ -12,12 +12,11 @@ function Footer() {
             alt="INFINITY LEGAL"
           />
           <p className="text-sm text-black max-w-48">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            tincidunt sit amet
+            PT Infinity Legal is a trusted corporate law firm based in Bali.
           </p>
         </div>
-        <div className="flex flex-col gap-2.5">
-          <div className="flex flex-col gap-4 pl-16">
+        <div className="flex flex-col gap-9">
+          <div className="flex flex-col gap-2 pl-16">
             <h3 className="text-xl font-semibold text-cyan-600">
               Office Location
             </h3>
@@ -31,7 +30,7 @@ function Footer() {
               alt="Location icon"
             /> */}
           </div>
-          <div className="flex flex-col gap-4 pl-16">
+          <div className="flex flex-col gap-2 pl-16">
             <Link to={"/contact"}>
               <h3 className="text-xl font-semibold text-cyan-600">
                 Contact us
