@@ -12,7 +12,7 @@ import { fetchServiceBySlug } from "../../services/supabase/serviceService";
 // Collapsible Documents Component
 const CollapsibleDocuments = ({ documents }) => {
   const initialExpandedState = documents.reduce((acc, _, index) => {
-    acc[index] = true;
+    acc[index] = false;
     return acc;
   }, {});
 
