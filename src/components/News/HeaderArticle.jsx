@@ -39,7 +39,7 @@ function HeaderArticle() {
         </Link>
         <Link to="https://wa.me/6281239336293">
           <p className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-cyan-600 transition-colors">
-            Whatsapp Kami
+            WhatsApp us
           </p>
         </Link>
       </nav>

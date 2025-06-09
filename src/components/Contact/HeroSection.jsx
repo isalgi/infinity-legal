@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function HeroSection() {
   return (
     <div className="flex overflow-hidden flex-col justify-center px-16 mt-16 w-full rounded-3xl max-md:px-5 max-md:mt-10 max-md:max-w-full">
@@ -19,9 +21,11 @@ function HeroSection() {
                   services
                 </p>
                 <div className="flex gap-10 items-start self-start mt-10 text-base font-bold leading-snug text-center text-white">
-                  <button className="gap-2 self-stretch px-8 py-3 rounded-md border border-white border-solid min-h-[43px] max-md:px-5">
-                    Contact us
-                  </button>
+                  <Link to="https://wa.me/6281239336293">
+                    <button className="gap-2 self-stretch px-8 py-3 rounded-md border border-white border-solid min-h-[43px] max-md:px-5">
+                      WhatsApp us
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="flex gap-2.5 self-start mt-10 min-h-5 max-md:max-w-full" />
