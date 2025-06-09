@@ -87,9 +87,8 @@ function ContactSection() {
             </h2>
           </Link>
           <p className="text-base text-black max-w-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            tincidunt sit amet lorem quis dignissim. Vivamus facilisis venenatis
-            eros, id fringilla dolor iaculis quis. Donec quis purus leo.
+            You can also fill out the form below, and we will respond
+            within 1 business day.
           </p>
           <form className="flex flex-col gap-7 mt-4 max-w-md">
             <FormField placeholder="Nama Depan" required={true} />
