@@ -226,7 +226,7 @@ export default function DetailServicePage() {
     return (
       <>
         <HeaderServices />
-        <div className="container mx-auto px-5 py-16 text-center">
+        <div className="container mx-auto px-5 py-16 pt-32 text-center">
           <div className="text-cyan-600 text-xl">
             Loading service details...
           </div>
@@ -239,7 +239,7 @@ export default function DetailServicePage() {
     return (
       <>
         <HeaderServices />
-        <div className="container mx-auto px-5 py-16 text-center">
+        <div className="container mx-auto px-5 py-16 pt-32 text-center">
           <h1 className="text-2xl font-medium text-gray-700">
             {error ? "Failed to load service" : "Service not found"}
           </h1>
@@ -267,7 +267,7 @@ export default function DetailServicePage() {
       <HeaderServices />
 
       {/* Hero Section - Grid Layout with Image on Right */}
-      <section className="bg-white pt-10">
+      <section className="bg-white pt-32 max-md:pt-28 max-sm:pt-26">
         <div className="container mx-auto px-5 md:px-10 lg:px-16 mt-6">
           <div className="container mx-auto text-[#1196A9] text-[40px] leading-10 font-bold mb-14">
             {service.title}

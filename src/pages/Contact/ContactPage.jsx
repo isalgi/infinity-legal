@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <>
       <HeaderContact />
-      <div className="px-12">
+      <div className="px-12 pt-32 max-md:pt-28 max-sm:pt-26">
         <HeroSection />
         <ContactInfo />
       </div>

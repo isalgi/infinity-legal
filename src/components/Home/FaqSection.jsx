@@ -5,61 +5,43 @@ function FaqSection() {
   // Set expandedQuestion to 0 (first question) by default
   const [expandedQuestion, setExpandedQuestion] = useState(0);
 
-  const tabs = ["Common", "Services", "Process", "Company"];
+  const tabs = ["Common"];
 
   const faqData = {
     Common: [
       {
-        question:
-          "Is there a deadline or time limit for scheduling an appointment?",
+        question: "Can I get a free legal consultation?",
         answer:
-          "There is no specific deadline; however, we recommend confirming your appointment in advance via our official WhatsApp channel to ensure better coordination.",
+          "Yes. We do not charge for pre-engagement consultations or for preliminary research related to your case or legal matter. You are welcome to discuss your needs with us with no obligation.",
+      },
+      {
+        question: "Can consultations be conducted outside the office?",
+        answer:
+          "Yes. We are happy to arrange off-site meetings at a location of your choice to ensure your comfort.",
       },
       {
         question:
-          "Is it possible to have a walk-in consultation at the office without a prior appointment?",
+          "Is it safe to use Infinity Legal's services for visas, company formation, and legal matters?",
         answer:
-          "Yes, of course. You are welcome to visit our office directly for a consultation.",
-      },
-      {
-        question: "Is it possible to have a consultation outside the office?",
-        answer:
-          "Absolutely Possible. We are happy to arrange off-site meetings to suit your needs. Your comfort throughout the consultation process is our priority.",
-      },
-    ],
-    Services: [
-      {
-        question:
-          "What types of visas, KITAS, company set-up, and legal services are available through PT Infinity Legal?",
-        answer:
-          "At PT Infinity Legal, we offer a comprehensive range of visa, KITAS, company setup, and legal services. Our offerings include Single Entry Visa, Visitor Visa, Multiple Entry Visa, Family KITAS Visa, Digital Nomad Visa, Investor KITAS, Working KITAS, Retirement KITAS, as well as company dissolution, virtual office solutions, LKPM reporting, PMA registration, tax and accounting services, NPWP processing, contract review and drafting, legal representation, and notarial services. Our experienced team is dedicated to guiding you in selecting the most suitable visa, KITAS, company setup, and legal services tailored to your needs, ensuring a smooth and efficient application process from start to finish.",
-      },
-      {
-        question: "What sets PT Infinity Legal apart from others?",
-        answer:
-          "PT Infinity Legal stands out as a trusted one-stop provider of visa, KITAS, company setup, and legal services, combining expert guidance, efficient processing, and personalized support to ensure a smooth and worry-free experience for every client.",
-      },
-    ],
-    Process: [
-      {
-        question:
-          "Is there a deadline for submitting applications for visa, KITAS, and company setup?",
-        answer:
-          "We recommend scheduling a consultation with us in advance. Our experienced team will guide you through every step to ensure your visa, KITAS, and company setup are completed on time, eliminating any last-minute stress.",
+          "Absolutely. We uphold strict confidentiality and handle every client matter with the highest professional standards.",
       },
       {
         question:
-          "Is it possible to apply for a visa, KITAS, company setup, and legal services without visiting the office?",
+          "What makes Infinity Legal different from other service providers?",
         answer:
-          "Of course, you can apply for a visa, KITAS, company setup, and legal services online or by submitting the required documents. However, we recommend scheduling a consultation first to better assist you in preparing the necessary paperwork.",
+          "Infinity Legal offers a trusted, one-stop solution for visas, company formation, and legal services — combining expert guidance, efficient processing, and personalized support. Our team consists of highly experienced lawyers to ensure the best results for our clients.",
       },
-    ],
-    Company: [
       {
         question:
-          "Is it safe to apply for a visa, KITAS, company setup, and legal services through PT Infinity Legal?",
+          "Can I obtain a visa or set up a PMA (foreign investment company) quickly?",
         answer:
-          "Absolutely. Our professional and experienced team will guide you by providing precise advice and recommendations tailored to your specific needs. In matters of visa processing, KITAS, company setup, and legal services, we have successfully assisted numerous clients. Therefore, do not hesitate to collaborate with us.",
+          "It depends on your specific needs and timeline. We offer flexible service packages — standard, expedited, and priority — to accommodate different requirements. Please contact us via WhatsApp to discuss the best option for you.",
+      },
+      {
+        question:
+          "Can I apply for visas, company formation, or legal services without visiting the office?",
+        answer:
+          "Yes. Applications can be completed online or by submitting documents remotely. However, we recommend an initial consultation to ensure all required documents are properly prepared.",
       },
     ],
   };
@@ -79,9 +61,9 @@ function FaqSection() {
     <section className="py-16 w-full bg-[#F5FEFF]">
       <div className="max-w-7xl mx-auto px-8 max-sm:px-5">
         <div className="mb-10">
-          <h3 className="text-xl font-semibold text-black">FAQ</h3>
+          <h3 className="text-xl font-semibold text-black">FAQ's</h3>
           <h2 className="text-4xl font-semibold text-black mt-1">
-            Frequently Asked Questions
+            Any Question?
           </h2>
           <p className="text-base text-gray-700 mt-3">
             A few common questions that are frequently asked.

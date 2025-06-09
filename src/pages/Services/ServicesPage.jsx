@@ -9,7 +9,9 @@ export default function ServicesPage() {
   return (
     <>
       <HeaderServices />
-      <ServicesList />
+      <div className="pt-32 max-md:pt-28 max-sm:pt-26">
+        <ServicesList />
+      </div>
       <ReviewsSection />
       <FaqSection />
       <ContactSection />
