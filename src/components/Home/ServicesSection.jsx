@@ -57,28 +57,28 @@ function ServicesSection() {
         key: "visa",
         title: "Visa",
         description:
-          "PT Infinity Legal offers a complete range of visa services to support your business, travel, or investment plans in Indonesia. As an official legal partner, we're here to help you with Single Entry Visas, Visitor Visas, and Multiple Entry Visas, all while ensuring full compliance with Indonesian immigration laws. Our experienced team is ready to guide you in choosing the right visa, preparing the necessary documents, and handling the application process whether through the electronic system (e-Visa) or the conventional route.",
+          "Infinity Legal helps you obtain the right visa for your business, travel, or investment needs in Indonesia — including Single Entry, Visitor, and Multiple Entry Visas. We ensure full compliance and handle the process from start to finish.",
         filter: (service) => service.category === "visa",
       },
       {
         key: "limited-stay-permit",
-        title: "Limited Stay Permit",
+        title: "Limited Stay Permit (KITAS)",
         description:
-          "PT Infinity Legal provides comprehensive Limited Stay Permit (KITAS) solutions. Our expert legal team assists with all types of KITAS, including Family KITAS, Digital Nomad Visa, Investor KITAS, Working KITAS, and Retirement KITAS. We ensure full compliance with Indonesia's immigration laws, while offering efficient processing tailored to your needs whether in Bali, or other key destinations. PT Infinity Legal simplifies your KITAS application with end to end professional support.",
+          "Infinity Legal provides full support for all types of KITAS — Family, Digital Nomad, Investor, Work, and Retirement. We ensure compliance and a smooth application process, tailored to your needs in Bali or elsewhere.",
         filter: (service) => service.category === "limited stay permit",
       },
       {
         key: "company-setup",
         title: "Company Setup",
         description:
-          "PT Infinity Legal offers end-to-end solutions for Company Setup and business-related services in Indonesia. As an official legal partner, we help clients handle all legal aspects of their business from incorporation to dissolution ensuring full compliance with Indonesian regulations. Our expert team is here to support you with setting up a company PT PMA, Virtual Office services, LKPM reporting, Accounting & Tax services, and Company Dissolution. We understand the complexity of Indonesia's bureaucracy, so we focus on delivering a process that's efficient, transparent, and tailored to your business needs.",
+          "Infinity Legal offers end-to-end services for setting up your company in Indonesia — from PMA registration, Virtual Office, and LKPM reporting to Accounting, Tax, and Company Dissolution. We simplify the process so you can focus on your business.",
         filter: (service) => service.category === "company set up",
       },
       {
         key: "legal-services",
         title: "Legal Services",
         description:
-          "PT Infinity Legal provides comprehensive legal services to protect your business interests and ensure your company's legal compliance in Indonesia. As a trusted legal partner, we offer practical, tailored legal solutions for corporate clients and foreign investors always in line with Indonesian laws and regulations. Our experienced team is here to support you with Agreement Review & Drafting, Legal Consultation & Assistance, and Notarial Services. We make sure your documents and business transactions are legally sound, helping you safeguard company assets and reduce the risk of disputes.",
+          "Infinity Legal provides practical legal services — including lawyer representation, contract drafting, legal consultation, corporate compliance, and notarial services. We help protect your interests and ensure your business stays fully compliant with Indonesian law.",
         filter: (service) => service.category === "legal services",
       },
     ];

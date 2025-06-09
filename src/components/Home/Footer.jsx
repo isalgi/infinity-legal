@@ -21,8 +21,10 @@ function Footer() {
               Office Location
             </h3>
             <p className="text-sm text-black">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              tincidunt sit amet
+              Jl Raya Bypass Jl. Tanah Lot No.888x, Munggu, Bali, Kabupaten
+              Badung, Bali 80351
+              <br />
+              8°37'08.8"S 115°07'01.6"E
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
