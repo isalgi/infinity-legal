@@ -126,12 +126,12 @@ function DetailArticlePage() {
       </div>
 
       {/* Article Recommendation Section */}
-      <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
-        <h2 className="text-2xl font-medium text-cyan-600 mb-8">
-          Article Recommendation
-        </h2>
+      {filteredRecommendations.length > 1 && (
+        <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
+          <h2 className="text-2xl font-medium text-cyan-600 mb-8">
+            Article Recommendation
+          </h2>
 
-        {filteredRecommendations.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {filteredRecommendations.map((rec) => (
               <ArticleCard
@@ -143,19 +143,17 @@ function DetailArticlePage() {
               />
             ))}
           </div>
-        ) : (
-          <p>No recommendations available at this time.</p>
-        )}
 
-        <div className="text-right mt-8">
-          <Link
-            to="/news"
-            className="text-sm font-medium text-cyan-600 hover:text-cyan-700"
-          >
-            View More &gt;&gt;
-          </Link>
-        </div>
-      </section>
+          <div className="text-right mt-8">
+            <Link
+              to="/news"
+              className="text-sm font-medium text-cyan-600 hover:text-cyan-700"
+            >
+              View More &gt;&gt;
+            </Link>
+          </div>
+        </section>
+      )}
 
       <ReviewsSection />
       <FaqSection />

@@ -11,20 +11,19 @@ function ContactInfo() {
             Alamat Kantor
           </h2>
           <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg leading-8 basis-0 text-neutral-700 max-md:max-w-full">
-            Nulla commodo eros nulla, at sodales elit ultrices sed. Nulla nec
-            rutrum risus. Duis eu sapien auctor, tristique nisl sit amet,
-            sodales nulla. Pellentesque varius placerat felis sed fermentum.
+            Jl Raya Bypass Jl. Tanah Lot No.888x, Munggu, Bali, Kabupaten
+            Badung, Bali 80351
           </p>
         </section>
 
         <section className="mt-8 max-w-full w-[608px]">
           <h2 className="gap-2.5 w-full text-2xl font-medium text-black max-md:max-w-full">
-            Jam kerja
+            Hari dan Waktu Kerja
           </h2>
           <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg leading-8 basis-0 text-neutral-700 max-md:max-w-full">
-            Senin sampai Jumat pukul 09:00 – 18:00 WIB
+            Senin - Sabtu, Pukul 09.00 – 18.00 WIB
             <br />
-            Sabtu & Minggu libur
+            Minggu tutup
           </p>
         </section>
 
@@ -42,7 +41,7 @@ function ContactInfo() {
             Nomor Telepon
           </h2>
           <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg basis-0 text-neutral-700 max-md:max-w-full">
-            +62 823-1020-1321
+            +62 812-3933-6293
           </p>
         </section>
       </div>
