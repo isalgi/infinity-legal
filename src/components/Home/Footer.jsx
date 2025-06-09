@@ -37,8 +37,11 @@ function Footer() {
               </h3>
             </Link>
             <p className="text-sm text-black">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              tincidunt sit amet
+              Email: infinitylegalco@gmail.com
+              <br />
+              WhatsApp: +6282139336293
+              <br />
+              Instagram: infinitylegal.co
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/536586b7c4fe73f09e464acc5b0f83868388fdad?placeholderIfAbsent=true"
