@@ -5,7 +5,7 @@ function ServiceCard({ image, title, description, price, slug }) {
   return (
     <Link
       to={slug === "contact" ? "/contact" : `/services/${slug}`}
-      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-[800px]"
+      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-[600px]"
     >
       {/* Image container */}
       <div className="p-4 flex-shrink-0">
