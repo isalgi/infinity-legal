@@ -3,7 +3,7 @@ import infinityLogo from "../../assets/infinity-logo.png";
 
 function HeaderArticle() {
   return (
-    <header className="flex justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">
+    <header className="fixed top-0 left-0 right-0 bg-white flex justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20 shadow-sm">
       <div>
         <img
           src={infinityLogo}

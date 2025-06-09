@@ -90,7 +90,7 @@ function DetailArticlePage() {
     <>
       <HeaderArticle />
 
-      <div className="container mx-auto px-5 md:px-10 lg:px-20 py-8">
+      <div className="container mx-auto px-5 md:px-10 lg:px-20 py-8 pt-32">
         <Link to="/news" className="text-cyan-600 flex items-center gap-2 mb-4">
           <svg
             width="16"

@@ -41,7 +41,7 @@ function ArticlePage() {
         <HeaderArticle />
 
         {/* News Title and Search */}
-        <section className="pt-12 pb-4 max-md:pt-8 max-sm:pt-6">
+        <section className="pt-32 pb-4 max-md:pt-28 max-sm:pt-26">
           <div className="container mx-auto px-5 md:px-10 lg:px-20">
             <h1 className="text-3xl font-medium text-gray-700 mb-6">
               Berita Hari ini
