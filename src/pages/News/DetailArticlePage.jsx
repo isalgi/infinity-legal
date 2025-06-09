@@ -126,12 +126,12 @@ function DetailArticlePage() {
       </div>
 
       {/* Article Recommendation Section */}
-      {filteredRecommendations.length > 1 && (
-        <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
-          <h2 className="text-2xl font-medium text-cyan-600 mb-8">
-            Article Recommendation
-          </h2>
+      <section className="container mx-auto px-5 md:px-10 lg:px-20 py-12">
+        <h2 className="text-2xl font-medium text-cyan-600 mb-8">
+          Article Recommendation
+        </h2>
 
+        {filteredRecommendations.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {filteredRecommendations.map((rec) => (
               <ArticleCard
@@ -143,7 +143,11 @@ function DetailArticlePage() {
               />
             ))}
           </div>
+        ) : (
+          <p>No recommendations available at this time.</p>
+        )}
 
+        {filteredRecommendations.length > 1 && (
           <div className="text-right mt-8">
             <Link
               to="/news"
@@ -152,8 +156,8 @@ function DetailArticlePage() {
               View More &gt;&gt;
             </Link>
           </div>
-        </section>
-      )}
+        )}
+      </section>
 
       <ReviewsSection />
       <FaqSection />
