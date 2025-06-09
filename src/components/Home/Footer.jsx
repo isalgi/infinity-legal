@@ -23,8 +23,6 @@ function Footer() {
             <p className="text-sm text-black">
               Jl Raya Bypass Jl. Tanah Lot No.888x, Munggu, Bali, Kabupaten
               Badung, Bali 80351
-              <br />
-              8°37'08.8"S 115°07'01.6"E
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
@@ -62,7 +60,7 @@ function Footer() {
         </div>
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold text-cyan-600">Ask Now</h3>
-          <Link to="https://wa.me/6282131907575">
+          <Link to="https://wa.me/6281239336293">
             <img
               src={icon1}
               alt=""

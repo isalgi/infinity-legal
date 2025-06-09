@@ -87,7 +87,7 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
           </p>
         </div>
 
-        <Link to="https://wa.me/6282131907575">
+        <Link to="https://wa.me/6281239336293">
           <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
             Ask us Now
           </button>
@@ -200,7 +200,7 @@ const PricingDisplay = ({ pricingData, serviceName }) => {
         ))}
       </div>
 
-      <Link to="https://wa.me/6282131907575">
+      <Link to="https://wa.me/6281239336293">
         <button className="w-full mt-6 bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
           Ask us Now
         </button>
@@ -377,7 +377,7 @@ export default function DetailServicePage() {
                   ))}
               </div>
 
-              <Link to="https://wa.me/6282131907575">
+              <Link to="https://wa.me/6281239336293">
                 <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-medium hover:bg-cyan-700 transition-colors">
                   Ask us Now
                 </button>
