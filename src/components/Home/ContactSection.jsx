@@ -9,11 +9,10 @@ function ContactSection() {
 
   // Options for the service dropdown
   const serviceOptions = [
-    { value: "business-formation", label: "Pendirian Perusahaan" },
-    { value: "visa-services", label: "Jasa Visa" },
-    { value: "legal-consultation", label: "Konsultasi Hukum" },
-    { value: "business-licenses", label: "Perizinan Bisnis" },
-    { value: "tax-services", label: "Jasa Perpajakan" },
+    { value: "visa", label: "Visa" },
+    { value: "limited-stay-permit", label: "Limited Stay Permit" },
+    { value: "legal-services", label: "Legal Services" },
+    { value: "company-set-up", label: "Company Set Up" },
   ];
 
   // Custom styles for react-select
@@ -91,14 +90,14 @@ function ContactSection() {
             within 1 business day.
           </p>
           <form className="flex flex-col gap-7 mt-4 max-w-md">
-            <FormField placeholder="Nama Depan" required={true} />
-            <FormField placeholder="Nama Belakang" required={true} />
+            <FormField placeholder="First Name" required={true} />
+            <FormField placeholder="Last Name" required={true} />
             <FormField placeholder="Email" required={true} type="email" />
-            <FormField placeholder="Nomor Telepon" required={true} type="tel" />
+            <FormField placeholder="Phone Number" required={true} type="tel" />
 
             {/* Date Picker instead of dropdown */}
             <DatePickerField
-              placeholder="Kapan Anda ingin memulai bisnis?"
+              placeholder="When do you want to start a business?"
               required={true}
               value={startDate}
               onChange={setStartDate}
@@ -112,7 +111,7 @@ function ContactSection() {
                 styles={customStyles}
                 value={selectedService}
                 onChange={setSelectedService}
-                placeholder="Layanan apa yang Anda cari?"
+                placeholder="What services are you looking for?"
                 className="react-select-container"
                 classNamePrefix="react-select"
                 required
