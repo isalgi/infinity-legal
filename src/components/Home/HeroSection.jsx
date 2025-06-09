@@ -30,7 +30,7 @@ function HeroSection() {
             Expert Solutions for Business and Visa Needs in Indonesia
           </h1>
           <Link to={"/contact"}>
-            <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-1/3 mt-5">
+            <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-1/3 mt-5 hover:bg-white hover:text-gray-800 transition-colors">
               Contact us
             </button>
           </Link>

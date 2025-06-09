@@ -3,46 +3,50 @@ import infinityLogo from "../../assets/infinity-logo.png";
 
 function Header() {
   return (
-    <header className="flex absolute top-0 justify-between items-center px-20 py-2.5 w-full h-[120px] z-[100] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">
-      <div>
-        <img
-          src={infinityLogo}
-          className="h-[72px] w-[76px] bg-white rounded-lg"
-          alt="INFINITY LEGAL"
-        />
+    <header className="fixed top-0 left-0 right-0 z-[100] mt-4">
+      <div className="max-w-full">
+        <div className="flex justify-between items-center py-4 px-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+          <div className="px-16">
+            <img
+              src={infinityLogo}
+              className="h-[72px] w-[76px] bg-white rounded-lg"
+              alt="INFINITY LEGAL"
+            />
+          </div>
+          <nav className="flex gap-14 items-center max-sm:hidden px-16">
+            <Link to={"/"}>
+              <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
+                Home
+              </p>
+            </Link>
+            <Link to={"/services"}>
+              <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
+                Services
+              </p>
+            </Link>
+            <Link to="/#about">
+              <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
+                About
+              </p>
+            </Link>
+            <Link to={"/news"}>
+              <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
+                News
+              </p>
+            </Link>
+            <Link to={"/contact"}>
+              <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
+                Contact
+              </p>
+            </Link>
+            <Link to="https://wa.me/6282131907575">
+              <button className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-none shadow-lg hover:bg-cyan-600 transition-colors">
+                Whatsapp Kami
+              </button>
+            </Link>
+          </nav>
+        </div>
       </div>
-      <nav className="flex gap-14 items-center max-sm:hidden">
-        <Link to={"/"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
-            Home
-          </p>
-        </Link>
-        <Link to={"/services"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
-            Services
-          </p>
-        </Link>
-        <Link to="/#about">
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
-            About
-          </p>
-        </Link>
-        <Link to={"/news"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
-            News
-          </p>
-        </Link>
-        <Link to={"/contact"}>
-          <p className="text-base font-bold text-white cursor-pointer hover:underline">
-            Contact
-          </p>
-        </Link>
-        <Link to="https://wa.me/6282131907575">
-          <button className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-cyan-600 transition-colors">
-            Whatsapp Kami
-          </button>
-        </Link>
-      </nav>
     </header>
   );
 }
