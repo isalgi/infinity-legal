@@ -32,7 +32,7 @@ function ContactInfo() {
             Email
           </h2>
           <p className="flex-1 shrink gap-2.5 mt-2.5 w-full text-lg basis-0 text-neutral-700 max-md:max-w-full">
-            sales@goritax.com
+            infinitylegalco@gmail.com
           </p>
         </section>
 
