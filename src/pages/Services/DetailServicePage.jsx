@@ -281,29 +281,33 @@ export default function DetailServicePage() {
                 {service.description.split("\n").map((line, index) => {
                   const trimmedLine = line.trim();
 
-                  // Check if line should be a bullet point
-                  if (
-                    trimmedLine.match(
-                      /^(Choose|Each|After|Valid|Must|Can|Will|Should|Allows|This)/i
-                    ) ||
-                    // Also check for lines that look like bullet points (short, descriptive lines)
-                    (trimmedLine.length < 100 &&
-                      (trimmedLine.includes("days") ||
-                        trimmedLine.includes("years") ||
-                        trimmedLine.includes("extendable") ||
-                        trimmedLine.includes("return")))
-                  ) {
+                  // Empty line for spacing
+                  if (trimmedLine === "") {
+                    return <div key={index} className="h-2"></div>;
+                  }
+
+                  // Check if line starts with bullet marker
+                  if (trimmedLine.startsWith("-")) {
                     return (
                       <div key={index} className="flex items-start gap-3 ml-4">
                         <span className="text-gray-400">•</span>
-                        <span className="leading-relaxed">{trimmedLine}</span>
+                        <span className="leading-relaxed">
+                          {trimmedLine.substring(1).trim()}
+                        </span>
                       </div>
                     );
                   }
 
-                  // Empty line for spacing
-                  if (trimmedLine === "") {
-                    return <div key={index} className="h-2"></div>;
+                  // Check if it's a header (short line, title case)
+                  if (trimmedLine.length < 50 && trimmedLine.includes("&")) {
+                    return (
+                      <h4
+                        key={index}
+                        className="font-semibold text-gray-800 mt-6 mb-2"
+                      >
+                        {trimmedLine}
+                      </h4>
+                    );
                   }
 
                   // Regular paragraph
