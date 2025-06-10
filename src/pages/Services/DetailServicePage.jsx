@@ -59,7 +59,7 @@ const CollapsibleDocuments = ({ documents }) => {
 };
 
 // Integrated Pricing Display Component
-const PricingDisplay = ({ pricingData, serviceName }) => {
+const PricingDisplay = ({ pricingData }) => {
   let pricing;
   try {
     pricing =
@@ -257,10 +257,6 @@ export default function DetailServicePage() {
       Array.isArray(service.additionalImages.additionalImages)
     ? service.additionalImages.additionalImages
     : [];
-
-  const formatTitle = (title) => {
-    return title.toUpperCase();
-  };
 
   return (
     <>
