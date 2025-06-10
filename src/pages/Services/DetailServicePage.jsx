@@ -288,8 +288,14 @@ export default function DetailServicePage() {
                   // Check if line should be a bullet point
                   if (
                     trimmedLine.match(
-                      /^(Choose|Each|After|Valid|Must|Can|Will|Should|Allows)/i
-                    )
+                      /^(Choose|Each|After|Valid|Must|Can|Will|Should|Allows|This)/i
+                    ) ||
+                    // Also check for lines that look like bullet points (short, descriptive lines)
+                    (trimmedLine.length < 100 &&
+                      (trimmedLine.includes("days") ||
+                        trimmedLine.includes("years") ||
+                        trimmedLine.includes("extendable") ||
+                        trimmedLine.includes("return")))
                   ) {
                     return (
                       <div key={index} className="flex items-start gap-3 ml-4">
