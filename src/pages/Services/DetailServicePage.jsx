@@ -281,9 +281,33 @@ export default function DetailServicePage() {
                   service.category.slice(1)}{" "}
                 services you can get
               </h1>
-              <p className="text-xl text-gray-600 mt-5 mb-10">
-                {service.description}
-              </p>
+              <div className="text-xl text-gray-600 mt-5 mb-10 space-y-4">
+                {service.description.split("\n").map((line, index) => {
+                  const trimmedLine = line.trim();
+
+                  // Check if line should be a bullet point
+                  if (
+                    trimmedLine.match(
+                      /^(Choose|Each|After|Valid|Must|Can|Will|Should|Allows)/i
+                    )
+                  ) {
+                    return (
+                      <div key={index} className="flex items-start gap-3 ml-4">
+                        <span className="text-gray-400">•</span>
+                        <span className="leading-relaxed">{trimmedLine}</span>
+                      </div>
+                    );
+                  }
+
+                  // Empty line for spacing
+                  if (trimmedLine === "") {
+                    return <div key={index} className="h-2"></div>;
+                  }
+
+                  // Regular paragraph
+                  return <p key={index}>{trimmedLine}</p>;
+                })}
+              </div>
               <Link to={"/contact"}>
                 <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-auto text-md font-medium">
                   Contact us
