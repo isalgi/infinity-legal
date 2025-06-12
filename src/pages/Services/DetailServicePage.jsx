@@ -269,7 +269,7 @@ export default function DetailServicePage() {
             {service.title}
           </div>
           {/* Hero Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
             <div className="h-full">
               <h1 className="text-2xl font-bold text-gray-900">
                 Best{" "}
@@ -324,7 +324,7 @@ export default function DetailServicePage() {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-full object-cover"
+                className="w-full h-[480px] object-cover"
               />
             </div>
           </div>
