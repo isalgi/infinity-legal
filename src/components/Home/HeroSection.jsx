@@ -1,25 +1,22 @@
+// Updated HeroSection.jsx
 import Header from "./Header";
 import { Link } from "react-router-dom";
+import CachedVideo from "../CachedVideo";
 
 function HeroSection() {
   return (
     <>
       <Header />
       <section className="flex relative items-center justify-start min-h-screen pl-24 max-md:px-10 max-sm:px-5 overflow-hidden">
-        {/* Video Background */}
-        <video
+        {/* Cached Video Background */}
+        <CachedVideo
+          src="https://jxtylpahapimibfnchjt.supabase.co/storage/v1/object/public/videos/hero-section.mp4"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source
-            src="https://jxtylpahapimibfnchjt.supabase.co/storage/v1/object/public/videos/hero-section.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          playsInline={true}
+        />
 
         {/* Dark overlay for better text readability */}
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 z-10"></div>
