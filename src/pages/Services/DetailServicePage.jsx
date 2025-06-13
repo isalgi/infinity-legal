@@ -9,9 +9,26 @@ import Footer from "../../components/Home/Footer";
 import HeaderServices from "../../components/Services/HeaderServices";
 import { fetchServiceBySlug } from "../../services/supabase/serviceService";
 
+// Helper function to parse JSON string fields
+const parseJsonField = (field) => {
+  if (!field) return [];
+  if (Array.isArray(field)) return field;
+  if (typeof field === "string") {
+    try {
+      return JSON.parse(field);
+    } catch (error) {
+      console.error("Error parsing JSON field:", error);
+      return [];
+    }
+  }
+  return [];
+};
+
 // Collapsible Documents Component
 const CollapsibleDocuments = ({ documents }) => {
-  const initialExpandedState = documents.reduce((acc, _, index) => {
+  const parsedDocuments = parseJsonField(documents);
+
+  const initialExpandedState = parsedDocuments.reduce((acc, _, index) => {
     acc[index] = false;
     return acc;
   }, {});
@@ -27,7 +44,7 @@ const CollapsibleDocuments = ({ documents }) => {
 
   return (
     <div className="space-y-4">
-      {documents.map((document, index) => (
+      {parsedDocuments.map((document, index) => (
         <div key={index} className="flex">
           <button
             onClick={() => toggleItem(index)}
@@ -74,7 +91,6 @@ const PricingDisplay = ({ pricingData }) => {
     );
   }
 
-  // Handle consultation-based pricing
   // Handle consultation-based pricing
   if (pricing.pricing_type === "consultation") {
     return (
@@ -251,12 +267,11 @@ export default function DetailServicePage() {
     );
   }
 
-  const additionalImagesList = Array.isArray(service.additionalImages)
-    ? service.additionalImages
-    : service.additionalImages?.additionalImages &&
-      Array.isArray(service.additionalImages.additionalImages)
-    ? service.additionalImages.additionalImages
-    : [];
+  // Parse JSON string fields
+  const parsedAdditionalImages = parseJsonField(service.additionalImages);
+  const additionalImagesList = parsedAdditionalImages.additionalImages || [];
+  const parsedCanDo = parseJsonField(service.canDo);
+  const parsedCannotDo = parseJsonField(service.cannotDo);
 
   return (
     <>
@@ -348,9 +363,9 @@ export default function DetailServicePage() {
               {/* Features List with Checkmarks and Crosses */}
               <div className="space-y-3 mb-6 flex-grow">
                 {/* Can Do Items (with cyan checks) */}
-                {service.canDo &&
-                  service.canDo.length > 0 &&
-                  service.canDo.map((item, index) => (
+                {parsedCanDo &&
+                  parsedCanDo.length > 0 &&
+                  parsedCanDo.map((item, index) => (
                     <div
                       key={`can-${index}`}
                       className="flex items-start gap-3"
@@ -377,9 +392,9 @@ export default function DetailServicePage() {
                   ))}
 
                 {/* Cannot Do Items (with red crosses) */}
-                {service.cannotDo &&
-                  service.cannotDo.length > 0 &&
-                  service.cannotDo.map((item, index) => (
+                {parsedCannotDo &&
+                  parsedCannotDo.length > 0 &&
+                  parsedCannotDo.map((item, index) => (
                     <div
                       key={`cannot-${index}`}
                       className="flex items-start gap-3"
@@ -439,9 +454,7 @@ export default function DetailServicePage() {
                 <h2 className="text-2xl font-semibold text-gray-800 mb-8">
                   Required Document
                 </h2>
-                <CollapsibleDocuments
-                  documents={service.required_documents || []}
-                />
+                <CollapsibleDocuments documents={service.required_documents} />
               </div>
             </div>
           </div>
