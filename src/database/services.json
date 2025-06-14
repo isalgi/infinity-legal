@@ -256,7 +256,7 @@
       "price": "{\n  \"pricing_type\": \"consultation\",\n  \"consultation_note\": \"Based on consultation.\"\n}",
       "category": "legal services",
       "additionalImage": "/images/Required.png",
-      "canDo": "[\"To ensure your rights are protected from the earliest stages (e.g., police report or summons)\",\"To build a strong, strategic legal defence based on the facts and law\",\"To avoid procedural errors that could affect your outcome\",\"To have a qualified legal representative speak on your behalf in court or with authorities\"]",
+      "canDo": "[\"To ensure your rights are protected from the earliest stages (e.g., police report or summons)\",\"To build a strong, strategic legal defence based on the facts and law\",\"To avoid procedural errors that could affect your outcome\",\"To have a qualified legal representative speak on your behalf in court or with authorities\",\"To maximise your chances of success in disputes, defence, or negotiation\"]",
       "cannotDo": [],
       "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"}]"
     }
