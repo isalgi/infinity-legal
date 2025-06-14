@@ -11,10 +11,7 @@ function AboutSection() {
         muted
         playsInline
       >
-        <source
-          src="https://jxtylpahapimibfnchjt.supabase.co/storage/v1/object/public/videos//about-section%20(1).mp4"
-          type="video/mp4"
-        />
+        <source src="/videos/about-section.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

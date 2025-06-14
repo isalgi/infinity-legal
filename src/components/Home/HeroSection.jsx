@@ -14,10 +14,7 @@ function HeroSection() {
           muted
           playsInline
         >
-          <source
-            src="https://jxtylpahapimibfnchjt.supabase.co/storage/v1/object/public/videos/hero-section.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/hero-section.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
