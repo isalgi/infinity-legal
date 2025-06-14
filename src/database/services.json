@@ -218,8 +218,27 @@
       "category": "company set up",
       "additionalImage": "/images/Required.png",
       "canDo": "[\"Avoid fines and penalties by ensuring timely and accurate tax reporting\",\"Save time and money through effective tax planning strategies\",\"Get assistance from experienced consultants who understand Indonesian tax laws\",\"Ensure professional and timely financial reporting and bookkeeping\",\"Tailored support for foreign investors who face unique tax challenges\"]",
-      "cannotDo": [],
-      "required_documents": "[{\"name\":\"Initial consultation\",\"description\":\"to understand your business and tax situation\"},{\"name\":\"Document collection\",\"description\":\"including financial reports, transactions, and supporting materials\"},{\"name\":\"Preparation and review\",\"description\":\"of accounting records and tax filings\"},{\"name\":\"Monthly and annual tax reporting\",\"description\":\"submitted to the Directorate General of Taxes (DJP)\"},{\"name\":\"Ongoing support\",\"description\":\"for audits, regulatory updates, and strategic planning\"}]"
+      "cannotDo": "[]",
+      "required_documents": "[{\"name\":\"Initial consultation\",\"description\":\"to understand your business and tax situation\"},{\"name\":\"Document collection\",\"description\":\"including financial reports, transactions, and supporting materials\"},{\"name\":\"Preparation and review\",\"description\":\"of accounting records and tax filings\"},{\"name\":\"Monthly and annual tax reporting\",\"description\":\"submitted to the Directorate General of Taxes (DJP)\"},{\"name\":\"Ongoing support\",\"description\":\"for audits, regulatory updates, and strategic planning\"}]",
+      "extraDetails": {
+        "whatIs": "Every individual or company operating in Indonesia, including foreign-owned businesses (PMA), is legally required to maintain accurate financial records and report taxes correctly. Failure to do so may result in penalties, audits, or even business license revocation.",
+        "servicesOffered": [
+          "Personal and Corporate Tax Consultation",
+          "Monthly and Annual Tax Filing (PPh 21, PPh 23, Corporate Tax, VAT)",
+          "Preparation and Review of Financial Statements",
+          "Withholding Tax calculation and submission",
+          "Accounting and Bookkeeping services",
+          "Local Tax Compliance in Bali",
+          "Assistance with BPJS and payroll tax obligations"
+        ],
+        "process": [
+          "Initial consultation to understand your business and tax situation",
+          "Document collection, including financial reports, transactions, and supporting materials",
+          "Preparation and review of accounting records and tax filings",
+          "Monthly and annual tax reporting submitted to the Directorate General of Taxes (DJP)",
+          "Ongoing support for audits, regulatory updates, and strategic planning"
+        ]
+      }
     },
     {
       "id": 19,
@@ -231,8 +250,32 @@
       "category": "legal services",
       "additionalImage": "/images/Required.png",
       "canDo": "[\"Professional and experienced reviewers with expertise in Indonesian and international legal standards\",\"Comprehensive legal and commercial analysis tailored to your needs\",\"Clear, actionable feedback and revision suggestions\",\"Guaranteed confidentiality for all documents and communications\",\"Reduce the risk of legal disputes and financial exposure\",\"Strengthen your position in negotiations\",\"Make informed decisions with clarity and confidence\",\"Ensure legal protection of your interests\"]",
-      "cannotDo": [],
-      "required_documents": "[{\"name\":\"Document to be reviewed\",\"description\":\"contracts, agreements, etc.\"},{\"name\":\"Context information\",\"description\":\"regarding the document\"},{\"name\":\"Specific concerns\",\"description\":\"to be addressed in review\"}]"
+      "cannotDo": "[]",
+      "required_documents": "[{\"name\":\"Document to be reviewed\",\"description\":\"contracts, agreements, etc.\"},{\"name\":\"Context information\",\"description\":\"regarding the document\"},{\"name\":\"Specific concerns\",\"description\":\"to be addressed in review\"}]",
+      "extraDetails": {
+        "documentsWeCanReview": [
+          "Employment contracts",
+          "Lease agreements (residential, commercial, office)",
+          "Business partnership agreements (MoU, joint ventures, collaboration agreements)",
+          "Sale and purchase agreements",
+          "Corporate legal documents (Articles of Association, Shareholders Agreements)",
+          "Vendor and client contracts",
+          "Website Terms & Conditions and Privacy Policies",
+          "Letters of authority, declarations, and other formal letters"
+        ],
+        "advantages": [
+          "Professional and experienced reviewers with expertise in Indonesian and international legal standards",
+          "Comprehensive legal and commercial analysis tailored to your needs",
+          "Clear, actionable feedback and revision suggestions",
+          "Guaranteed confidentiality for all documents and communications"
+        ],
+        "benefits": [
+          "Reduce the risk of legal disputes and financial exposure",
+          "Strengthen your position in negotiations",
+          "Make informed decisions with clarity and confidence",
+          "Ensure legal protection of your interests"
+        ]
+      }
     },
     {
       "id": 20,
@@ -244,8 +287,34 @@
       "category": "legal services",
       "additionalImage": "/images/Required.png",
       "canDo": "[\"Drafted by professionals with legal and commercial expertise\",\"Fully customised to your needs, industry standards, and jurisdiction\",\"Clear structure with enforceable clauses and risk management features\",\"Delivered in plain, professional language to suit your audience\",\"Gain a legally sound agreement tailored to your specific transaction or relationship\",\"Avoid ambiguity, loopholes, or disputes down the line\",\"Save time and legal costs by starting with a strong draft\",\"Protect your rights, responsibilities, and business interests from the outset\"]",
-      "cannotDo": [],
-      "required_documents": "[{\"name\":\"Agreement type specifications\",\"description\":\"employment, service, lease, etc.\"},{\"name\":\"Key terms and conditions\",\"description\":\"to be included\"},{\"name\":\"Party information\",\"description\":\"names, addresses, contact details\"},{\"name\":\"Timeline requirements\",\"description\":\"deadlines, durations, etc.\"}]"
+      "cannotDo": "[]",
+      "required_documents": "[{\"name\":\"Agreement type specifications\",\"description\":\"employment, service, lease, etc.\"},{\"name\":\"Key terms and conditions\",\"description\":\"to be included\"},{\"name\":\"Party information\",\"description\":\"names, addresses, contact details\"},{\"name\":\"Timeline requirements\",\"description\":\"deadlines, durations, etc.\"}]",
+      "extraDetails": {
+        "agreementTypes": [
+          "Employment contracts",
+          "Service agreements",
+          "Lease and rental agreements",
+          "Non-disclosure agreements (NDAs)",
+          "Memoranda of Understanding (MoUs)",
+          "Joint venture and partnership agreements",
+          "Shareholders agreements",
+          "Sales and purchase agreements",
+          "Independent contractor agreements",
+          "Website Terms & Conditions and Privacy Policies"
+        ],
+        "advantages": [
+          "Drafted by professionals with legal and commercial expertise",
+          "Fully customised to your needs, industry standards, and jurisdiction",
+          "Clear structure with enforceable clauses and risk management features",
+          "Delivered in plain, professional language to suit your audience"
+        ],
+        "benefits": [
+          "Gain a legally sound agreement tailored to your specific transaction or relationship",
+          "Avoid ambiguity, loopholes, or disputes down the line",
+          "Save time and legal costs by starting with a strong draft",
+          "Protect your rights, responsibilities, and business interests from the outset"
+        ]
+      }
     },
     {
       "id": 21,
@@ -257,13 +326,39 @@
       "category": "legal services",
       "additionalImage": "/images/Required.png",
       "canDo": "[\"To ensure your rights are protected from the earliest stages (e.g., police report or summons)\",\"To build a strong, strategic legal defence based on the facts and law\",\"To avoid procedural errors that could affect your outcome\",\"To have a qualified legal representative speak on your behalf in court or with authorities\",\"To maximise your chances of success in disputes, defence, or negotiation\"]",
-      "cannotDo": [],
-      "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"}]"
+      "cannotDo": "[]",
+      "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"}]",
+      "extraDetails": {
+        "disputeResolutionServices": [
+          "Civil cases: breach of contract, defamation, tort claims, consumer claims, inheritance disputes",
+          "Family law: divorce, child custody, spousal and child support, marital property division",
+          "Commercial litigation: debt recovery, partnership breakdowns, shareholder conflicts",
+          "Criminal defence: fraud, embezzlement, defamation, document forgery, misuse of funds, general crime",
+          "Police-level assistance: representing you during police reports, examinations, detentions, and investigations",
+          "Prosecutor-level defence: preparation of defence strategies and engagement with public prosecutors",
+          "Court representation: from District Court to Supreme Court",
+          "Out-of-court resolution: mediation, negotiation, and settlements to avoid unnecessary litigation"
+        ],
+        "legalStrategyServices": [
+          "Legal consultation to assess your position and build a defence or claim",
+          "Preparation of legal documents (e.g., subpoenas, complaints, defence responses)",
+          "Representation during witness examinations, hearings, or trial proceedings",
+          "Appeal and cassation filings (if necessary)",
+          "Ongoing communication and updates throughout your case"
+        ],
+        "whyYouNeedLawyer": [
+          "To ensure your rights are protected from the earliest stages (e.g., police report or summons)",
+          "To build a strong, strategic legal defence based on the facts and law",
+          "To avoid procedural errors that could affect your outcome",
+          "To have a qualified legal representative speak on your behalf in court or with authorities",
+          "To maximise your chances of success in disputes, defence, or negotiation"
+        ]
+      }
     },
     {
       "id": 22,
       "title": "Property Transaction Legal Services",
-      "description": "As legal consultants and licensed lawyers, we offer end-to-end legal support and representation in property transactions — whether you're buying or selling. We do not act as brokers or agents; our duty is to protect your legal rights and financial interests at every stage of the transaction.\n\nProperty Purchase Process (With Legal Representation)\n- Initial consultation to understand your objectives and transaction structure\n- Comprehensive due diligence on the property, including title ownership verification, land use status (HGB/SHM), encumbrance and lien checks, zoning, spatial planning, and permit review\n- Drafting or legal review of the Sale and Purchase Agreement (SPA)\n- Negotiation support to secure your interests\n- Coordination with Notary (PPAT) for deed execution and title registration\n- Monitoring of tax payments and legal compliance during the handover process\n- Delivery of legally binding documents and post-completion verification\n\nProperty Sale Process (With Legal Representation)\n- Document review (ownership certificate, IMB, tax status, etc.)\n- Drafting or review of SPA with appropriate seller protections\n- Assistance with disclosures, liability limitation clauses, and pricing terms\n- Coordination with buyer and Notary (PPAT) for seamless execution\n- Monitoring payment terms, tax obligations, and title transfer\n- Issuance of final sale deed and legal documentation confirming completion",
+      "description": "As legal consultants and licensed lawyers, we offer end-to-end legal support and representation in property transactions — whether you're buying or selling. We do not act as brokers or agents; our duty is to protect your legal rights and financial interests at every stage of the transaction.",
       "slug": "property-transaction-legal-services",
       "image": "/images/Agreement 2.jpg",
       "price": "{\n  \"pricing_type\": \"consultation\",\n  \"consultation_note\": \"Based on consultation.\"\n}",
@@ -271,7 +366,42 @@
       "additionalImage": "/images/Required.png",
       "canDo": "[\"Your interests are protected by qualified legal professionals\",\"You receive a complete due diligence report before any payment is made\",\"All agreements are reviewed or prepared with legal clarity and enforceability\",\"You reduce risk of fraud, invalid title, hidden obligations, or disputes\",\"End-to-end legal coordination allows for a smooth, compliant transaction\",\"Services are available in Indonesian and English, suitable for local and foreign clients\"]",
       "cannotDo": "[\"We do not act as brokers or agents\",\"We cannot guarantee property value appreciation\",\"We cannot provide investment advice beyond legal compliance\"]",
-      "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits, IMB, tax status\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"},{\"name\":\"Supporting documents\",\"description\":\"title, tax clearance, IDs, permits as applicable\"}]"
+      "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits, IMB, tax status\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"},{\"name\":\"Supporting documents\",\"description\":\"title, tax clearance, IDs, permits as applicable\"}]",
+      "extraDetails": {
+        "propertyPurchaseProcess": [
+          "Initial consultation to understand your objectives and transaction structure",
+          "Comprehensive due diligence on the property, including: Title ownership verification, Land use status (HGB/SHM), Encumbrance and lien checks, Zoning, spatial planning, and permit review",
+          "Drafting or legal review of the Sale and Purchase Agreement (SPA)",
+          "Negotiation support to secure your interests",
+          "Coordination with Notary (PPAT) for deed execution and title registration",
+          "Monitoring of tax payments and legal compliance during the handover process",
+          "Delivery of legally binding documents and post-completion verification"
+        ],
+        "propertySaleProcess": [
+          "Document review (ownership certificate, IMB, tax status, etc.)",
+          "Drafting or review of SPA with appropriate seller protections",
+          "Assistance with disclosures, liability limitation clauses, and pricing terms",
+          "Coordination with buyer and Notary (PPAT) for seamless execution",
+          "Monitoring payment terms, tax obligations, and title transfer",
+          "Issuance of final sale deed and legal documentation confirming completion"
+        ],
+        "legalDocumentsYouReceive": [
+          "Sale and Purchase Agreement (SPA)",
+          "Legal Due Diligence Report",
+          "Power of Attorney (if applicable)",
+          "Tax and transaction cost summary",
+          "Final Deed of Sale (AJB) and updated Certificate (SHM/HGB)",
+          "Letters of confirmation, consent, or approval from relevant authorities (if needed)"
+        ],
+        "legalAgreementDraftingProcess": [
+          "Consultation to understand the facts and goals of the transaction",
+          "Review of supporting documents (title, tax clearance, IDs, permits, etc.)",
+          "Drafting of legal agreement (SPA or related) tailored to your position",
+          "Revisions and negotiation support based on your feedback or buyer/seller input",
+          "Finalised agreement delivered in editable format (Word/PDF)",
+          "Coordination with Notary (PPAT) if notarisation is required"
+        ]
+      }
     },
     {
       "id": 23,
@@ -284,7 +414,24 @@
       "additionalImage": "/images/Required.png",
       "canDo": "[\"Ensure legal authenticity and enforceability of documents\",\"Comply with regulatory or government requirements\",\"Provide stronger legal protection in case of dispute\",\"Ensure official recognition by courts, banks, and institutions\",\"Support cross-border transactions or visa/immigration processes\",\"Professional review and adjustment of content into official notarial format\"]",
       "cannotDo": "[\"Cannot notarise incomplete or invalid documents\",\"Cannot provide legal advice beyond notarial requirements\",\"Cannot guarantee acceptance by all foreign jurisdictions without proper legalisation\"]",
-      "required_documents": "[{\"name\":\"Document to be notarised\",\"description\":\"draft or final version\"},{\"name\":\"Purpose confirmation\",\"description\":\"intended use of the notarised document\"},{\"name\":\"Identification documents\",\"description\":\"of all parties signing\"},{\"name\":\"Supporting documents\",\"description\":\"if required for the specific type of notarisation\"}]"
+      "required_documents": "[{\"name\":\"Document to be notarised\",\"description\":\"draft or final version\"},{\"name\":\"Purpose confirmation\",\"description\":\"intended use of the notarised document\"},{\"name\":\"Identification documents\",\"description\":\"of all parties signing\"},{\"name\":\"Supporting documents\",\"description\":\"if required for the specific type of notarisation\"}]",
+      "extraDetails": {
+        "whyNotarise": [
+          "To ensure legal authenticity and enforceability of the document",
+          "To comply with regulatory or government requirements (e.g., land transactions, company deeds)",
+          "To provide stronger legal protection in case of dispute",
+          "To ensure the document is officially recognised by courts, banks, and institutions",
+          "For use in cross-border transactions or visa/immigration processes"
+        ],
+        "notarisationProcess": [
+          "Initial consultation to confirm the purpose and type of document",
+          "Review of draft to ensure it meets notarial requirements",
+          "Preparation or adjustment of content into official notarial format (if needed)",
+          "Scheduling of signing at the notary office",
+          "Execution and registration by the notary",
+          "Delivery of notarised original and certified copies to the client"
+        ]
+      }
     },
     {
       "id": 24,
@@ -297,7 +444,23 @@
       "additionalImage": "/images/Required.png",
       "canDo": "[\"Certify documents for international recognition and validity\",\"Handle authentication by multiple Indonesian authorities\",\"Coordinate with relevant Embassies or Consulates for final legalisation\",\"Ensure compliance with destination country requirements\",\"Process various document types including academic certificates, corporate documents, and personal certificates\",\"Provide both original and scanned copies upon completion\"]",
       "cannotDo": "[\"Cannot guarantee acceptance by foreign authorities if documents are incomplete\",\"Cannot expedite processing beyond standard government timelines\",\"Cannot legalise documents that do not meet Indonesian legal standards\",\"Cannot provide legal advice for foreign jurisdictions\"]",
-      "required_documents": "[{\"name\":\"Document to be legalised\",\"description\":\"original or notarised copy\"},{\"name\":\"Destination country information\",\"description\":\"where the document will be used\"},{\"name\":\"Purpose of legalisation\",\"description\":\"visa application, employment, business registration, etc.\"},{\"name\":\"Identification documents\",\"description\":\"passport or ID of document owner\"},{\"name\":\"Additional documents\",\"description\":\"as required by specific destination country requirements\"}]"
+      "required_documents": "[{\"name\":\"Document to be legalised\",\"description\":\"original or notarised copy\"},{\"name\":\"Destination country information\",\"description\":\"where the document will be used\"},{\"name\":\"Purpose of legalisation\",\"description\":\"visa application, employment, business registration, etc.\"},{\"name\":\"Identification documents\",\"description\":\"passport or ID of document owner\"},{\"name\":\"Additional documents\",\"description\":\"as required by specific destination country requirements\"}]",
+      "extraDetails": {
+        "whatIsLegalisation": "Legalisation is the process of certifying that a document issued in one country is valid and can be legally recognised in another country. This typically involves authentication by multiple authorities, such as: A notary public, The Ministry of Law and Human Rights, The Ministry of Foreign Affairs, The Embassy or Consulate of the destination country. Legalisation is often required for documents such as powers of attorney, academic certificates, birth or marriage certificates, and corporate documents.",
+        "whyYouNeed": [
+          "For use of documents abroad (e.g., visa applications, overseas employment, foreign business registration)",
+          "To meet foreign government or institutional requirements",
+          "To ensure that your documents are officially recognised and legally valid internationally",
+          "To avoid rejection or delay in cross-border legal or commercial matters"
+        ],
+        "legalisationProcess": [
+          "Initial consultation to assess your document and destination country requirements",
+          "Notarisation (if the document is not already notarised)",
+          "Submission to relevant Indonesian ministries for authentication",
+          "Submission to the appropriate Embassy or Consulate for final legalisation",
+          "Delivery of the fully legalised document to you (original and/or scanned copy)"
+        ]
+      }
     }
   ]
 }

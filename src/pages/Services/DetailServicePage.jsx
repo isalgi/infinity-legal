@@ -217,251 +217,478 @@ export default function DetailServicePage() {
           }}
         >
           {/* Content container */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 py-16 max-w-4xl 2xl:max-w-7xl mx-auto items-stretch">
-            {/* Left Column - Service Details */}
-            <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
-              <h3 className="text-2xl font-semibold text-[#1196A9] mb-6">
-                {service.title}
-              </h3>
+          <div className="relative z-10 px-5 py-16 max-w-4xl 2xl:max-w-7xl mx-auto">
+            {/* Service Details and Pricing Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch mb-16">
+              {/* Left Column - Service Details */}
+              <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
+                <h3 className="text-2xl font-semibold text-[#1196A9] mb-6">
+                  {service.title}
+                </h3>
 
-              {/* Features List with Checkmarks and Crosses */}
-              <div className="space-y-4 mb-6 flex-grow">
-                {/* Can Do Items (with cyan checks) */}
-                {parsedCanDo &&
-                  parsedCanDo.length > 0 &&
-                  parsedCanDo.map((item, index) => (
-                    <div
-                      key={`can-${index}`}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="text-[#1196A9] flex-shrink-0 mt-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span className="text-gray-700 text-base leading-relaxed">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
+                {/* Features List with Checkmarks and Crosses */}
+                <div className="space-y-4 mb-6 flex-grow">
+                  {/* Can Do Items (with cyan checks) */}
+                  {parsedCanDo &&
+                    parsedCanDo.length > 0 &&
+                    parsedCanDo.map((item, index) => (
+                      <div
+                        key={`can-${index}`}
+                        className="flex items-start gap-3"
+                      >
+                        <span className="text-[#1196A9] flex-shrink-0 mt-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 text-base leading-relaxed">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
 
-                {/* Cannot Do Items (with red crosses) */}
-                {parsedCannotDo &&
-                  parsedCannotDo.length > 0 &&
-                  parsedCannotDo.map((item, index) => (
-                    <div
-                      key={`cannot-${index}`}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="text-red-500 flex-shrink-0 mt-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1="22" y1="4" x2="2" y2="20"></line>
-                          <line x1="2" y1="4" x2="22" y2="20"></line>
-                        </svg>
-                      </span>
-                      <span className="text-gray-700 text-base leading-relaxed">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
+                  {/* Cannot Do Items (with red crosses) */}
+                  {parsedCannotDo &&
+                    parsedCannotDo.length > 0 &&
+                    parsedCannotDo.map((item, index) => (
+                      <div
+                        key={`cannot-${index}`}
+                        className="flex items-start gap-3"
+                      >
+                        <span className="text-red-500 flex-shrink-0 mt-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <line x1="22" y1="4" x2="2" y2="20"></line>
+                            <line x1="2" y1="4" x2="22" y2="20"></line>
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 text-base leading-relaxed">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+
+                <Link to="https://wa.me/6281239336293">
+                  <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
+                    Ask us Now
+                  </button>
+                </Link>
               </div>
 
-              <Link to="https://wa.me/6281239336293">
-                <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                  Ask us Now
-                </button>
-              </Link>
-            </div>
+              {/* Right Column - Pricing with Enhanced Font Sizes */}
+              <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
+                <h3 className="text-2xl font-semibold text-[#1196A9] mb-6">
+                  Pricing
+                </h3>
 
-            {/* Right Column - Pricing with Enhanced Font Sizes */}
-            <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
-              <h3 className="text-2xl font-semibold text-[#1196A9] mb-6">
-                Pricing
-              </h3>
-
-              {(() => {
-                let pricing;
-                try {
-                  pricing =
-                    typeof service.price === "string"
-                      ? JSON.parse(service.price)
-                      : service.price;
-                } catch (error) {
-                  console.error("Error parsing pricing data:", error);
-                  return (
-                    <div className="flex flex-col h-full">
-                      <p className="text-gray-600 text-lg">
-                        Pricing information unavailable
-                      </p>
-                    </div>
-                  );
-                }
-
-                // Handle consultation-based pricing
-                if (pricing.pricing_type === "consultation") {
-                  return (
-                    <div className="flex flex-col h-full">
-                      <div className="flex-grow flex flex-col justify-center items-center text-center py-8">
-                        <p className="text-gray-600 text-xl mb-8 leading-relaxed">
-                          {pricing.consultation_note}
+                {(() => {
+                  let pricing;
+                  try {
+                    pricing =
+                      typeof service.price === "string"
+                        ? JSON.parse(service.price)
+                        : service.price;
+                  } catch (error) {
+                    console.error("Error parsing pricing data:", error);
+                    return (
+                      <div className="flex flex-col h-full">
+                        <p className="text-gray-600 text-lg">
+                          Pricing information unavailable
                         </p>
+                      </div>
+                    );
+                  }
+
+                  // Handle consultation-based pricing
+                  if (pricing.pricing_type === "consultation") {
+                    return (
+                      <div className="flex flex-col h-full">
+                        <div className="flex-grow flex flex-col justify-center items-center text-center py-8">
+                          <p className="text-gray-600 text-xl mb-8 leading-relaxed">
+                            {pricing.consultation_note}
+                          </p>
+                        </div>
+
+                        <Link to="https://wa.me/6281239336293">
+                          <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
+                            Ask us Now
+                          </button>
+                        </Link>
+                      </div>
+                    );
+                  }
+
+                  // Render pricing options
+                  const renderPricingOptions = () => {
+                    const options = [];
+
+                    Object.entries(pricing.pricing).forEach(([key, value]) => {
+                      if (key === "breakdown") return;
+
+                      if (typeof value === "object" && value !== null) {
+                        Object.entries(value).forEach(
+                          ([serviceLevel, price]) => {
+                            if (serviceLevel !== "breakdown") {
+                              const processingTime =
+                                pricing.processing_time?.[serviceLevel] || "";
+                              const serviceLevelDisplay =
+                                serviceLevel.charAt(0).toUpperCase() +
+                                serviceLevel.slice(1);
+                              const keyDisplay = key
+                                .replace(/_/g, " ")
+                                .replace(/\b\w/g, (l) => l.toUpperCase());
+
+                              options.push({
+                                title: `${serviceLevelDisplay} ${keyDisplay}`,
+                                price: price,
+                                processingTime: processingTime,
+                                breakdown: value.breakdown,
+                              });
+                            }
+                          }
+                        );
+                      } else {
+                        const processingTime =
+                          pricing.processing_time?.standard || "";
+                        const keyDisplay = key
+                          .replace(/_/g, " ")
+                          .replace(/\b\w/g, (l) => l.toUpperCase());
+
+                        options.push({
+                          title: keyDisplay,
+                          price: value,
+                          processingTime: processingTime,
+                        });
+                      }
+                    });
+
+                    return options;
+                  };
+
+                  const pricingOptions = renderPricingOptions();
+
+                  return (
+                    <div className="flex flex-col h-full">
+                      {/* Important Notes */}
+                      {pricing.important_notes &&
+                        pricing.important_notes.length > 0 && (
+                          <div className="mb-6 p-4 bg-blue-50 rounded-2xl border-l-4 border-blue-400">
+                            {pricing.important_notes.map((note, index) => (
+                              <p
+                                key={index}
+                                className="text-base text-blue-700 leading-relaxed"
+                              >
+                                {note}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+
+                      <div className="space-y-6 flex-grow">
+                        {pricingOptions.map((option, index) => (
+                          <div key={index} className="space-y-3">
+                            {/* Service Name */}
+                            <div className="font-semibold text-gray-800 text-lg">
+                              {option.title}
+                            </div>
+
+                            {/* Price and Processing Time */}
+                            <div>
+                              <span className="text-3xl font-bold text-gray-900">
+                                {option.price}
+                              </span>
+                              {/* Processing Time below price */}
+                              {option.processingTime && (
+                                <div className="text-base text-gray-600 mt-2">
+                                  {option.processingTime}
+                                </div>
+                              )}
+                            </div>
+
+                            {/* Breakdown if available */}
+                            {option.breakdown && (
+                              <div className="text-sm text-gray-500 space-y-2 mt-3">
+                                {Object.entries(option.breakdown).map(
+                                  ([key, value]) => (
+                                    <div
+                                      key={key}
+                                      className="flex justify-between"
+                                    >
+                                      <span>
+                                        {key
+                                          .replace(/_/g, " ")
+                                          .replace(/\b\w/g, (l) =>
+                                            l.toUpperCase()
+                                          )}
+                                        :
+                                      </span>
+                                      <span className="font-medium">
+                                        {value}
+                                      </span>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            )}
+
+                            {/* Separator line except for last item */}
+                            {index < pricingOptions.length - 1 && (
+                              <hr className="border-gray-200 mt-6" />
+                            )}
+                          </div>
+                        ))}
                       </div>
 
                       <Link to="https://wa.me/6281239336293">
-                        <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
+                        <button className="w-full mt-8 bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
                           Ask us Now
                         </button>
                       </Link>
                     </div>
                   );
+                })()}
+              </div>
+            </div>
+
+            {/* Legal Services Extra Information Cards - Inside Background Container */}
+            {service.category === "legal services" &&
+              service.extraDetails &&
+              (() => {
+                const extraDetails = service.extraDetails;
+                const cards = [];
+
+                // Card for "What is" or general information
+                if (extraDetails.whatIs || extraDetails.whatIsLegalisation) {
+                  cards.push({
+                    title:
+                      service.slug === "legalisation-services"
+                        ? "What is Legalisation?"
+                        : "Why You Need Tax and Accounting",
+                    content:
+                      extraDetails.whatIsLegalisation || extraDetails.whatIs,
+                    type: "text",
+                  });
                 }
 
-                // Render pricing options
-                const renderPricingOptions = () => {
-                  const options = [];
-
-                  Object.entries(pricing.pricing).forEach(([key, value]) => {
-                    if (key === "breakdown") return;
-
-                    if (typeof value === "object" && value !== null) {
-                      Object.entries(value).forEach(([serviceLevel, price]) => {
-                        if (serviceLevel !== "breakdown") {
-                          const processingTime =
-                            pricing.processing_time?.[serviceLevel] || "";
-                          const serviceLevelDisplay =
-                            serviceLevel.charAt(0).toUpperCase() +
-                            serviceLevel.slice(1);
-                          const keyDisplay = key
-                            .replace(/_/g, " ")
-                            .replace(/\b\w/g, (l) => l.toUpperCase());
-
-                          options.push({
-                            title: `${serviceLevelDisplay} ${keyDisplay}`,
-                            price: price,
-                            processingTime: processingTime,
-                            breakdown: value.breakdown,
-                          });
-                        }
-                      });
-                    } else {
-                      const processingTime =
-                        pricing.processing_time?.standard || "";
-                      const keyDisplay = key
-                        .replace(/_/g, " ")
-                        .replace(/\b\w/g, (l) => l.toUpperCase());
-
-                      options.push({
-                        title: keyDisplay,
-                        price: value,
-                        processingTime: processingTime,
-                      });
-                    }
+                // Card for services offered/document types
+                if (extraDetails.servicesOffered) {
+                  cards.push({
+                    title: "Services We Offer",
+                    content: extraDetails.servicesOffered,
+                    type: "list",
                   });
+                }
 
-                  return options;
-                };
+                if (extraDetails.documentsWeCanReview) {
+                  cards.push({
+                    title: "Documents We Can Review",
+                    content: extraDetails.documentsWeCanReview,
+                    type: "list",
+                  });
+                }
 
-                const pricingOptions = renderPricingOptions();
+                if (extraDetails.agreementTypes) {
+                  cards.push({
+                    title: "Types of Agreements We Can Draft",
+                    content: extraDetails.agreementTypes,
+                    type: "list",
+                  });
+                }
+
+                // Card for advantages
+                if (extraDetails.advantages) {
+                  cards.push({
+                    title: "Our Advantages",
+                    content: extraDetails.advantages,
+                    type: "list",
+                  });
+                }
+
+                // Card for benefits
+                if (extraDetails.benefits) {
+                  cards.push({
+                    title: "Benefits to You",
+                    content: extraDetails.benefits,
+                    type: "list",
+                  });
+                }
+
+                // Card for process
+                if (extraDetails.process) {
+                  cards.push({
+                    title:
+                      service.slug === "tax-accounting-services"
+                        ? "How the Tax and Accounting Process Works"
+                        : "Process",
+                    content: extraDetails.process,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.notarisationProcess) {
+                  cards.push({
+                    title: "How the Notarisation Process Works",
+                    content: extraDetails.notarisationProcess,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.legalisationProcess) {
+                  cards.push({
+                    title: "How the Legalisation Process Works",
+                    content: extraDetails.legalisationProcess,
+                    type: "list",
+                  });
+                }
+
+                // Card for why you need specific services
+                if (extraDetails.whyYouNeedLawyer) {
+                  cards.push({
+                    title:
+                      "Why You Need a Lawyer in Litigation or Criminal Matters",
+                    content: extraDetails.whyYouNeedLawyer,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.whyNotarise) {
+                  cards.push({
+                    title: "Why You Need to Notarise Important Documents",
+                    content: extraDetails.whyNotarise,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.whyYouNeed) {
+                  cards.push({
+                    title: "Why You May Need Legalisation",
+                    content: extraDetails.whyYouNeed,
+                    type: "list",
+                  });
+                }
+
+                // Cards for specific processes
+                if (extraDetails.propertyPurchaseProcess) {
+                  cards.push({
+                    title:
+                      "Property Purchase Process (With Legal Representation)",
+                    content: extraDetails.propertyPurchaseProcess,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.propertySaleProcess) {
+                  cards.push({
+                    title: "Property Sale Process (With Legal Representation)",
+                    content: extraDetails.propertySaleProcess,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.disputeResolutionServices) {
+                  cards.push({
+                    title: "Dispute Resolution & Litigation",
+                    content: extraDetails.disputeResolutionServices,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.legalStrategyServices) {
+                  cards.push({
+                    title: "Legal Strategy & Case Management",
+                    content: extraDetails.legalStrategyServices,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.legalDocumentsYouReceive) {
+                  cards.push({
+                    title: "Legal Documents You Will Receive",
+                    content: extraDetails.legalDocumentsYouReceive,
+                    type: "list",
+                  });
+                }
+
+                if (extraDetails.legalAgreementDraftingProcess) {
+                  cards.push({
+                    title: "Legal Agreement Drafting Process",
+                    content: extraDetails.legalAgreementDraftingProcess,
+                    type: "list",
+                  });
+                }
+
+                if (cards.length === 0) return null;
 
                 return (
-                  <div className="flex flex-col h-full">
-                    {/* Important Notes */}
-                    {pricing.important_notes &&
-                      pricing.important_notes.length > 0 && (
-                        <div className="mb-6 p-4 bg-blue-50 rounded-2xl border-l-4 border-blue-400">
-                          {pricing.important_notes.map((note, index) => (
-                            <p
-                              key={index}
-                              className="text-base text-blue-700 leading-relaxed"
-                            >
-                              {note}
+                  <div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {cards.map((card, index) => (
+                        <div
+                          key={index}
+                          className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] h-fit"
+                        >
+                          <h3 className="text-xl font-semibold text-[#1196A9] mb-4">
+                            {card.title}
+                          </h3>
+                          {card.type === "text" ? (
+                            <p className="text-gray-700 text-base leading-relaxed">
+                              {card.content}
                             </p>
-                          ))}
-                        </div>
-                      )}
-
-                    <div className="space-y-6 flex-grow">
-                      {pricingOptions.map((option, index) => (
-                        <div key={index} className="space-y-3">
-                          {/* Service Name */}
-                          <div className="font-semibold text-gray-800 text-lg">
-                            {option.title}
-                          </div>
-
-                          {/* Price and Processing Time */}
-                          <div>
-                            <span className="text-3xl font-bold text-gray-900">
-                              {option.price}
-                            </span>
-                            {/* Processing Time below price */}
-                            {option.processingTime && (
-                              <div className="text-base text-gray-600 mt-2">
-                                {option.processingTime}
-                              </div>
-                            )}
-                          </div>
-
-                          {/* Breakdown if available */}
-                          {option.breakdown && (
-                            <div className="text-sm text-gray-500 space-y-2 mt-3">
-                              {Object.entries(option.breakdown).map(
-                                ([key, value]) => (
-                                  <div
-                                    key={key}
-                                    className="flex justify-between"
-                                  >
-                                    <span>
-                                      {key
-                                        .replace(/_/g, " ")
-                                        .replace(/\b\w/g, (l) =>
-                                          l.toUpperCase()
-                                        )}
-                                      :
-                                    </span>
-                                    <span className="font-medium">{value}</span>
-                                  </div>
-                                )
-                              )}
+                          ) : (
+                            <div className="space-y-3">
+                              {card.content.map((item, itemIndex) => (
+                                <div
+                                  key={itemIndex}
+                                  className="flex items-start gap-3"
+                                >
+                                  <span className="text-[#1196A9] flex-shrink-0 mt-1">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth="5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    >
+                                      <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                  </span>
+                                  <span className="text-gray-700 text-base leading-relaxed">
+                                    {item}
+                                  </span>
+                                </div>
+                              ))}
                             </div>
-                          )}
-
-                          {/* Separator line except for last item */}
-                          {index < pricingOptions.length - 1 && (
-                            <hr className="border-gray-200 mt-6" />
                           )}
                         </div>
                       ))}
                     </div>
-
-                    <Link to="https://wa.me/6281239336293">
-                      <button className="w-full mt-8 bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                        Ask us Now
-                      </button>
-                    </Link>
                   </div>
                 );
               })()}
-            </div>
           </div>
         </div>
 
