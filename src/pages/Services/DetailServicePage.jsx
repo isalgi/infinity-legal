@@ -24,6 +24,14 @@ const parseJsonField = (field) => {
   return [];
 };
 
+// Helper function to get proper image URL
+const getImageUrl = (imagePath) => {
+  if (!imagePath) return "";
+  if (imagePath.startsWith("http")) return imagePath; // Already full URL
+  if (imagePath.startsWith("/")) return imagePath; // Already absolute path
+  return `${imagePath}`; // Add storage prefix
+};
+
 // Collapsible Documents Component
 const CollapsibleDocuments = ({ documents }) => {
   const parsedDocuments = parseJsonField(documents);
@@ -268,8 +276,6 @@ export default function DetailServicePage() {
   }
 
   // Parse JSON string fields
-  const parsedAdditionalImages = parseJsonField(service.additionalImages);
-  const additionalImagesList = parsedAdditionalImages.additionalImages || [];
   const parsedCanDo = parseJsonField(service.canDo);
   const parsedCannotDo = parseJsonField(service.cannotDo);
 
@@ -337,9 +343,13 @@ export default function DetailServicePage() {
             </div>
             <div className="rounded-xl overflow-hidden ml-10">
               <img
-                src={service.image}
+                src={getImageUrl(service.image)}
                 alt={service.title}
                 className="w-full h-[480px] object-cover"
+                onError={(e) => {
+                  console.error("Failed to load main image:", service.image);
+                  e.target.style.display = "none";
+                }}
               />
             </div>
           </div>
@@ -440,12 +450,19 @@ export default function DetailServicePage() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left Column - Additional Image */}
-              {additionalImagesList[0] && (
-                <div className=" overflow-hidden">
+              {service.additionalImage && (
+                <div className="overflow-hidden">
                   <img
-                    src={additionalImagesList[0]}
+                    src={getImageUrl(service.additionalImage)}
                     alt={`${service.title} documents`}
                     className="rounded-2xl w-full h-[360px] object-cover"
+                    onError={(e) => {
+                      console.error(
+                        "Failed to load additional image:",
+                        service.additionalImage
+                      );
+                      e.target.style.display = "none";
+                    }}
                   />
                 </div>
               )}
