@@ -219,10 +219,10 @@ export default function DetailServicePage() {
           {/* Content container */}
           <div className="relative z-10 px-5 py-16 max-w-4xl 2xl:max-w-7xl mx-auto">
             {/* Service Details and Pricing Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch mb-8">
               {/* Left Column - Service Details */}
               <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
-                <h3 className="text-2xl font-semibold text-[#1196A9] mb-6">
+                <h3 className="text-xl font-semibold text-[#1196A9] mb-6">
                   {service.title}
                 </h3>
 
@@ -297,7 +297,7 @@ export default function DetailServicePage() {
 
               {/* Right Column - Pricing with Enhanced Font Sizes */}
               <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
-                <h3 className="text-2xl font-semibold text-[#1196A9] mb-6">
+                <h3 className="text-xl font-semibold text-[#1196A9] mb-6">
                   Pricing
                 </h3>
 
@@ -641,48 +641,55 @@ export default function DetailServicePage() {
 
                 return (
                   <div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                       {cards.map((card, index) => (
                         <div
                           key={index}
-                          className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] h-fit"
+                          className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] h-full flex flex-col"
                         >
                           <h3 className="text-xl font-semibold text-[#1196A9] mb-4">
                             {card.title}
                           </h3>
-                          {card.type === "text" ? (
-                            <p className="text-gray-700 text-base leading-relaxed">
-                              {card.content}
-                            </p>
-                          ) : (
-                            <div className="space-y-3">
-                              {card.content.map((item, itemIndex) => (
-                                <div
-                                  key={itemIndex}
-                                  className="flex items-start gap-3"
-                                >
-                                  <span className="text-[#1196A9] flex-shrink-0 mt-1">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="16"
-                                      height="16"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      strokeWidth="5"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                    >
-                                      <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                  </span>
-                                  <span className="text-gray-700 text-base leading-relaxed">
-                                    {item}
-                                  </span>
-                                </div>
-                              ))}
-                            </div>
-                          )}
+                          <div className="flex-grow mb-6">
+                            {card.type === "text" ? (
+                              <p className="text-gray-700 text-base leading-relaxed">
+                                {card.content}
+                              </p>
+                            ) : (
+                              <div className="space-y-3">
+                                {card.content.map((item, itemIndex) => (
+                                  <div
+                                    key={itemIndex}
+                                    className="flex items-start gap-3"
+                                  >
+                                    <span className="text-[#1196A9] flex-shrink-0 mt-1">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      >
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                      </svg>
+                                    </span>
+                                    <span className="text-gray-700 text-base leading-relaxed">
+                                      {item}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <Link to="https://wa.me/6281239336293">
+                            <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
+                              Ask us Now
+                            </button>
+                          </Link>
                         </div>
                       ))}
                     </div>
