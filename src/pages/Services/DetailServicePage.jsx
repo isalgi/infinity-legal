@@ -285,6 +285,7 @@ export default function DetailServicePage() {
 
       {/* Hero Section - Grid Layout with Image on Right */}
       <section className="bg-white pt-32 max-md:pt-28 max-sm:pt-26">
+        {/* First Container - Title and Hero Grid */}
         <div className="container mx-auto px-5 md:px-10 lg:px-16 mt-6">
           <div className="container mx-auto text-[#1196A9] text-[40px] leading-10 font-bold mb-14">
             {service.title}
@@ -353,11 +354,22 @@ export default function DetailServicePage() {
               />
             </div>
           </div>
+        </div>
 
-          {/* Two Column Layout - Service Details and Pricing */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 mt-16 px-5 items-stretch">
+        {/* SEPARATED - Two Column Layout - Service Details and Pricing with Background */}
+        <div
+          className="w-full mb-16 mt-16 relative"
+          style={{
+            backgroundImage: `url('/images/new-image.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* Content container */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 py-16 max-w-4xl 2xl:max-w-7xl mx-auto items-stretch">
             {/* Left Column - Service Details */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)] flex flex-col h-full">
+            <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
               <h3 className="text-xl font-medium text-[#1196A9] mb-6">
                 {service.title}
               </h3>
@@ -445,7 +457,10 @@ export default function DetailServicePage() {
               serviceName={service.title}
             />
           </div>
+        </div>
 
+        {/* Third Container - Required Documents Section */}
+        <div className="container mx-auto px-5 md:px-10 lg:px-16">
           {/* Required Documents Section */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
