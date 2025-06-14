@@ -355,7 +355,7 @@ export default function DetailServicePage() {
           </div>
 
           {/* Two Column Layout - Service Details and Pricing */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 mt-16 px-32 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 mt-16 px-5 items-stretch">
             {/* Left Column - Service Details */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_8px_0_rgba(0,0,0,0.40)] flex flex-col h-full">
               <h3 className="text-xl font-medium text-[#1196A9] mb-6">
