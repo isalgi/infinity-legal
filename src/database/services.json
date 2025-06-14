@@ -224,7 +224,7 @@
     {
       "id": 19,
       "title": "Agreement Review",
-      "description": "We provide review services for a wide range of legal and commercial documents, including but not limited to:\n- Employment contracts\n- Lease agreements (residential, commercial, office)\n- Business partnership agreements (MoU, joint ventures, collaboration agreements)\n- Sale and purchase agreements\n- Corporate legal documents (Articles of Association, Shareholders Agreements)\n- Vendor and client contracts\n- Website Terms & Conditions and Privacy Policies\n- Letters of authority, declarations, and other formal letters\n",
+      "description": "We provide review services for a wide range of legal and commercial documents, including but not limited to:\n Documents We Can Review\n- Employment contracts\n- Lease agreements (residential, commercial, office)\n- Business partnership agreements (MoU, joint ventures, collaboration agreements)\n- Sale and purchase agreements\n- Corporate legal documents (Articles of Association, Shareholders Agreements)\n- Vendor and client contracts\n- Website Terms & Conditions and Privacy Policies\n- Letters of authority, declarations, and other formal letters\n",
       "slug": "agreement-review",
       "image": "/images/Agreement 1.jpg",
       "price": "{\n  \"pricing_type\": \"consultation\",\n  \"consultation_note\": \"Based on consultation.\"\n}",
@@ -237,7 +237,7 @@
     {
       "id": 20,
       "title": "Agreement Drafting",
-      "description": "We offer tailored drafting services for a wide range of agreements, including but not limited to:\n- Employment contracts\n- Service agreements\n- Lease and rental agreements\n- Non-disclosure agreements (NDAs)\n- Memoranda of Understanding (MoUs)\n- Joint venture and partnership agreements\n- Shareholders agreements\n- Sales and purchase agreements\n- Independent contractor agreements\n- Website Terms & Conditions and Privacy Policies\n",
+      "description": "We offer tailored drafting services for a wide range of agreements, including but not limited to:\n Types of Agreements We Can Draft\n- Employment contracts\n- Service agreements\n- Lease and rental agreements\n- Non-disclosure agreements (NDAs)\n- Memoranda of Understanding (MoUs)\n- Joint venture and partnership agreements\n- Shareholders agreements\n- Sales and purchase agreements\n- Independent contractor agreements\n- Website Terms & Conditions and Privacy Policies\n",
       "slug": "agreement-drafting",
       "image": "/images/Agreement 3.jpg",
       "price": "{\n  \"pricing_type\": \"consultation\",\n  \"consultation_note\": \"Based on consultation.\"\n}",
@@ -250,13 +250,13 @@
     {
       "id": 21,
       "title": "Lawyer Services",
-      "description": "We offer end-to-end legal support and representation in property transactions to protect your rights and financial interests.",
+      "description": "We provide full legal representation in contentious matters, with services including:\nDispute Resolution & Litigation\n- Civil cases: breach of contract, defamation, tort claims, consumer claims, inheritance disputes\n- Family law: divorce, child custody, spousal and child support, marital property division\n- Commercial litigation: debt recovery, partnership breakdowns, shareholder conflicts\n- Criminal defence: fraud, embezzlement, defamation, document forgery, misuse of funds, general crime\n- Corporate legal documents (Articles of Association, Shareholders Agreements)\n- Police-level assistance: representing you during police reports, examinations, detentions, and investigations\n- Prosecutor-level defence: preparation of defence strategies and engagement with public prosecutors\n-Court representation: from District Court to Supreme Court\n- Out-of-court resolution: mediation, negotiation, and settlements to avoid unnecessary litigation\n Legal Strategy & Case Management\n- Legal consultation to assess your position and build a defence or claim\n- Preparation of legal documents (e.g., subpoenas, complaints, defence responses)\n- Representation during witness examinations, hearings, or trial proceedings\n- Appeal and cassation filings (if necessary)\n- Ongoing communication and updates throughout your case",
       "slug": "lawyer-services",
       "image": "/images/Agreement 2.jpg",
       "price": "{\n  \"pricing_type\": \"consultation\",\n  \"consultation_note\": \"Based on consultation.\"\n}",
       "category": "legal services",
       "additionalImage": "/images/Required.png",
-      "canDo": [],
+      "canDo": "[\"To ensure your rights are protected from the earliest stages (e.g., police report or summons)\",\"To build a strong, strategic legal defence based on the facts and law\",\"To avoid procedural errors that could affect your outcome\",\"To have a qualified legal representative speak on your behalf in court or with authorities\"]",
       "cannotDo": [],
       "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"}]"
     }
