@@ -288,8 +288,8 @@
       "price": "{\n  \"pricing_type\": \"consultation\",\n  \"consultation_note\": \"Based on consultation.\"\n}",
       "category": "legal services",
       "additionalImage": "/images/Required.png",
-      "canDo": "",
-      "cannotDo": "",
+      "canDo": null,
+      "cannotDo": null,
       "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits, IMB, tax status\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"},{\"name\":\"Supporting documents\",\"description\":\"title, tax clearance, IDs, permits as applicable\"}]",
       "extraDetails": {
         "propertyPurchaseProcess": [
@@ -309,13 +309,13 @@
           "Monitoring payment terms, tax obligations, and title transfer",
           "Issuance of final sale deed and legal documentation confirming completion"
         ],
-        "legalDocumentsYouReceive": [
-          "Sale and Purchase Agreement (SPA)",
-          "Legal Due Diligence Report",
-          "Power of Attorney (if applicable)",
-          "Tax and transaction cost summary",
-          "Final Deed of Sale (AJB) and updated Certificate (SHM/HGB)",
-          "Letters of confirmation, consent, or approval from relevant authorities (if needed)"
+        "whyYouNeedLegal": [
+          "Your interests are protected by qualified legal professionals",
+          "You receive a complete due diligence report before any payment is made",
+          "All agreements are reviewed or prepared with legal clarity and enforceability",
+          "You reduce risk of fraud, invalid title, hidden obligations, or disputes",
+          "End-to-end legal coordination allows for a smooth, compliant transaction",
+          "Services are available in Indonesian and English, suitable for local and foreign clients"
         ],
         "legalAgreementDraftingProcess": [
           "Consultation to understand the facts and goals of the transaction",

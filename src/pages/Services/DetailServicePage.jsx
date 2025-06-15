@@ -621,10 +621,10 @@ export default function DetailServicePage() {
                   });
                 }
 
-                if (extraDetails.legalDocumentsYouReceive) {
+                if (extraDetails.whyYouNeedLegal) {
                   cards.push({
-                    title: "Legal Documents You Will Receive",
-                    content: extraDetails.legalDocumentsYouReceive,
+                    title: "Why You Need Legal Representation",
+                    content: extraDetails.whyYouNeedLegal,
                     type: "list",
                   });
                 }
