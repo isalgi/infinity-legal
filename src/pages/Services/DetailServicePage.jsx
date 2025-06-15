@@ -737,7 +737,9 @@ export default function DetailServicePage() {
               {/* Right Column - Documents List */}
               <div>
                 <h2 className="text-2xl font-semibold text-gray-800 mb-8">
-                  Required Document
+                  {service.title === "Property Transaction Legal Services"
+                    ? "Legal Documents You Will Receive"
+                    : "Required Document"}
                 </h2>
                 <CollapsibleDocuments documents={service.required_documents} />
               </div>

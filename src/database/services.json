@@ -290,7 +290,7 @@
       "additionalImage": "/images/Required.png",
       "canDo": null,
       "cannotDo": null,
-      "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits, IMB, tax status\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"},{\"name\":\"Supporting documents\",\"description\":\"title, tax clearance, IDs, permits as applicable\"}]",
+      "required_documents": "[{\"name\":\"Sale and Purchase Agreement (SPA)\",\"description\":\"\"},{\"name\":\"Legal Due Diligence Report\",\"description\":\"\"},{\"name\":\"Power of Attorney (if applicable)\",\"description\":\"\"},{\"name\":\"Tax and transaction cost summary\",\"description\":\"\"},{\"name\":\"Final Deed of Sale (AJB) and updated Certificate (SHM/HGB)\",\"description\":\"\"},{\"name\":\"Letters of confirmation, consent, or approval from relevant authorities (if needed)\",\"description\":\"\"}]",
       "extraDetails": {
         "propertyPurchaseProcess": [
           "Initial consultation to understand your objectives and transaction structure",
