@@ -288,8 +288,8 @@
       "price": "{\n  \"pricing_type\": \"consultation\",\n  \"consultation_note\": \"Based on consultation.\"\n}",
       "category": "legal services",
       "additionalImage": "/images/Required.png",
-      "canDo": "[\"Your interests are protected by qualified legal professionals\",\"You receive a complete due diligence report before any payment is made\",\"All agreements are reviewed or prepared with legal clarity and enforceability\",\"You reduce risk of fraud, invalid title, hidden obligations, or disputes\",\"End-to-end legal coordination allows for a smooth, compliant transaction\",\"Services are available in Indonesian and English, suitable for local and foreign clients\"]",
-      "cannotDo": "[\"We do not act as brokers or agents\",\"We cannot guarantee property value appreciation\",\"We cannot provide investment advice beyond legal compliance\"]",
+      "canDo": "",
+      "cannotDo": "",
       "required_documents": "[{\"name\":\"Property documents\",\"description\":\"ownership certificates, permits, IMB, tax status\"},{\"name\":\"Transaction details\",\"description\":\"pricing, terms, proposed structure\"},{\"name\":\"Identification documents\",\"description\":\"of all parties involved\"},{\"name\":\"Property location details\",\"description\":\"address, land office registration\"},{\"name\":\"Supporting documents\",\"description\":\"title, tax clearance, IDs, permits as applicable\"}]",
       "extraDetails": {
         "propertyPurchaseProcess": [
