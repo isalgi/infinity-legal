@@ -94,7 +94,7 @@
     {
       "id": 9,
       "title": "Family KITAS",
-      "description": "The Family KITAS is a Limited Stay Permit for foreign family members of KITAS/ITAP holders. It allows spouses, children, and parents to live in Indonesia for 1 or 2 years with the ability to travel in and out of Indonesia freely. Upon arrival, you will automatically receive an electronic stay permit (e-ITAS) and re-entry permit.",
+      "description": "Family KITAS (E31 Series)\nThe Family KITAS is a Limited Stay Permit for foreign family members of KITAS/ITAP holders. It allows spouses, children, and parents to live in Indonesia for 1 or 2 years with the ability to travel in and out of Indonesia freely. Upon arrival, you will automatically receive an electronic stay permit (e-ITAS) and re-entry permit.",
       "slug": "family-kitas",
       "image": "/images/Kitas 2.jpg",
       "price": "{\n  \"pricing_type\": \"tiered\",\n  \"processing_time\": {\n    \"regular\": \"14 business days\",\n    \"priority\": \"7 business days\"\n  },\n  \"important_notes\": [\"Visa will be emailed and must be used within 90 days from date of issue.\"],\n  \"pricing\": {\n    \"spouse_kitas_e31b_1_year\": {\n      \"regular\": \"IDR 13,500,000\",\n      \"priority\": \"IDR 15,000,000\"\n    },\n    \"spouse_kitas_e31b_2_years\": {\n      \"regular\": \"IDR 16,500,000\",\n      \"priority\": \"IDR 18,000,000\"\n    },\n    \"child_kitas_e31e_1_year\": {\n      \"regular\": \"IDR 13,500,000\",\n      \"priority\": \"IDR 15,000,000\"\n    },\n    \"child_kitas_e31e_2_years\": {\n      \"regular\": \"IDR 16,500,000\",\n      \"priority\": \"IDR 18,000,000\"\n    },\n    \"parent_kitas_e31h_1_year\": {\n      \"regular\": \"IDR 13,500,000\",\n      \"priority\": \"IDR 15,000,000\"\n    },\n    \"parent_kitas_e31h_2_years\": {\n      \"regular\": \"IDR 16,500,000\",\n      \"priority\": \"IDR 18,000,000\"\n    }\n  }\n}",
@@ -133,7 +133,7 @@
     {
       "id": 12,
       "title": "Working KITAS",
-      "description": "The Working KITAS is a Limited Stay Permit that allows foreigners to work legally for an Indonesian company. This visa is suitable for employees, directors, managers, and foreign professionals employed by a local company, PMA, or representative office in Indonesia. It is available for 180 days, 1 year, or 2 years, and is extendable.",
+      "description": "E23 – Working KITAS (Index 312)\nThe Working KITAS is a Limited Stay Permit that allows foreigners to work legally for an Indonesian company. This visa is suitable for employees, directors, managers, and foreign professionals employed by a local company, PMA, or representative office in Indonesia. It is available for 180 days, 1 year, or 2 years, and is extendable.",
       "slug": "working-kitas",
       "image": "/images/Kitas 4.jpg",
       "price": "{\n  \"pricing_type\": \"tiered\",\n  \"processing_time\": {\n    \"standard\": \"25 business days\",\n    \"priority\": \"14 business days\"\n  },\n  \"important_notes\": [\"*Visa must be used within 90 days from the date of issue.\"],\n  \"pricing\": {\n    \"180_days\": {\n      \"standard\": \"IDR 15,000,000\",\n      \"priority\": \"IDR 18,000,000\",\n      \"breakdown\": {\n        \"visa_fee\": \"IDR 5,250,000\",\n        \"work_permit_usd\": \"USD 600\",\n        \"work_insurance\": \"IDR 3,000,000\"\n      }\n    },\n    \"1_year\": {\n      \"standard\": \"IDR 17,500,000\",\n      \"priority\": \"IDR 21,000,000\",\n      \"breakdown\": {\n        \"visa_fee\": \"IDR 7,000,000\",\n        \"work_permit_usd\": \"USD 1,200\",\n        \"work_insurance\": \"Included\"\n      }\n    },\n    \"2_years\": {\n      \"standard\": \"IDR 22,000,000\",\n      \"priority\": \"IDR 25,000,000\",\n      \"breakdown\": {\n        \"visa_fee\": \"IDR 9,500,000\",\n        \"work_permit_usd\": \"USD 2,400\",\n        \"work_insurance\": \"Included\"\n      }\n    }\n  }\n}\n",
@@ -146,7 +146,7 @@
     {
       "id": 13,
       "title": "Retirement KITAS",
-      "description": "This visa is designed for retirees aged 55 and above who wish to reside in Indonesia long-term without working. Valid for 1 year with extensions possible.",
+      "description": "E33F – Retirement KITAS (1 Year)\nThis visa is designed for retirees aged 55 and above who wish to reside in Indonesia long-term without working. Valid for 1 year with extensions possible.",
       "slug": "retirement-kitas",
       "image": "/images/Kitas 3.jpg",
       "price": "{\n  \"pricing_type\": \"tiered\",\n  \"processing_time\": {\n    \"standard\": \"14 business days\",\n    \"express\": \"7 business days\"\n  },\n  \"important_notes\": [\"Visa will be issued via email once approved.\"],\n  \"pricing\": {\n    \"1_year\": {\n      \"standard\": \"IDR 15,000,000\",\n      \"express\": \"IDR 18,000,000\"\n    }\n  }\n}",
