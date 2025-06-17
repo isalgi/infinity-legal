@@ -170,8 +170,12 @@ export default function DetailServicePage() {
                     );
                   }
 
-                  // Check if it's a header (short line, title case)
-                  if (trimmedLine.length < 50 && trimmedLine.includes("&")) {
+                  // Check if it's a header (short line, title case, or specific header patterns)
+                  if (
+                    trimmedLine.length < 50 &&
+                    (trimmedLine.includes("&") ||
+                      trimmedLine.toLowerCase().includes("why you need"))
+                  ) {
                     return (
                       <h4
                         key={index}
