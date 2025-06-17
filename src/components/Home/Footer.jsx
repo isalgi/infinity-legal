@@ -1,7 +1,28 @@
 import icon1 from "../../assets/whatsapp.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleServiceNavigation = (sectionId) => {
+    if (location.pathname === "/services") {
+      // If already on services page, just scroll to the section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+      // Update URL hash without causing page reload
+      window.history.pushState(null, null, `#${sectionId}`);
+    } else {
+      // If on different page, navigate to services with hash
+      navigate(`/services#${sectionId}`);
+    }
+  };
+
   return (
     <footer className="px-20 pt-16 pb-10 bg-sky-50 max-sm:px-5 max-sm:py-10">
       <div className="flex justify-between mb-20 max-sm:flex-col max-sm:gap-10">
@@ -22,7 +43,7 @@ function Footer() {
             </h3>
             <p className="text-sm text-black">
               Jl Raya Bypass Jl. Tanah Lot No.888x, Munggu, Bali, Kabupaten
-              Badung, Bali 80351
+              Badung, Bali 80351
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
@@ -53,10 +74,30 @@ function Footer() {
         <div className="flex flex-col gap-2.5">
           <h3 className="text-xl text-cyan-600">Services</h3>
           <div className="flex flex-col gap-2">
-            <a className="text-sm text-black">Visa</a>
-            <a className="text-sm text-black">Limited Stay Permit</a>
-            <a className="text-sm text-black">Company Setup</a>
-            <a className="text-sm text-black">Legal Services</a>
+            <button
+              onClick={() => handleServiceNavigation("visa-services")}
+              className="text-sm text-black hover:text-cyan-600 transition-colors duration-200 text-left cursor-pointer"
+            >
+              Visa
+            </button>
+            <button
+              onClick={() => handleServiceNavigation("permit-services")}
+              className="text-sm text-black hover:text-cyan-600 transition-colors duration-200 text-left cursor-pointer"
+            >
+              Limited Stay Permit
+            </button>
+            <button
+              onClick={() => handleServiceNavigation("company-services")}
+              className="text-sm text-black hover:text-cyan-600 transition-colors duration-200 text-left cursor-pointer"
+            >
+              Company Setup
+            </button>
+            <button
+              onClick={() => handleServiceNavigation("legal-services")}
+              className="text-sm text-black hover:text-cyan-600 transition-colors duration-200 text-left cursor-pointer"
+            >
+              Legal Services
+            </button>
           </div>
         </div>
         <div className="flex flex-col gap-2.5">

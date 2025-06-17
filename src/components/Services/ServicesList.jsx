@@ -1,5 +1,5 @@
 // src/components/Services/ServicesList.jsx
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchAllServices } from "../../services/supabase/serviceService";
@@ -94,6 +94,40 @@ export default function ServicesList() {
     [fetchNextPage, hasNextPage, isLoading, isFetchingNextPage]
   );
 
+  // Handle hash navigation and smooth scrolling
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        const element = document.getElementById(sectionId);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }, 100); // Small delay to ensure the page is rendered
+        }
+      }
+    };
+
+    // Handle initial load with hash
+    if (services.length > 0) {
+      handleHashNavigation();
+    }
+
+    // Handle hash changes
+    const handleHashChange = () => {
+      handleHashNavigation();
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [services]); // Re-run when services data changes
+
   if (isLoading && services.length === 0) {
     return (
       <div className="container mx-auto py-12 text-center">
@@ -161,7 +195,7 @@ export default function ServicesList() {
       <div className="container mx-auto px-24">
         {/* Visa Services Section */}
         {visaServices.length > 0 && (
-          <div className="mb-16">
+          <div id="visa-services" className="mb-16 scroll-mt-32">
             {/* Category Header */}
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-[#1196A9] mb-4">Visa</h2>
@@ -178,7 +212,7 @@ export default function ServicesList() {
 
         {/* Limited Stay Permit Services Section */}
         {permitServices.length > 0 && (
-          <div className="mb-16">
+          <div id="permit-services" className="mb-16 scroll-mt-32">
             {/* Category Header */}
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
@@ -197,7 +231,7 @@ export default function ServicesList() {
 
         {/* Company Set Up Services Section */}
         {companyServices.length > 0 && (
-          <div className="mb-16">
+          <div id="company-services" className="mb-16 scroll-mt-32">
             {/* Category Header */}
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
@@ -216,7 +250,7 @@ export default function ServicesList() {
 
         {/* Business Services Section */}
         {legalServices.length > 0 && (
-          <div className="mb-16">
+          <div id="legal-services" className="mb-16 scroll-mt-32">
             {/* Category Header */}
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
