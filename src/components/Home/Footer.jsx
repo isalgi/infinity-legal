@@ -12,7 +12,7 @@ function Footer() {
             alt="INFINITY LEGAL"
           />
           <p className="text-sm text-black max-w-48">
-            PT Infinity Legal is a trusted corporate law firm based in Bali.
+            Infinity Legal is a trusted corporate law firm based in Bali.
           </p>
         </div>
         <div className="flex flex-col gap-9">
@@ -51,14 +51,19 @@ function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-2.5">
-          <h3 className="text-xl font-semibold text-cyan-600">Services</h3>
-          <div className="flex flex-col gap-4">
-            <a className="text-sm font-semibold text-black">Visa</a>
-            <a className="text-sm font-semibold text-black">
-              Limited Stay Permit
-            </a>
-            <a className="text-sm font-semibold text-black">Company Setup</a>
-            <a className="text-sm font-semibold text-black">Legal Services</a>
+          <h3 className="text-xl text-cyan-600">Services</h3>
+          <div className="flex flex-col gap-2">
+            <a className="text-sm text-black">Visa</a>
+            <a className="text-sm text-black">Limited Stay Permit</a>
+            <a className="text-sm text-black">Company Setup</a>
+            <a className="text-sm text-black">Legal Services</a>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2.5">
+          <h3 className="text-xl text-cyan-600">Help</h3>
+          <div className="flex flex-col gap-2">
+            <a className="text-sm text-black">Privacy Policy</a>
+            <a className="text-sm text-black">Terms and condition</a>
           </div>
         </div>
         <div className="flex flex-col">

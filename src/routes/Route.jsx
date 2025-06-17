@@ -13,6 +13,7 @@ const AppRoutes = () => {
     <>
       <ScrollToTop />
       <Routes>
+        <Route path="*" element={<HomePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:slug" element={<DetailServicePage />} />

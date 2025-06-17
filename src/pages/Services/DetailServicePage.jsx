@@ -149,7 +149,7 @@ export default function DetailServicePage() {
                   service.category.slice(1)}{" "}
                 services you can get
               </h1>
-              <div className="text-xl text-gray-600 mt-5 mb-10 space-y-4">
+              <div className="text-xl text-gray-600 mt-5 mb-10 space-y-2">
                 {service.description.split("\n").map((line, index) => {
                   const trimmedLine = line.trim();
 
