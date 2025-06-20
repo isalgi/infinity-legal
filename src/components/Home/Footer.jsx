@@ -32,9 +32,6 @@ function Footer() {
             className="h-[86px] w-[120px]"
             alt="INFINITY LEGAL"
           />
-          <p className="text-sm text-black max-w-48">
-            Infinity Legal is a trusted corporate law firm based in Bali.
-          </p>
         </div>
         <div className="flex flex-col gap-9">
           <div className="flex flex-col gap-2 pl-16">
@@ -101,7 +98,7 @@ function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-2.5">
-          <h3 className="text-xl text-cyan-600">Help</h3>
+          <h3 className="text-xl text-cyan-600">Legal</h3>
           <div className="flex flex-col gap-2">
             <a className="text-sm text-black">Privacy Policy</a>
             <a className="text-sm text-black">Terms and condition</a>

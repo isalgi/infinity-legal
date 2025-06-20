@@ -146,7 +146,7 @@
     {
       "id": 13,
       "title": "Retirement KITAS",
-      "description": "E33F – Retirement KITAS (1 Year)\nThis visa is designed for retirees aged 55 and above who wish to reside in Indonesia long-term without working. Valid for 1 year with extensions possible.",
+      "description": "E33F – Retirement KITAS (1 Year)\nThis visa is designed for retirees aged 55 and above who wish to reside in Indonesia long-term without working. It is valid for 1 year and allows multiple entries during the period of stay. It can be extended annually.",
       "slug": "retirement-kitas",
       "image": "/images/Kitas 3.jpg",
       "price": "{\n  \"pricing_type\": \"tiered\",\n  \"processing_time\": {\n    \"standard\": \"14 business days\",\n    \"express\": \"7 business days\"\n  },\n  \"important_notes\": [\"Visa will be issued via email once approved.\"],\n  \"pricing\": {\n    \"1_year\": {\n      \"standard\": \"IDR 15,000,000\",\n      \"express\": \"IDR 18,000,000\"\n    }\n  }\n}",
