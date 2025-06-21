@@ -149,11 +149,19 @@ function ServicesSection() {
         cheapestService = categoryServices[0];
       }
 
+      // Override price for Company Setup category
+      let finalPrice;
+      if (categoryMapping.key === "company-setup") {
+        finalPrice = "IDR 25,000,000";
+      } else {
+        finalPrice = getLowestPrice(cheapestService.price);
+      }
+
       return {
         ...cheapestService,
         title: categoryMapping.title, // Use category title
         description: categoryMapping.description, // Use category description
-        price: getLowestPrice(cheapestService.price),
+        price: finalPrice,
       };
     });
   };
