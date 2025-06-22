@@ -34,7 +34,7 @@ function Footer() {
           />
         </div>
         <div className="flex flex-col gap-9">
-          <div className="flex flex-col gap-2 pl-16">
+          <div className="flex flex-col gap-2 pl-16 max-sm:pl-0">
             <h3 className="text-xl font-semibold text-cyan-600">
               Office Location
             </h3>
@@ -48,7 +48,7 @@ function Footer() {
               alt="Location icon"
             /> */}
           </div>
-          <div className="flex flex-col gap-2 pl-16">
+          <div className="flex flex-col gap-2 pl-16 max-sm:pl-0">
             <Link to={"/contact"}>
               <h3 className="text-xl font-semibold text-cyan-600">
                 Contact us

@@ -86,8 +86,8 @@ function ContactSection() {
             </h2>
           </Link>
           <p className="text-base text-black max-w-xl">
-            You can also fill out the form below, and we will respond
-            within 1 business day.
+            You can also fill out the form below, and we will respond within 1
+            business day.
           </p>
           <form className="flex flex-col gap-7 mt-4 max-w-md">
             <FormField placeholder="First Name" required={true} />
@@ -126,7 +126,7 @@ function ContactSection() {
             </button> */}
           </form>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 max-md:hidden">
           <img
             src={contact}
             className="w-full h-full object-cover max-h-[700px] pl-24"
