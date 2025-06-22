@@ -158,51 +158,60 @@ export default function ServicesList() {
       className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
     >
       {/* Image container */}
-      <div className="p-4">
+      <div className="p-4 max-sm:p-3">
         <img
           src={service.image}
           alt={service.title}
-          className="rounded-2xl h-[180px] w-full object-cover"
+          className="rounded-2xl h-[180px] max-md:h-[160px] max-sm:h-[140px] w-full object-cover"
         />
       </div>
 
       {/* Content container */}
-      <div className="px-4 pb-4 flex flex-col flex-grow">
+      <div className="px-4 pb-4 max-sm:px-3 max-sm:pb-3 flex flex-col flex-grow">
         {/* Title */}
-        <h3 className="text-lg font-semibold text-[#1196A9] mb-3 min-h-[50px] flex items-start">
+        <h3 className="text-lg max-md:text-base max-sm:text-sm font-semibold text-[#1196A9] mb-3 max-sm:mb-2 min-h-[50px] max-md:min-h-[45px] max-sm:min-h-[40px] flex items-start">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-gray-600 mb-4 line-clamp-3 min-h-[60px]">
+        <p className="text-sm max-sm:text-xs text-gray-600 mb-4 max-sm:mb-3 line-clamp-3 min-h-[60px] max-md:min-h-[55px] max-sm:min-h-[45px]">
           {service.description}
         </p>
 
         {/* Price section */}
         <div className="mt-auto">
-          <p className="text-xs text-gray-500 mb-1">Starting From</p>
-          <p className="text-xl font-bold text-gray-900">
+          <p className="text-xs max-sm:text-[10px] text-gray-500 mb-1">
+            Starting From
+          </p>
+          <p className="text-xl max-md:text-lg max-sm:text-base font-bold text-gray-900">
             {getLowestPrice(service.price)}
           </p>
-          <p className="text-xs text-gray-500 mt-1">All pricing exclude PPN</p>
+          <p className="text-xs max-sm:text-[10px] text-gray-500 mt-1">
+            All pricing exclude PPN
+          </p>
         </div>
       </div>
     </Link>
   );
 
   return (
-    <section className="bg-gray-50 py-12">
-      <div className="container mx-auto px-24">
+    <section className="bg-gray-50 py-12 max-md:py-8 max-sm:py-6">
+      <div className="container mx-auto px-24 max-lg:px-16 max-md:px-8 max-sm:px-4">
         {/* Visa Services Section */}
         {visaServices.length > 0 && (
-          <div id="visa-services" className="mb-16 scroll-mt-32">
+          <div
+            id="visa-services"
+            className="mb-16 max-md:mb-12 max-sm:mb-8 scroll-mt-32"
+          >
             {/* Category Header */}
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-[#1196A9] mb-4">Visa</h2>
+            <div className="mb-8 max-md:mb-6 max-sm:mb-4">
+              <h2 className="text-3xl max-md:text-2xl max-sm:text-xl font-bold text-[#1196A9] mb-4 max-sm:mb-2">
+                Visa
+              </h2>
             </div>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
               {visaServices.map((service, index) =>
                 renderServiceCard(service, index, false)
               )}
@@ -212,16 +221,19 @@ export default function ServicesList() {
 
         {/* Limited Stay Permit Services Section */}
         {permitServices.length > 0 && (
-          <div id="permit-services" className="mb-16 scroll-mt-32">
+          <div
+            id="permit-services"
+            className="mb-16 max-md:mb-12 max-sm:mb-8 scroll-mt-32"
+          >
             {/* Category Header */}
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
+            <div className="mb-8 max-md:mb-6 max-sm:mb-4">
+              <h2 className="text-3xl max-md:text-2xl max-sm:text-xl font-bold text-[#1196A9] mb-4 max-sm:mb-2">
                 Limited Stay Permit
               </h2>
             </div>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
               {permitServices.map((service, index) =>
                 renderServiceCard(service, index, false)
               )}
@@ -231,16 +243,19 @@ export default function ServicesList() {
 
         {/* Company Set Up Services Section */}
         {companyServices.length > 0 && (
-          <div id="company-services" className="mb-16 scroll-mt-32">
+          <div
+            id="company-services"
+            className="mb-16 max-md:mb-12 max-sm:mb-8 scroll-mt-32"
+          >
             {/* Category Header */}
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
+            <div className="mb-8 max-md:mb-6 max-sm:mb-4">
+              <h2 className="text-3xl max-md:text-2xl max-sm:text-xl font-bold text-[#1196A9] mb-4 max-sm:mb-2">
                 Company Set Up
               </h2>
             </div>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
               {companyServices.map((service, index) =>
                 renderServiceCard(service, index, false)
               )}
@@ -250,16 +265,19 @@ export default function ServicesList() {
 
         {/* Business Services Section */}
         {legalServices.length > 0 && (
-          <div id="legal-services" className="mb-16 scroll-mt-32">
+          <div
+            id="legal-services"
+            className="mb-16 max-md:mb-12 max-sm:mb-8 scroll-mt-32"
+          >
             {/* Category Header */}
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-[#1196A9] mb-4">
+            <div className="mb-8 max-md:mb-6 max-sm:mb-4">
+              <h2 className="text-3xl max-md:text-2xl max-sm:text-xl font-bold text-[#1196A9] mb-4 max-sm:mb-2">
                 Legal Services
               </h2>
             </div>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
               {legalServices.map((service, index) =>
                 renderServiceCard(
                   service,
@@ -272,8 +290,10 @@ export default function ServicesList() {
         )}
 
         {(isLoading || isFetchingNextPage) && (
-          <div className="text-center mt-8">
-            <div className="text-cyan-600">Loading more services...</div>
+          <div className="text-center mt-8 max-sm:mt-6">
+            <div className="text-cyan-600 max-sm:text-sm">
+              Loading more services...
+            </div>
           </div>
         )}
 

@@ -24,8 +24,8 @@ function Footer() {
   };
 
   return (
-    <footer className="px-20 pt-16 pb-10 bg-sky-50 max-sm:px-5 max-sm:py-10">
-      <div className="flex justify-between mb-20 max-sm:flex-col max-sm:gap-10">
+    <footer className="px-20 pt-16 pb-10 bg-sky-50 max-md:px-5 max-md:py-10">
+      <div className="flex justify-between mb-20 max-md:flex-col max-md:gap-10">
         <div className="flex flex-col gap-2.5">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/58c575e76d13a1fd2ff022656a1e57f19aa443c7?placeholderIfAbsent=true"
@@ -34,7 +34,7 @@ function Footer() {
           />
         </div>
         <div className="flex flex-col gap-9">
-          <div className="flex flex-col gap-2 pl-16 max-sm:pl-0">
+          <div className="flex flex-col gap-2 pl-16 max-md:pl-0">
             <h3 className="text-xl font-semibold text-cyan-600">
               Office Location
             </h3>
@@ -48,7 +48,7 @@ function Footer() {
               alt="Location icon"
             /> */}
           </div>
-          <div className="flex flex-col gap-2 pl-16 max-sm:pl-0">
+          <div className="flex flex-col gap-2 pl-16 max-md:pl-0">
             <Link to={"/contact"}>
               <h3 className="text-xl font-semibold text-cyan-600">
                 Contact us
