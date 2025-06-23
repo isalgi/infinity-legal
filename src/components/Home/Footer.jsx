@@ -39,8 +39,8 @@ function Footer() {
               Office Location
             </h3>
             <p className="text-sm text-black">
-              Jl Raya Bypass Jl. Tanah Lot No.888x, Munggu, Bali, Kabupaten
-              Badung, Bali 80351
+              Bypass Road, Tanah Lot Street No. 888x, Munggu, Badung Regency,
+              Bali Province 80351
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
@@ -101,7 +101,7 @@ function Footer() {
           <h3 className="text-xl text-cyan-600">Legal</h3>
           <div className="flex flex-col gap-2">
             <a className="text-sm text-black">Privacy Policy</a>
-            <a className="text-sm text-black">Terms and condition</a>
+            <a className="text-sm text-black">Terms and Condition</a>
           </div>
         </div>
         <div className="flex flex-col">

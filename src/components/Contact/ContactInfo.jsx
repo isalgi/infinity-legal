@@ -11,8 +11,8 @@ function ContactInfo() {
             Office Address
           </h2>
           <p className="flex-1 shrink gap-2.5 mt-2.5 max-sm:mt-2 w-full text-lg max-lg:text-base max-md:text-sm max-sm:text-xs leading-8 max-lg:leading-7 max-md:leading-6 max-sm:leading-5 basis-0 text-neutral-700 max-md:max-w-full">
-            Jl Raya Bypass Jl. Tanah Lot No.888x, Munggu, Bali, Kabupaten
-            Badung, Bali 80351
+            Bypass Road, Tanah Lot Street No. 888x, Munggu, Badung Regency, Bali
+            Province 80351
           </p>
         </section>
 
@@ -21,9 +21,10 @@ function ContactInfo() {
             Business Hours
           </h2>
           <p className="flex-1 shrink gap-2.5 mt-2.5 max-sm:mt-2 w-full text-lg max-lg:text-base max-md:text-sm max-sm:text-xs leading-8 max-lg:leading-7 max-md:leading-6 max-sm:leading-5 basis-0 text-neutral-700 max-md:max-w-full">
-            Senin - Sabtu, Pukul 09.00 – 18.00 WIB
+            Opening Hours: Monday to Saturday, 9:00 AM – 6:00 PM (Central
+            Indonesian Time)
             <br />
-            Minggu tutup
+            Closed on Sunday
           </p>
         </section>
 
@@ -47,7 +48,7 @@ function ContactInfo() {
       </div>
 
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.3637037865477!2d115.11672731478215!3d-8.663053993822887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd238b4a69a4e27%3A0x1a5c6a2e1b7d8c3f!2sJl.%20Tanah%20Lot%2C%20Munggu%2C%20Kec.%20Mengwi%2C%20Kabupaten%20Badung%2C%20Bali!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d986.1897026765927!2d115.11716669999998!3d-8.6191389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMzcnMDguOSJTIDExNcKwMDcnMDEuOCJF!5e0!3m2!1sen!2sid!4v1750699451545!5m2!1sen!2sid"
         className="rounded-3xl max-sm:rounded-2xl min-w-60 max-md:min-w-full w-[615px] max-lg:w-[500px] max-md:w-full max-md:max-w-full max-md:mt-6 max-sm:mt-4 border-0"
         style={{ aspectRatio: "1.12", height: "550px" }}
         allowFullScreen=""
