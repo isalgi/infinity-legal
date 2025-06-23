@@ -266,7 +266,7 @@ function FormField({ placeholder, required, type = "text", value, onChange }) {
         placeholder={`${placeholder}${required ? " *" : ""}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full py-2 pb-1.5 bg-transparent border-b border-gray-300 focus:border-cyan-600 focus:outline-none text-lg text-gray-400 placeholder-gray-400"
+        className="w-full py-2 pb-1.5 bg-transparent border-b border-gray-300 focus:border-cyan-600 focus:outline-none text-lg text-black placeholder-gray-400"
         required={required}
       />
     </div>
