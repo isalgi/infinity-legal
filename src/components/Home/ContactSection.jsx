@@ -198,7 +198,7 @@ function ContactSection() {
             />
             <FormField
               placeholder="Email"
-              required={true}
+              // required={true}
               type="email"
               value={formData.email}
               onChange={(value) => handleInputChange("email", value)}
