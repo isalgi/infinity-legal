@@ -46,10 +46,14 @@ function ContactInfo() {
         </section>
       </div>
 
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/fe29ae7dac1e59fb3a1743bb7d82afd805d416a4?placeholderIfAbsent=true&apiKey=0f6a69545387481e8abec5b167985ce1"
-        className="object-contain rounded-3xl max-sm:rounded-2xl aspect-[1.12] min-w-60 max-md:min-w-full w-[615px] max-lg:w-[500px] max-md:w-full max-md:max-w-full max-md:mt-6 max-sm:mt-4"
-        alt="Contact office"
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.3637037865477!2d115.11672731478215!3d-8.663053993822887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd238b4a69a4e27%3A0x1a5c6a2e1b7d8c3f!2sJl.%20Tanah%20Lot%2C%20Munggu%2C%20Kec.%20Mengwi%2C%20Kabupaten%20Badung%2C%20Bali!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
+        className="rounded-3xl max-sm:rounded-2xl min-w-60 max-md:min-w-full w-[615px] max-lg:w-[500px] max-md:w-full max-md:max-w-full max-md:mt-6 max-sm:mt-4 border-0"
+        style={{ aspectRatio: "1.12", height: "550px" }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Office Location Map"
       />
     </div>
   );

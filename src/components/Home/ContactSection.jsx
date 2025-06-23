@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import contact from "../../assets/banner-contact.jpeg";
 import Select from "react-select";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 function ContactSection() {
-  const [startDate, setStartDate] = useState("");
-  const [selectedService, setSelectedService] = useState(null);
+  const form = useRef();
+
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    startDate: "",
+    service: null,
+  });
+
+  // UI state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
 
   // Options for the service dropdown
   const serviceOptions = [
@@ -14,6 +28,69 @@ function ContactSection() {
     { value: "legal-services", label: "Legal Services" },
     { value: "company-set-up", label: "Company Set Up" },
   ];
+
+  // Handle form input changes
+  const handleInputChange = (field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // EmailJS configuration - Replace with your actual values
+      const serviceId = "service_zoew3p8";
+      const templateId = "template_y8giy8n";
+      const publicKey = "UHZ2tBnnsGIwtNsMs";
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        phone: formData.phone,
+        start_date: formData.startDate,
+        service: formData.service?.label || "",
+        message: `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${
+          formData.email
+        }\nPhone: ${formData.phone}\nStart Date: ${
+          formData.startDate
+        }\nService: ${formData.service?.label || "Not specified"}`,
+        to_name: "Infinity Legal",
+      };
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      console.log("Email sent successfully:", result);
+      setSubmitStatus("success");
+
+      // Reset form after successful submission
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        startDate: "",
+        service: null,
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   // Custom styles for react-select
   const customStyles = {
@@ -67,9 +144,6 @@ function ContactSection() {
         : null,
       color: state.isSelected ? "white" : "#374151",
       cursor: "pointer",
-      "&:active": {
-        // backgroundColor: "#0891b2",
-      },
     }),
   };
 
@@ -89,28 +163,69 @@ function ContactSection() {
             You can also fill out the form below, and we will respond within 1
             business day.
           </p>
-          <form className="flex flex-col gap-7 mt-4 max-w-md">
-            <FormField placeholder="First Name" required={true} />
-            <FormField placeholder="Last Name" required={true} />
-            <FormField placeholder="Email" required={true} type="email" />
-            <FormField placeholder="Phone Number" required={true} type="tel" />
 
-            {/* Date Picker instead of dropdown */}
+          {/* Success/Error Messages */}
+          {submitStatus === "success" && (
+            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded max-w-md">
+              Thank you! Your message has been sent successfully. We'll get back
+              to you within 1 business day.
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded max-w-md">
+              Sorry, there was an error sending your message. Please try again
+              or contact us directly.
+            </div>
+          )}
+
+          <form
+            ref={form}
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-7 mt-4 max-w-md"
+          >
+            <FormField
+              placeholder="First Name"
+              required={true}
+              value={formData.firstName}
+              onChange={(value) => handleInputChange("firstName", value)}
+            />
+            <FormField
+              placeholder="Last Name"
+              required={true}
+              value={formData.lastName}
+              onChange={(value) => handleInputChange("lastName", value)}
+            />
+            <FormField
+              placeholder="Email"
+              required={true}
+              type="email"
+              value={formData.email}
+              onChange={(value) => handleInputChange("email", value)}
+            />
+            <FormField
+              placeholder="Phone Number"
+              required={true}
+              type="tel"
+              value={formData.phone}
+              onChange={(value) => handleInputChange("phone", value)}
+            />
+
+            {/* Date Picker */}
             <DatePickerField
               placeholder="When do you want to start a business?"
               required={true}
-              value={startDate}
-              onChange={setStartDate}
+              value={formData.startDate}
+              onChange={(value) => handleInputChange("startDate", value)}
             />
 
             {/* React Select component for services */}
             <div className="relative">
-              {/* <label className="text-gray-400 text-lg absolute -top-7 left-0"></label> */}
               <Select
                 options={serviceOptions}
                 styles={customStyles}
-                value={selectedService}
-                onChange={setSelectedService}
+                value={formData.service}
+                onChange={(value) => handleInputChange("service", value)}
                 placeholder="What services are you looking for?"
                 className="react-select-container"
                 classNamePrefix="react-select"
@@ -118,12 +233,17 @@ function ContactSection() {
               />
             </div>
 
-            {/* <button
+            <button
               type="submit"
-              className="mt-4 bg-cyan-600 text-white py-3 px-8 rounded-md font-medium self-start hover:bg-cyan-700 transition-colors"
+              disabled={isSubmitting}
+              className={`mt-4 py-3 px-8 rounded-md font-medium self-start transition-colors ${
+                isSubmitting
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-cyan-600 hover:bg-cyan-700"
+              } text-white`}
             >
-              Submit
-            </button> */}
+              {isSubmitting ? "Sending..." : "Submit"}
+            </button>
           </form>
         </div>
         <div className="flex-1 max-md:hidden">
@@ -138,52 +258,17 @@ function ContactSection() {
   );
 }
 
-function FormField({
-  placeholder,
-  required,
-  type = "text",
-  isDropdown = false,
-}) {
+function FormField({ placeholder, required, type = "text", value, onChange }) {
   return (
     <div className="relative">
-      {isDropdown ? (
-        <div className="relative">
-          <select
-            className="w-full py-2 pb-1.5 bg-transparent border-b border-gray-300 focus:border-cyan-600 focus:outline-none appearance-none pr-8 text-gray-400 text-lg"
-            required={required}
-          >
-            <option value="" disabled selected>
-              {placeholder} {required && "*"}
-            </option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-          <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-gray-400"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-        </div>
-      ) : (
-        <input
-          type={type}
-          placeholder={`${placeholder}${required ? " *" : ""}`}
-          className="w-full py-2 pb-1.5 bg-transparent border-b border-gray-300 focus:border-cyan-600 focus:outline-none text-lg text-gray-400 placeholder-gray-400"
-          required={required}
-        />
-      )}
+      <input
+        type={type}
+        placeholder={`${placeholder}${required ? " *" : ""}`}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full py-2 pb-1.5 bg-transparent border-b border-gray-300 focus:border-cyan-600 focus:outline-none text-lg text-gray-400 placeholder-gray-400"
+        required={required}
+      />
     </div>
   );
 }

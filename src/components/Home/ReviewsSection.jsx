@@ -4,32 +4,32 @@ import ReviewCard from "./ReviewCard";
 function ReviewsSection() {
   const reviews = [
     {
-      name: "John Doe",
+      name: "Ethan Varrow",
       review:
-        "I had a great experience with this legal and visa service in Bali. The team was not only fast and efficient, but also incredibly trustworthy and professional throughout the entire process. You can tell they genuinely care about helping their clients and go out of their way to provide the best service possible. Their pricing is also fair and transparent, which made the whole experience even more reassuring. I wouldn't hesitate to recommend them to anyone needing visa or legal assistance in Bali they truly make everything smooth and stress-free.",
+        "I had a great experience with this legal and visa service in Bali. The team was not only fast and efficient, but also incredibly trustworthy and professional throughout the entire process. You can tell they genuinely care about helping their clients and go out of their way to provide the best service possible. Their pricing is also fair and transparent, which made the whole experience even more reassuring. I wouldn't hesitate to recommend them to anyone needing visa or legal assistance in Bali  they truly make everything smooth and stress-free.",
     },
     {
-      name: "Alexa",
+      name: "Lydia Vexley",
       review:
         "The team was incredibly responsive and always ready to help, no matter how many questions I had. They took the time to explain everything clearly and patiently, which made the whole process feel a lot less overwhelming. I truly appreciated their professionalism and the friendly way they handled everything.",
     },
     {
-      name: "Davis",
+      name: "Vincent Kellor",
       review:
         "I had a fantastic experience with Infinity Legal in Bali. From the start, their communication was clear, professional, and friendly. They responded quickly to every question I had, and the entire process was handled efficiently and without any hassle. Everything moved faster than I expected, which was a huge relief. I'm genuinely grateful for the support and service I received thank you to the entire Infinity Legal team! I highly recommend them to anyone needing legal or visa assistance in Bali.",
     },
     {
-      name: "Jeremy",
+      name: "Marcus Tolland",
       review:
         "The team was not only competent, but also offered a very personalized approach it never felt like a one-size-fits-all process. They understood our situation and managed to help us extend our visas quickly and without any stress. Their professionalism and efficiency truly stood out, and we felt well taken care of from start to finish. I highly recommend their services to anyone.",
     },
     {
-      name: "James",
+      name: "Nathan Pryce",
       review:
         "The staff was incredibly helpful, friendly, and made the whole process feel really easy. On top of that, they offered a very reasonable price for my visa, which I truly appreciated! It's not always easy to find a service that's both professional and welcoming, but they definitely delivered on both. I'll definitely be coming back here when it's time to extend my visa again. Highly recommended!",
     },
     {
-      name: "Emily",
+      name: "Paige Ellstrom",
       review:
         "I'm really impressed with the service I received they were able to help me get an urgent visa at the very last minute. Everything was handled incredibly fast and professionally, and the team stayed calm and focused the entire time. It's clear they know exactly what they're doing, and their determination to get things done quickly really stood out. Huge thanks to the team you truly saved the day. Well done!",
     },
