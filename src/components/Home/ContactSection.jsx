@@ -212,12 +212,12 @@ function ContactSection() {
             />
 
             {/* Date Picker */}
-            <DatePickerField
+            {/* <DatePickerField
               placeholder="When do you want to start a business?"
               required={true}
               value={formData.startDate}
               onChange={(value) => handleInputChange("startDate", value)}
-            />
+            /> */}
 
             {/* React Select component for services */}
             <div className="relative">
