@@ -116,8 +116,7 @@ function Footer() {
         </div>
       </div>
       <p className="text-xs font-medium text-center text-cyan-600">
-        Copyright ©2025 - PT. INFINITY LEGAL. All right reserved. Liability
-        limited by a scheme approved under Proffessional Standart Legislation.
+        Copyright 2025 – Infinity Legal Indonesia
       </p>
     </footer>
   );

@@ -41,10 +41,10 @@ function AboutSection() {
           and professionalism.
           <br />
           <br />
-          At Infinity Legal, our mission is to simplify the complexities of
-          legal and regulatory processes in Indonesia — so you can focus on what
-          matters most. Whether you are an individual, expatriate, entrepreneur,
-          or corporation, we are your trusted partner in navigating Indonesia’s
+          Our mission is to simplify the complexities of legal and regulatory
+          processes in Indonesia — so you can focus on what matters most.
+          Whether you are an individual, expatriate, entrepreneur, or
+          corporation, we are your trusted partner in navigating Indonesia’s
           legal landscape with ease.
         </p>
         <div className="flex justify-between items-center mt-5">
