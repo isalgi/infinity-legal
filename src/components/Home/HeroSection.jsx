@@ -28,7 +28,7 @@ function HeroSection() {
           </h1>
           <Link to={"/contact"}>
             <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-fit mt-5 hover:bg-white hover:text-gray-800 transition-colors">
-              Contact us
+              Contact
             </button>
           </Link>
         </div>

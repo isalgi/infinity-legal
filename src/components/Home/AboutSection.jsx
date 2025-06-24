@@ -20,7 +20,7 @@ function AboutSection() {
 
       {/* Content */}
       <div className="flex flex-col gap-5 max-w-[1264px] relative z-20">
-        <h2 className="text-3xl font-semibold text-white">About us</h2>
+        <h2 className="text-3xl font-semibold text-white">About</h2>
         <p className="text-base font-medium leading-5 text-white mt-5">
           Infinity Legal is a professional legal and visa consultancy based in
           Bali, Indonesia.

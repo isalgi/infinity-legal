@@ -190,9 +190,9 @@ export default function DetailServicePage() {
                   return <p key={index}>{trimmedLine}</p>;
                 })}
               </div>
-              <Link to={"/contact"}>
+              <Link to={"/"}>
                 <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-auto text-md font-medium">
-                  Contact us
+                  Contact
                 </button>
               </Link>
             </div>

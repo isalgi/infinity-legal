@@ -152,7 +152,7 @@ function ContactSection() {
       <div className="flex gap-12 px-16 pb-16 max-w-7xl mx-auto bg-white max-md:flex-col max-md:p-10 max-sm:p-5">
         <div className="flex flex-col gap-8 flex-1">
           <h2 className="text-7xl font-extrabold text-black max-sm:text-5xl">
-            Contact us
+            Contact
           </h2>
           <p className="text-base text-black max-w-xl">
             You can also fill out the form below, and we will respond within 1
