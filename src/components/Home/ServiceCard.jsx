@@ -2,9 +2,24 @@
 import { Link } from "react-router-dom";
 
 function ServiceCard({ image, title, description, price, slug }) {
+  // Map category keys to section IDs in the services page
+  const getSectionHash = (slug) => {
+    const sectionMapping = {
+      visa: "#visa-services",
+      "limited-stay-permit": "#permit-services",
+      "company-setup": "#company-services",
+      "legal-services": "#legal-services",
+    };
+
+    return sectionMapping[slug] || "";
+  };
+
+  const linkDestination =
+    slug === "contact" ? "/contact" : `/services${getSectionHash(slug)}`;
+
   return (
     <Link
-      to={slug === "contact" ? "/contact" : `/services/${slug}`}
+      to={linkDestination}
       className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-[600px]"
     >
       {/* Image container */}

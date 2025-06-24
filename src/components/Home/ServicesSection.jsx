@@ -162,6 +162,7 @@ function ServicesSection() {
         title: categoryMapping.title, // Use category title
         description: categoryMapping.description, // Use category description
         price: finalPrice,
+        slug: categoryMapping.key, // Pass category key as slug for navigation
       };
     });
   };
