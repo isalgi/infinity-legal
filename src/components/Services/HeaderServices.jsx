@@ -106,18 +106,10 @@ function HeaderServices() {
               News
             </p>
           </Link>
-          <Link to={"/contact"} onClick={() => setIsMenuOpen(false)}>
+          <Link to={"/"} onClick={() => setIsMenuOpen(false)}>
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               Contact
             </p>
-          </Link>
-          <Link
-            to="https://wa.me/6281239336293"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <button className="px-6 py-2 text-sm font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-none shadow-lg hover:bg-cyan-600 transition-colors w-fit">
-              WhatsApp us
-            </button>
           </Link>
         </nav>
       </div>
