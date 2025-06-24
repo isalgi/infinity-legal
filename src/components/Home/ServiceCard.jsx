@@ -25,14 +25,14 @@ function ServiceCard({ image, title, description, price, slug }) {
 
         {/* Description - Takes up available space */}
         <div className="flex-grow mb-6 overflow-hidden">
-          <p className="text-sm text-gray-600 leading-relaxed h-full">
+          <p className="text-sm text-gray-600 text-justify leading-relaxed h-full">
             {description}
           </p>
         </div>
 
         {/* Price section - Fixed at bottom with adequate spacing */}
         <div className="flex-shrink-0 mt-auto pt-4">
-          <p className="text-xs text-gray-500 mb-2">Starting From</p>
+          <p className="text-xs text-gray-500 mb-2">Starting from</p>
           <p className="text-xl font-bold text-gray-900 mb-2">{price}</p>
           <p className="text-xs text-gray-500">All pricing include PPN</p>
         </div>
