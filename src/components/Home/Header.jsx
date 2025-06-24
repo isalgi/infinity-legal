@@ -9,6 +9,10 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-[100]">
       <div className="max-w-full">
@@ -23,12 +27,12 @@ function Header() {
 
           {/* Desktop Navigation */}
           <nav className="flex gap-14 items-center max-md:hidden px-16">
-            <Link to={"/"}>
+            <Link to={"/"} onClick={scrollToTop}>
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Home
               </p>
             </Link>
-            <Link to={"/services"}>
+            <Link to={"/#services"}>
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Services
               </p>
@@ -43,7 +47,7 @@ function Header() {
                 News
               </p>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/#contact"}>
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Contact
               </p>
@@ -87,12 +91,18 @@ function Header() {
           }`}
         >
           <nav className="flex flex-col space-y-4 p-6">
-            <Link to={"/"} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to={"/"}
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToTop();
+              }}
+            >
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Home
               </p>
             </Link>
-            <Link to={"/services"} onClick={() => setIsMenuOpen(false)}>
+            <Link to={"/#services"} onClick={() => setIsMenuOpen(false)}>
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Services
               </p>
@@ -107,7 +117,11 @@ function Header() {
                 News
               </p>
             </Link>
-
+            <Link to={"/#contact"} onClick={() => setIsMenuOpen(false)}>
+              <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
+                Contact
+              </p>
+            </Link>
             <Link
               to="https://wa.me/6281239336293"
               onClick={() => setIsMenuOpen(false)}
