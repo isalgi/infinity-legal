@@ -24,13 +24,17 @@ function HomePage() {
     <>
       <div className="relative min-h-screen">
         <HeroSection />
-        <ServicesSection />
+        <div id="services">
+          <ServicesSection />
+        </div>
         <div id="about">
           <AboutSection />
         </div>
         <ReviewsSection />
         <FaqSection />
-        <ContactSection />
+        <div id="contact">
+          <ContactSection />
+        </div>
         <Footer />
       </div>
     </>

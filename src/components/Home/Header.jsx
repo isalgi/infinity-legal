@@ -13,6 +13,13 @@ function Header() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-[100]">
       <div className="max-w-full">
@@ -32,12 +39,12 @@ function Header() {
                 Home
               </p>
             </Link>
-            <Link to={"/#services"}>
+            <Link to={"/#services"} onClick={() => scrollToSection("services")}>
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Services
               </p>
             </Link>
-            <Link to="/#about">
+            <Link to="/#about" onClick={() => scrollToSection("about")}>
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 About
               </p>
@@ -47,7 +54,7 @@ function Header() {
                 News
               </p>
             </Link>
-            <Link to={"/#contact"}>
+            <Link to={"/#contact"} onClick={() => scrollToSection("contact")}>
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Contact
               </p>
@@ -102,12 +109,24 @@ function Header() {
                 Home
               </p>
             </Link>
-            <Link to={"/#services"} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to={"/#services"}
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToSection("services");
+              }}
+            >
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Services
               </p>
             </Link>
-            <Link to="/#about" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/#about"
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToSection("about");
+              }}
+            >
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 About
               </p>
@@ -117,7 +136,13 @@ function Header() {
                 News
               </p>
             </Link>
-            <Link to={"/#contact"} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to={"/#contact"}
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToSection("contact");
+              }}
+            >
               <p className="text-base font-bold text-white cursor-pointer hover:text-cyan-200 transition-colors">
                 Contact
               </p>
