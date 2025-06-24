@@ -21,16 +21,24 @@ function HeroSection() {
         {/* Dark overlay for better text readability */}
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 z-10"></div>
 
-        {/* Content */}
-        <div className="flex flex-col gap-5 w-[577px] max-sm:w-full relative z-20">
-          <h1 className="text-4xl font-bold leading-10 text-white max-sm:text-3xl max-sm:leading-8">
-            Expert Solutions for Business and Visa Needs in Indonesia
-          </h1>
-          <Link to={"/contact"}>
-            <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-fit mt-5 hover:bg-white hover:text-gray-800 transition-colors">
-              Contact
-            </button>
-          </Link>
+        {/* Content Container with Glassmorphism Effect */}
+        <div className="relative z-20 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 max-sm:p-6 shadow-xl">
+          <div className="flex flex-col gap-5 w-[577px] max-sm:w-full">
+            <h1 className="text-xl font-bold leading-10 text-white max-sm:text-3xl max-sm:leading-8">
+              Professional Visa & Corporate Attorneys in Indonesia
+            </h1>
+            <h1 className="text-2xl font-bold leading-10 text-white max-sm:text-3xl max-sm:leading-8">
+              Infinity Legal Indonesia
+            </h1>
+            <h1 className="text-lg font-bold leading-10 text-white max-sm:text-3xl max-sm:leading-8">
+              Expert Solutions for Business and Visa Needs in Indonesia
+            </h1>
+            <Link to={"/#contact"}>
+              <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-fit mt-5 hover:bg-white hover:text-gray-800 transition-colors">
+                Free Consultation!
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
     </>
