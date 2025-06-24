@@ -9,6 +9,17 @@ function HeaderServices() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white w-full z-[100] shadow-sm">
       <div className="flex justify-between items-center px-20 py-2.5 h-[120px] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">
@@ -22,7 +33,7 @@ function HeaderServices() {
 
         {/* Desktop Navigation */}
         <nav className="flex gap-14 items-center max-md:hidden">
-          <Link to={"/"}>
+          <Link to={"/"} onClick={scrollToTop}>
             <p className="text-base font-bold text-black cursor-pointer hover:underline">
               Home
             </p>
@@ -32,17 +43,17 @@ function HeaderServices() {
               Services
             </p>
           </Link>
-          <Link to="/#about">
+          <Link to="/#about" onClick={() => scrollToSection("about")}>
             <p className="text-base font-bold text-black cursor-pointer hover:underline">
               About
             </p>
           </Link>
           <Link to={"/news"}>
-            <p className="text-base font-bold cursor-pointer hover:underline">
+            <p className="text-base font-bold text-black cursor-pointer hover:underline">
               News
             </p>
           </Link>
-          <Link to={"/"}>
+          <Link to={"/#contact"} onClick={() => scrollToSection("contact")}>
             <p className="text-base font-bold text-black cursor-pointer hover:underline">
               Contact
             </p>
@@ -77,16 +88,22 @@ function HeaderServices() {
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile/Tablet Navigation Menu */}
       <div
-        className={`sm:hidden bg-white shadow-lg border-t transition-all duration-300 ${
+        className={`md:hidden bg-white shadow-lg border-t transition-all duration-300 ${
           isMenuOpen
             ? "max-h-96 opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
         <nav className="flex flex-col space-y-4 p-6">
-          <Link to={"/"} onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to={"/"}
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToTop();
+            }}
+          >
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               Home
             </p>
@@ -96,7 +113,13 @@ function HeaderServices() {
               Services
             </p>
           </Link>
-          <Link to="/#about" onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to="/#about"
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToSection("about");
+            }}
+          >
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               About
             </p>
@@ -106,10 +129,24 @@ function HeaderServices() {
               News
             </p>
           </Link>
-          <Link to={"/"} onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to={"/#contact"}
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToSection("contact");
+            }}
+          >
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               Contact
             </p>
+          </Link>
+          <Link
+            to="https://wa.me/6281239336293"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <button className="px-6 py-2 text-sm font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-none shadow-lg hover:bg-cyan-600 transition-colors w-fit">
+              WhatsApp
+            </button>
           </Link>
         </nav>
       </div>

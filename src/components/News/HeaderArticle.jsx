@@ -9,6 +9,17 @@ function HeaderArticle() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white w-full z-[100] shadow-sm">
       <div className="flex justify-between items-center px-20 py-2.5 h-[120px] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">
@@ -22,17 +33,17 @@ function HeaderArticle() {
 
         {/* Desktop Navigation */}
         <nav className="flex gap-14 items-center max-md:hidden">
-          <Link to={"/"}>
+          <Link to={"/"} onClick={scrollToTop}>
             <p className="text-base font-bold text-black cursor-pointer hover:underline">
               Home
             </p>
           </Link>
-          <Link to={"/services"}>
-            <p className="text-base font-bold cursor-pointer hover:underline">
+          <Link to={"/#services"} onClick={() => scrollToSection("services")}>
+            <p className="text-base font-bold text-black cursor-pointer hover:underline">
               Services
             </p>
           </Link>
-          <Link to="/#about">
+          <Link to="/#about" onClick={() => scrollToSection("about")}>
             <p className="text-base font-bold text-black cursor-pointer hover:underline">
               About
             </p>
@@ -42,7 +53,7 @@ function HeaderArticle() {
               News
             </p>
           </Link>
-          <Link to={"/"}>
+          <Link to={"/#contact"} onClick={() => scrollToSection("contact")}>
             <p className="text-base font-bold text-black cursor-pointer hover:underline">
               Contact
             </p>
@@ -86,17 +97,35 @@ function HeaderArticle() {
         }`}
       >
         <nav className="flex flex-col space-y-4 p-6">
-          <Link to={"/"} onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to={"/"}
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToTop();
+            }}
+          >
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               Home
             </p>
           </Link>
-          <Link to={"/services"} onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to={"/#services"}
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToSection("services");
+            }}
+          >
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               Services
             </p>
           </Link>
-          <Link to="/#about" onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to="/#about"
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToSection("about");
+            }}
+          >
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               About
             </p>
@@ -106,7 +135,13 @@ function HeaderArticle() {
               News
             </p>
           </Link>
-          <Link to={"/contact"} onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to={"/#contact"}
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToSection("contact");
+            }}
+          >
             <p className="text-base font-bold text-black cursor-pointer hover:text-cyan-600 transition-colors">
               Contact
             </p>

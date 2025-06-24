@@ -23,7 +23,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-[100]">
       <div className="max-w-full">
-        <div className="flex justify-between items-center py-4 px-8 bg-[#3B3D3B]/70 shadow-lg max-sm:px-5 max-sm:py-3">
+        <div className="flex justify-between items-center py-2 px-8 bg-[#3B3D3B]/70 shadow-lg max-sm:px-5 max-sm:py-3">
           <div className="max-sm:px-0 px-16">
             <img
               src={infinityLogo}
