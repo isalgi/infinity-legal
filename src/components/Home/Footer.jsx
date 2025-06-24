@@ -36,11 +36,19 @@ function Footer() {
         <div className="flex flex-col gap-9">
           <div className="flex flex-col gap-2 pl-16 max-md:pl-0">
             <h3 className="text-xl font-semibold text-cyan-600">
-              Office Location
+              Office Address
             </h3>
             <p className="text-sm text-black">
-              Bypass Road, Tanah Lot Street No. 888x, Munggu, Badung Regency,
-              Bali Province 80351
+              Bypass Road, Tanah Lot Street No. 888x, Munggu, <br />
+              Badung Regency, Bali Province 80351
+              <br />
+              <br />
+              Business Hours
+              <br />
+              Opening Hours: Monday to Saturday, 9:00 AM – 6:00 PM <br />
+              (Central Indonesian Time)
+              <br />
+              Closed on Sunday
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
@@ -101,18 +109,8 @@ function Footer() {
           <h3 className="text-xl text-cyan-600">Legal</h3>
           <div className="flex flex-col gap-2">
             <a className="text-sm text-black">Privacy Policy</a>
-            <a className="text-sm text-black">Terms and Condition</a>
+            <a className="text-sm text-black">Terms and Conditions</a>
           </div>
-        </div>
-        <div className="flex flex-col">
-          <h3 className="text-xl font-semibold text-cyan-600">Ask Now</h3>
-          <Link to="https://wa.me/6281239336293">
-            <img
-              src={icon1}
-              alt=""
-              className="h-[41px] w-[41px] mt-5 cursor-pointer"
-            />
-          </Link>
         </div>
       </div>
       <p className="text-xs font-medium text-center text-cyan-600">

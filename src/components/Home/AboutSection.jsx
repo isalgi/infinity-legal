@@ -47,13 +47,6 @@ function AboutSection() {
           corporation, we are your trusted partner in navigating Indonesia’s
           legal landscape with ease.
         </p>
-        <div className="flex justify-between items-center mt-5">
-          <Link to={"/contact"}>
-            <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer">
-              Contact us
-            </button>
-          </Link>
-        </div>
       </div>
     </section>
   );

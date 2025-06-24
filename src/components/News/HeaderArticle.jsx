@@ -42,14 +42,14 @@ function HeaderArticle() {
               News
             </p>
           </Link>
-          <Link to={"/contact"}>
+          <Link to={"/"}>
             <p className="text-base font-bold text-black cursor-pointer hover:underline">
               Contact
             </p>
           </Link>
           <Link to="https://wa.me/6281239336293">
             <p className="px-8 py-3 text-base font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-[none] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-cyan-600 transition-colors">
-              WhatsApp us
+              WhatsApp
             </p>
           </Link>
         </nav>
@@ -116,7 +116,7 @@ function HeaderArticle() {
             onClick={() => setIsMenuOpen(false)}
           >
             <button className="px-6 py-2 text-sm font-bold text-white bg-cyan-500 rounded-xl cursor-pointer border-none shadow-lg hover:bg-cyan-600 transition-colors w-fit">
-              WhatsApp us
+              WhatsApp
             </button>
           </Link>
         </nav>

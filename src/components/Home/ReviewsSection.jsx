@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReviewCard from "./ReviewCard";
 
 function ReviewsSection() {
@@ -37,15 +37,6 @@ function ReviewsSection() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const reviewsToShow = 3;
-
-  // Auto-slide functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 4000); // Slides every 4 seconds
-
-    return () => clearInterval(interval);
-  }, [reviews.length]);
 
   // Get the current 3 reviews to display
   const getCurrentReviews = () => {

@@ -71,19 +71,19 @@ function FaqSection() {
         </div>
 
         <div className="flex gap-12 max-sm:flex-col">
-          <div className="flex flex-col gap-4 w-64 max-sm:w-full">
+          <div className="flex flex-col gap-4 w-64 max-sm:w-full ">
             {tabs.map((tab) => (
-              <button
+              <span
                 key={tab}
-                className={`text-base font-medium rounded-full py-3 px-6 transition-colors ${
+                className={`text-base font-medium text-center rounded-full py-3 px-6 transition-colors ${
                   activeTab === tab
                     ? "bg-[#1196A9] text-white"
                     : "bg-gray-300 text-gray-700 hover:bg-gray-400"
                 }`}
-                onClick={() => handleTabClick(tab)}
+                // onClick={() => handleTabClick(tab)}
               >
                 {tab}
-              </button>
+              </span>
             ))}
           </div>
 

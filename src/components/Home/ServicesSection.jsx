@@ -211,13 +211,6 @@ function ServicesSection() {
           />
         ))}
       </div>
-      <div>
-        <Link to={"/contact"}>
-          <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer bg-[#1196A9] hover:bg-cyan-700 transition-colors">
-            Contact us
-          </button>
-        </Link>
-      </div>
     </section>
   );
 }

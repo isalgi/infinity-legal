@@ -39,14 +39,13 @@ function ArticlePage() {
     <>
       <div className="relative min-h-screen">
         <HeaderArticle />
-
-        {/* News Title and Search */}
-        <section className="pt-40 pb-4 max-md:pt-36 max-sm:pt-34">
+        News Title and Search
+        <section className="pt-40 max-md:pt-36 max-sm:pt-34">
           <div className="container mx-auto px-5 md:px-10 lg:px-20">
-            <h1 className="text-3xl font-medium text-gray-700 mb-6">
-              Berita Hari ini
-            </h1>
-            <div className="w-full">
+            {/* <h1 className="text-3xl font-medium text-gray-700 mb-6">
+              Today News
+            </h1> */}
+            {/* <div className="w-full">
               <div className="relative">
                 <input
                   type="text"
@@ -56,10 +55,9 @@ function ArticlePage() {
                   className="w-full h-12 pl-5 pr-10 text-lg text-gray-500 bg-white rounded-2xl border border-gray-300 focus:outline-none focus:border-cyan-500"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
-
         {/* Newest Article Section */}
         {newestArticle && (
           <section className="container mx-auto px-5 md:px-10 lg:px-20 pb-12 mt-10">
@@ -96,7 +94,6 @@ function ArticlePage() {
             </div>
           </section>
         )}
-
         {/* Article Cards Section */}
         <section className="container mx-auto px-5 md:px-10 lg:px-20 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -111,7 +108,6 @@ function ArticlePage() {
             ))}
           </div>
         </section>
-
         <ReviewsSection />
         <FaqSection />
         <ContactSection />

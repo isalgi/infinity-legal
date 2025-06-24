@@ -106,7 +106,7 @@ function HeaderContact() {
               News
             </p>
           </Link>
-          <Link to={"/contact"} onClick={() => setIsMenuOpen(false)}>
+          <Link to={"/"} onClick={() => setIsMenuOpen(false)}>
             <p className="text-base font-bold text-[#1196A9] cursor-pointer hover:text-cyan-600 transition-colors">
               Contact
             </p>

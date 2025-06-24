@@ -187,7 +187,7 @@ export default function ServicesList() {
             {getLowestPrice(service.price)}
           </p>
           <p className="text-xs max-sm:text-[10px] text-gray-500 mt-1">
-            All pricing exclude PPN
+            All pricing include PPN
           </p>
         </div>
       </div>

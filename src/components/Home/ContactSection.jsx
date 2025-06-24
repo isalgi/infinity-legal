@@ -149,16 +149,11 @@ function ContactSection() {
 
   return (
     <section className="py-16">
-      <h2 className="text-3xl font-semibold text-center text-black mb-12">
-        Need a Help ?
-      </h2>
       <div className="flex gap-12 px-16 pb-16 max-w-7xl mx-auto bg-white max-md:flex-col max-md:p-10 max-sm:p-5">
         <div className="flex flex-col gap-8 flex-1">
-          <Link to={"/contact"}>
-            <h2 className="text-7xl font-extrabold text-black max-sm:text-5xl">
-              Contact us
-            </h2>
-          </Link>
+          <h2 className="text-7xl font-extrabold text-black max-sm:text-5xl">
+            Contact us
+          </h2>
           <p className="text-base text-black max-w-xl">
             You can also fill out the form below, and we will respond within 1
             business day.
@@ -247,10 +242,14 @@ function ContactSection() {
           </form>
         </div>
         <div className="flex-1 max-md:hidden">
-          <img
-            src={contact}
-            className="w-full h-full object-cover max-h-[700px] pl-24"
-            alt="Person's hand reaching out of the water"
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d986.1897026765927!2d115.11716669999998!3d-8.6191389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMzcnMDguOSJTIDExNcKwMDcnMDEuOCJF!5e0!3m2!1sen!2sid!4v1750699451545!5m2!1sen!2sid"
+            className="rounded-3xl max-sm:rounded-2xl min-w-60 max-md:min-w-full w-[615px] max-lg:w-[500px] max-md:w-full max-md:max-w-full max-md:mt-6 max-sm:mt-4 border-0"
+            style={{ aspectRatio: "1.12", height: "550px" }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Office Location Map"
           />
         </div>
       </div>
