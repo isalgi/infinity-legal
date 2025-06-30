@@ -24,7 +24,7 @@ function Footer() {
   };
 
   return (
-    <footer className="px-20 pt-16 pb-10 bg-sky-50 max-md:px-5 max-md:py-10">
+    <footer className="px-24 pt-16 pb-10 bg-sky-50 max-md:px-5 max-md:py-10">
       <div className="flex justify-between mb-20 max-md:flex-col max-md:gap-10">
         <div className="flex flex-col gap-2.5">
           <img
@@ -61,11 +61,9 @@ function Footer() {
               <h3 className="text-xl font-semibold text-cyan-600">Contact</h3>
             </Link>
             <p className="text-sm text-black">
-              Email: infinitylegalco@gmail.com
+              <span>infinitylegalco@gmail.com</span>
               <br />
-              WhatsApp: +6282139336293
-              <br />
-              Instagram: infinitylegal.co
+              <span>+6282139336293</span>
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/536586b7c4fe73f09e464acc5b0f83868388fdad?placeholderIfAbsent=true"
@@ -74,9 +72,9 @@ function Footer() {
             /> */}
           </div>
         </div>
-        <div className="flex flex-col gap-2.5">
-          <h3 className="text-xl text-cyan-600">Services</h3>
+        <div className="flex flex-col gap-[70px]">
           <div className="flex flex-col gap-2">
+            <h3 className="text-xl text-cyan-600 font-semibold">Services</h3>
             <button
               onClick={() => handleServiceNavigation("visa-services")}
               className="text-sm text-black hover:text-cyan-600 transition-colors duration-200 text-left cursor-pointer"
@@ -102,9 +100,18 @@ function Footer() {
               Legal Services
             </button>
           </div>
+          <div className="flex flex-col gap-2 max-md:pl-0">
+            <h3 className="text-xl font-semibold text-cyan-600">Follow us</h3>
+            <div className="gap-2 flex flex-row text-sm text-black">
+              <span>A</span>
+              <span>B</span>
+              <span>C</span>
+              <span>D</span>
+            </div>
+          </div>
         </div>
         <div className="flex flex-col gap-2.5">
-          <h3 className="text-xl text-cyan-600">Legal</h3>
+          <h3 className="text-xl text-cyan-600 font-semibold">Legal</h3>
           <div className="flex flex-col gap-2">
             <a className="text-sm text-black">Privacy Policy</a>
             <a className="text-sm text-black">Terms and Conditions</a>

@@ -295,7 +295,7 @@ export default function DetailServicePage() {
 
                   <Link to="https://wa.me/6281239336293">
                     <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                      Ask us Now
+                      Contact us
                     </button>
                   </Link>
                 </div>
@@ -336,7 +336,7 @@ export default function DetailServicePage() {
 
                           <Link to="https://wa.me/6281239336293">
                             <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                              Ask us Now
+                              Contact us
                             </button>
                           </Link>
                         </div>
@@ -400,7 +400,7 @@ export default function DetailServicePage() {
                         {/* Important Notes */}
                         {pricing.important_notes &&
                           pricing.important_notes.length > 0 && (
-                            <div className="mb-6 p-4 bg-blue-50 rounded-2xl border-l-4 border-blue-400">
+                            <div className="mb-6 p-4 bg-blue-50 rounded-2xl ">
                               {pricing.important_notes.map((note, index) => (
                                 <p
                                   key={index}
@@ -469,7 +469,7 @@ export default function DetailServicePage() {
 
                         <Link to="https://wa.me/6281239336293">
                           <button className="w-full mt-8 bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                            Ask us Now
+                            Contact us
                           </button>
                         </Link>
                       </div>
@@ -705,7 +705,7 @@ export default function DetailServicePage() {
                         </div>
                         <Link to="https://wa.me/6281239336293">
                           <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                            Ask us Now
+                            Contact us
                           </button>
                         </Link>
                       </div>

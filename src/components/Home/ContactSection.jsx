@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import contact from "../../assets/banner-contact.jpeg";
 import Select from "react-select";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
@@ -13,7 +12,6 @@ function ContactSection() {
     lastName: "",
     email: "",
     phone: "",
-    startDate: "",
     service: null,
   });
 
@@ -45,7 +43,7 @@ function ContactSection() {
 
     try {
       // EmailJS configuration - Replace with your actual values
-      const serviceId = "service_zoew3p8";
+      const serviceId = "service_7xmjyez";
       const templateId = "template_y8giy8n";
       const publicKey = "UHZ2tBnnsGIwtNsMs";
 
@@ -54,13 +52,12 @@ function ContactSection() {
         from_name: `${formData.firstName} ${formData.lastName}`,
         from_email: formData.email,
         phone: formData.phone,
-        start_date: formData.startDate,
         service: formData.service?.label || "",
         message: `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${
           formData.email
-        }\nPhone: ${formData.phone}\nStart Date: ${
-          formData.startDate
-        }\nService: ${formData.service?.label || "Not specified"}`,
+        }\nPhone: ${formData.phone}\nService: ${
+          formData.service?.label || "Not specified"
+        }`,
         to_name: "Infinity Legal",
       };
 
@@ -81,7 +78,6 @@ function ContactSection() {
         lastName: "",
         email: "",
         phone: "",
-        startDate: "",
         service: null,
       });
     } catch (error) {

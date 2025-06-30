@@ -49,7 +49,7 @@ function ServiceCard({ image, title, description, price, slug }) {
         <div className="flex-shrink-0 mt-auto pt-4">
           <p className="text-xs text-gray-500 mb-2">Starting from</p>
           <p className="text-xl font-bold text-gray-900 mb-2">{price}</p>
-          <p className="text-xs text-gray-500">All pricing include PPN</p>
+          <p className="text-xs text-gray-500">All pricing exclude PPN</p>
         </div>
       </div>
     </Link>
