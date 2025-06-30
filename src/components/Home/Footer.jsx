@@ -1,5 +1,6 @@
 import icon1 from "../../assets/whatsapp.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Facebook, Linkedin } from "lucide-react";
 
 function Footer() {
   const location = useLocation();
@@ -48,7 +49,7 @@ function Footer() {
               Opening Hours: Monday to Saturday, 9:00 AM – 6:00 PM <br />
               (Central Indonesian Time)
               <br />
-              Closed on Sunday
+              Closed on Sunday
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
@@ -61,7 +62,7 @@ function Footer() {
               <h3 className="text-xl font-semibold text-cyan-600">Contact</h3>
             </Link>
             <p className="text-sm text-black">
-              <span>infinitylegalco@gmail.com</span>
+              <span>admin@infinitylegal.co</span>
               <br />
               <span>+6282139336293</span>
             </p>
@@ -102,11 +103,38 @@ function Footer() {
           </div>
           <div className="flex flex-col gap-2 max-md:pl-0">
             <h3 className="text-xl font-semibold text-cyan-600">Follow us</h3>
-            <div className="gap-2 flex flex-row text-sm text-black">
-              <span>A</span>
-              <span>B</span>
-              <span>C</span>
-              <span>D</span>
+            <div className="gap-3 flex flex-row text-sm text-black">
+              <a
+                href="https://www.facebook.com/profile.php?id=61577606347406&mibextid=wwXIfr&rdid=yUwTilcSMtHv9Kdc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19MDWMGiRY%2F%3Fmibextid%3DwwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-600 transition-colors duration-200"
+              >
+                <Facebook size={20} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@infinitylegal.co?_t=ZS-8xTNUv8Axnk&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-600 transition-colors duration-200"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.947-1.166-2.16-1.166-3.338h-3.109v13.855a3.647 3.647 0 0 1-3.632 3.632 3.647 3.647 0 0 1-3.632-3.632 3.647 3.647 0 0 1 3.632-3.632c.362 0 .714.054 1.048.157V8.841a6.156 6.156 0 0 0-1.048-.09c-3.403 0-6.162 2.759-6.162 6.162S6.431 21.075 9.834 21.075s6.162-2.759 6.162-6.162V8.539a9.777 9.777 0 0 0 5.346 1.573V7.587a6.2 6.2 0 0 1-2.021-2.025Z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/infinity-legal-b66869371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-600 transition-colors duration-200"
+              >
+                <Linkedin size={20} />
+              </a>
             </div>
           </div>
         </div>
@@ -119,7 +147,7 @@ function Footer() {
         </div>
       </div>
       <p className="text-xs font-medium text-center text-cyan-600">
-        Copyright 2025 – Infinity Legal Indonesia
+        Copyright 2025 – Infinity Legal Indonesia
       </p>
     </footer>
   );
