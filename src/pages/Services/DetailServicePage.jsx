@@ -224,15 +224,29 @@ export default function DetailServicePage() {
             {/* Content container */}
             <div className="relative z-10 px-5 py-16 max-w-4xl 2xl:max-w-7xl mx-auto">
               {/* Service Details and Pricing Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch mb-8">
+              <div
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 mb-8 ${
+                  service.slug === "working-kitas"
+                    ? "items-start"
+                    : "items-stretch"
+                }`}
+              >
                 {/* Left Column - Service Details */}
-                <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col h-full">
+                <div
+                  className={`bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col ${
+                    service.slug === "working-kitas" ? "" : "h-full"
+                  }`}
+                >
                   <h3 className="text-xl font-semibold text-[#1196A9] mb-6">
                     {service.title}
                   </h3>
 
                   {/* Features List with Checkmarks and Crosses */}
-                  <div className="space-y-4 mb-6 flex-grow">
+                  <div
+                    className={`space-y-4 mb-6 ${
+                      service.slug === "working-kitas" ? "" : "flex-grow"
+                    }`}
+                  >
                     {/* Can Do Items (with cyan checks) */}
                     {parsedCanDo &&
                       parsedCanDo.length > 0 &&
@@ -435,27 +449,35 @@ export default function DetailServicePage() {
 
                               {/* Breakdown if available */}
                               {option.breakdown && (
-                                <div className="text-sm text-gray-500 space-y-2 mt-3">
-                                  {Object.entries(option.breakdown).map(
-                                    ([key, value]) => (
-                                      <div
-                                        key={key}
-                                        className="flex justify-between"
-                                      >
-                                        <span>
-                                          {key
-                                            .replace(/_/g, " ")
-                                            .replace(/\b\w/g, (l) =>
-                                              l.toUpperCase()
-                                            )}
-                                          :
-                                        </span>
-                                        <span className="font-medium">
-                                          {value}
-                                        </span>
-                                      </div>
-                                    )
+                                <div className="mt-3">
+                                  {/* Special note for Working KITAS */}
+                                  {service.slug === "working-kitas" && (
+                                    <p className="text-sm text-red-500 mb-2">
+                                      *The above price does not include :
+                                    </p>
                                   )}
+                                  <div className="text-sm text-gray-500 space-y-2">
+                                    {Object.entries(option.breakdown).map(
+                                      ([key, value]) => (
+                                        <div
+                                          key={key}
+                                          className="flex justify-between"
+                                        >
+                                          <span>
+                                            {key
+                                              .replace(/_/g, " ")
+                                              .replace(/\b\w/g, (l) =>
+                                                l.toUpperCase()
+                                              )}
+                                            :
+                                          </span>
+                                          <span className="font-medium">
+                                            {value}
+                                          </span>
+                                        </div>
+                                      )
+                                    )}
+                                  </div>
                                 </div>
                               )}
 
