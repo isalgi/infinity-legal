@@ -120,7 +120,21 @@ function DetailArticlePage() {
         <p className="text-gray-600 text-sm mb-6">{article.date}</p>
 
         <div
-          className="prose max-w-none [&>p]:mb-6 [&>p]:leading-relaxed [&>h1]:mt-8 [&>h1]:mb-4 [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:mt-6 [&>h3]:mb-3 [&>h1]:font-semibold [&>h2]:font-semibold [&>h3]:font-semibold [&>h1]:text-gray-800 [&>h2]:text-gray-800 [&>h3]:text-gray-800"
+          className="prose max-w-none 
+            [&>p]:mb-6 [&>p]:leading-relaxed 
+            [&>h1]:mt-8 [&>h1]:mb-4 [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:mt-6 [&>h3]:mb-3 
+            [&>h1]:font-semibold [&>h2]:font-semibold [&>h3]:font-semibold 
+            [&>h1]:text-gray-800 [&>h2]:text-gray-800 [&>h3]:text-gray-800
+            [&>ul]:mb-6 [&>ol]:mb-6 [&>ul]:pl-6 [&>ol]:pl-6
+            [&>ul]:list-disc [&>ol]:list-decimal
+            [&>li]:mb-2 [&>li]:leading-relaxed
+            [&>strong]:font-semibold [&>strong]:text-gray-800
+            [&>a]:text-cyan-600 [&>a]:hover:text-cyan-700 [&>a]:underline
+            [&_.article-image]:mb-6 [&_.article-image]:mt-6
+            [&_.article-image>img]:w-full [&_.article-image>img]:h-auto 
+            [&_.article-image>img]:rounded-lg [&_.article-image>img]:shadow-md
+            [&_.article-image>img]:object-cover
+            [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg [&_img]:shadow-sm"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
       </div>

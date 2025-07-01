@@ -15,7 +15,7 @@ function ArticlePage() {
 
   const { data: articles = [] } = useQuery({
     queryKey: ["articles"],
-    queryFn: () => fetchAllArticles(5), // Only fetch 5 articles
+    queryFn: () => fetchAllArticles(), // Only fetch 5 articles
     staleTime: 5 * 60 * 1000, // Cache for 5 minutes
     cacheTime: 30 * 60 * 1000,
     refetchOnWindowFocus: false,
