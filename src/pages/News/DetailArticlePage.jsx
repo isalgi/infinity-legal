@@ -20,8 +20,8 @@ function DetailArticlePage() {
   // Prefetch additional articles for recommendations
   useEffect(() => {
     queryClient.prefetchQuery({
-      queryKey: ["articles", 1, 3],
-      queryFn: () => fetchAllArticles(3, 1),
+      queryKey: ["articles", "recommendations"],
+      queryFn: () => fetchAllArticles(), // Fetch all articles
     });
   }, [queryClient]);
 
@@ -38,18 +38,18 @@ function DetailArticlePage() {
     retry: 1,
   });
 
-  // Query for recommended articles
+  // Query for recommended articles - fetch all articles to ensure we have enough for recommendations
   const { data: recommendedArticles = [] } = useQuery({
-    queryKey: ["articles", 1, 3],
-    queryFn: () => fetchAllArticles(3, 1),
+    queryKey: ["articles", "recommendations"],
+    queryFn: () => fetchAllArticles(), // Fetch all articles
     staleTime: 5 * 60 * 1000,
     enabled: !isLoading && !!article, // Only run after the main article is loaded
   });
 
-  // Filter out the current article from recommendations
+  // Filter out the current article from recommendations and ensure we always show exactly 3
   const filteredRecommendations = recommendedArticles
-    .filter((rec) => rec.slug !== slug)
-    .slice(0, 3);
+    .filter((rec) => rec.slug !== slug) // Remove current article
+    .slice(0, 3); // Take first 3 articles
 
   if (isLoading) {
     return (
