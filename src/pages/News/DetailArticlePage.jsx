@@ -107,6 +107,7 @@ function DetailArticlePage() {
 
         <h1 className="text-3xl text-cyan-600 mb-6 font-semibold">Article</h1>
 
+        {/* Image container with left alignment */}
         <div className="w-full overflow-hidden rounded-lg mb-6">
           <img
             src={article.image}
@@ -130,12 +131,15 @@ function DetailArticlePage() {
             [&>li]:mb-2 [&>li]:leading-relaxed
             [&>strong]:font-semibold [&>strong]:text-gray-800
             [&>a]:text-cyan-600 [&>a]:hover:text-cyan-700 [&>a]:underline
-            [&_.article-image]:mb-6 [&_.article-image]:mt-6
-            [&_.article-image>img]:w-full [&_.article-image>img]:max-h-[400px] [&_.article-image>img]:h-auto
-            [&_.article-image>img]:rounded-lg [&_.article-image>img]:shadow-md
-            [&_.article-image>img]:object-contain [&_.article-image>img]:bg-gray-50
-            [&_img]:max-w-full [&_img]:max-h-[400px] [&_img]:h-auto [&_img]:rounded-lg 
-            [&_img]:shadow-sm [&_img]:object-contain [&_img]:bg-gray-50"
+            [&_.article-image]:mb-6 [&_.article-image]:mt-6 [&_.article-image]:text-left
+            [&_.article-image>img]:!w-auto [&_.article-image>img]:max-h-[400px] [&_.article-image>img]:h-auto
+            [&_.article-image>img]:rounded-lg [&_.article-image>img]:!ml-0
+            [&_.article-image>img]:object-contain
+            [&_img]:!w-auto [&_img]:max-h-[400px] [&_img]:h-auto [&_img]:rounded-lg 
+            [&_img]:object-contain [&_img]:block [&_img]:!ml-0
+            [&_p]:text-left
+            [&_div]:text-left
+            [&>*]:text-left"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
       </div>
