@@ -13,8 +13,8 @@ function ArticleCard({ image, title, date, slug }) {
             loading="lazy"
           />
         </div>
+        <h3 className="mt-2 text-2xl font-medium text-black">{title}</h3>
       </Link>
-      <h3 className="text-2xl font-medium text-black">{title}</h3>
       <div className="flex flex-col justify-end flex-1">
         <time className="text-base text-black">{date}</time>
       </div>

@@ -74,7 +74,7 @@ function ArticlePage() {
                     loading="lazy"
                   />
                 </div>
-                <div className="flex flex-col gap-1 my-6 hover:underline">
+                <div className="flex flex-col gap-1 my-6">
                   <Link to={`/news/${newestArticle.slug}`}>
                     <h3 className="text-2xl font-medium text-black">
                       {newestArticle.title}
