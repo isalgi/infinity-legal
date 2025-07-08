@@ -1,6 +1,6 @@
-import icon1 from "../../assets/whatsapp.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Facebook, Linkedin } from "lucide-react";
+import { Facebook, Linkedin, Instagram } from "lucide-react";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 function Footer() {
   const location = useLocation();
@@ -44,12 +44,16 @@ function Footer() {
               Badung Regency, Bali Province 80351
               <br />
               <br />
-              Business Hours
+              <b>Business Hours</b>
               <br />
-              Opening Hours: Monday to Saturday, 9:00 AM – 6:00 PM <br />
+              Opening Hours:
+              <br />
+              Monday to Saturday, 9:00 AM – 6:00 PM <br />
               (Central Indonesian Time)
               <br />
-              Closed on Sunday
+              <span className="text-[#E90000] text-semibold">
+                Closed on Sunday
+              </span>
             </p>
             {/* <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8ed2f5ea52842c3a77de52ecea8df06e8d2d34?placeholderIfAbsent=true"
@@ -66,11 +70,11 @@ function Footer() {
               <br />
               <span>+6282139336293</span>
             </p>
-            {/* <img
+            <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/536586b7c4fe73f09e464acc5b0f83868388fdad?placeholderIfAbsent=true"
               className="h-[44.5px] w-[31.5px]"
               alt="Contact icon"
-            /> */}
+            />
           </div>
         </div>
         <div className="flex flex-col gap-[70px]">
@@ -102,8 +106,8 @@ function Footer() {
             </button>
           </div>
           <div className="flex flex-col gap-2 max-md:pl-0">
-            <h3 className="text-xl font-semibold text-cyan-600">Follow us</h3>
-            <div className="gap-3 flex flex-row text-sm text-black">
+            <h3 className="text-xl font-semibold text-cyan-600">Socials</h3>
+            <div className="gap-3 flex flex-row text-sm text-black items-center">
               <a
                 href="https://www.facebook.com/profile.php?id=61577606347406&mibextid=wwXIfr&rdid=yUwTilcSMtHv9Kdc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19MDWMGiRY%2F%3Fmibextid%3DwwXIfr"
                 target="_blank"
@@ -134,6 +138,22 @@ function Footer() {
                 className="hover:text-cyan-600 transition-colors duration-200"
               >
                 <Linkedin size={20} />
+              </a>
+              <a
+                href="https://www.instagram.com/infinitylegal.co?igsh=Mm81Mmpla2R6M2tp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-600 transition-colors duration-200"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://wa.me/6281239336293"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-600 transition-colors duration-200"
+              >
+                <WhatsAppIcon size={20} />
               </a>
             </div>
           </div>
