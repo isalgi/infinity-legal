@@ -44,16 +44,14 @@ function Footer() {
               Badung Regency, Bali Province 80351
               <br />
               <br />
-              <b>Business Hours</b>
-              <br />
-              Opening Hours:
-              <br />
+              <p className="text-xl font-semibold text-cyan-600">
+                Business Hours
+              </p>
+              <p className="mt-1">Opening Hours</p>
               Monday to Saturday, 9:00 AM – 6:00 PM <br />
               (Central Indonesian Time)
               <br />
-              <span className="text-[#E90000] text-semibold">
-                Closed on Sunday
-              </span>
+              <b className="text-[#E90000] text-semibold">Closed on Sunday</b>
             </p>
           </div>
           <div className="flex flex-col gap-2 pl-16 max-md:pl-0">
