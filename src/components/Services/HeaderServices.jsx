@@ -19,7 +19,6 @@ function HeaderServices() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
   return (
     <header className="fixed top-0 left-0 right-0 bg-white w-full z-[100] shadow-sm">
       <div className="flex justify-between items-center px-20 py-2.5 h-[120px] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">
@@ -38,7 +37,7 @@ function HeaderServices() {
               Home
             </p>
           </Link>
-          <Link to={"/services"}>
+          <Link to={"/#services"} onClick={() => scrollToSection("services")}>
             <p className="text-base font-bold text-[#1196A9] cursor-pointer hover:underline">
               Services
             </p>
@@ -108,7 +107,13 @@ function HeaderServices() {
               Home
             </p>
           </Link>
-          <Link to={"/services"} onClick={() => setIsMenuOpen(false)}>
+          <Link
+            to={"/#services"}
+            onClick={() => {
+              setIsMenuOpen(false);
+              scrollToSection("services");
+            }}
+          >
             <p className="text-base font-bold text-[#1196A9] cursor-pointer hover:text-cyan-600 transition-colors">
               Services
             </p>

@@ -20,7 +20,7 @@ function HomePage() {
         // Calculate header height
         const header = document.querySelector("header");
         const headerHeight = header ? header.offsetHeight : 0;
-        const additionalOffset = window.innerHeight * 0.001; // Show 25% of HeroSection
+        const additionalOffset = window.innerHeight * 0.001;
 
         const elementPosition =
           element.getBoundingClientRect().top + window.pageYOffset;
@@ -37,7 +37,7 @@ function HomePage() {
         // Calculate header height
         const header = document.querySelector("header");
         const headerHeight = header ? header.offsetHeight : 0;
-        const additionalOffset = window.innerHeight * 0.015; // Show 25% of HeroSection
+        const additionalOffset = window.innerHeight * 0.015;
 
         const elementPosition =
           element.getBoundingClientRect().top + window.pageYOffset;
