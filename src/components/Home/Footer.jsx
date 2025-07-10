@@ -55,9 +55,7 @@ function Footer() {
             </p>
           </div>
           <div className="flex flex-col gap-2 pl-16 max-md:pl-0">
-            <Link to={"/contact"}>
-              <h3 className="text-xl font-semibold text-cyan-600">Contact</h3>
-            </Link>
+            <h3 className="text-xl font-semibold text-cyan-600">Contact</h3>
             <p className="text-sm text-black">
               <span>admin@infinitylegal.co</span>
               <br />

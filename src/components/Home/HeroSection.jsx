@@ -44,11 +44,9 @@ function HeroSection() {
             <h1 className="text-[16] leading-10 text-white max-sm:text-3xl max-sm:leading-8">
               Free Consultation!
             </h1>
-            <Link to={"/#contact"}>
-              <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-fit mt-7 hover:bg-white hover:text-gray-800 transition-colors">
-                Contact us
-              </button>
-            </Link>
+            <button className="px-8 py-3 text-base font-bold text-white rounded-md border border-white border-solid cursor-pointer w-fit mt-7 hover:bg-white hover:text-gray-800 transition-colors">
+              <Link to={"/#contact"}>Contact us</Link>
+            </button>
           </div>
         </div>
       </section>
