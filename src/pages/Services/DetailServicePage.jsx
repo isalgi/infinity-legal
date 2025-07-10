@@ -190,7 +190,7 @@ export default function DetailServicePage() {
                   return <p key={index}>{trimmedLine}</p>;
                 })}
               </div>
-              <Link to={"/"}>
+              <Link to={"https://wa.me/6281239336293"}>
                 <button className="bg-white border border-[#1196A9] text-[#1196A9] hover:bg-cyan-50 rounded-md px-4 py-2 mt-auto text-md font-medium">
                   Contact
                 </button>
