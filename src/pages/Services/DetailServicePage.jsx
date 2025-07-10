@@ -224,29 +224,15 @@ export default function DetailServicePage() {
             {/* Content container */}
             <div className="relative z-10 px-5 py-16 max-w-4xl 2xl:max-w-7xl mx-auto">
               {/* Service Details and Pricing Grid */}
-              <div
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 mb-8 ${
-                  service.slug === "working-kitas"
-                    ? "items-start"
-                    : "items-stretch"
-                }`}
-              >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-8 items-start">
                 {/* Left Column - Service Details */}
-                <div
-                  className={`bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col ${
-                    service.slug === "working-kitas" ? "" : "h-full"
-                  }`}
-                >
+                <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] flex flex-col">
                   <h3 className="text-xl font-semibold text-[#1196A9] mb-6">
                     {service.title}
                   </h3>
 
                   {/* Features List with Checkmarks and Crosses */}
-                  <div
-                    className={`space-y-4 mb-6 ${
-                      service.slug === "working-kitas" ? "" : "flex-grow"
-                    }`}
-                  >
+                  <div className="space-y-4 mb-6">
                     {/* Can Do Items (with cyan checks) */}
                     {parsedCanDo &&
                       parsedCanDo.length > 0 &&
@@ -306,12 +292,6 @@ export default function DetailServicePage() {
                         </div>
                       ))}
                   </div>
-
-                  <Link to="https://wa.me/6281239336293">
-                    <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                      Contact us
-                    </button>
-                  </Link>
                 </div>
 
                 {/* Right Column - Pricing with Enhanced Font Sizes */}
@@ -347,12 +327,6 @@ export default function DetailServicePage() {
                               {pricing.consultation_note}
                             </p>
                           </div>
-
-                          <Link to="https://wa.me/6281239336293">
-                            <button className="w-full bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                              Contact us
-                            </button>
-                          </Link>
                         </div>
                       );
                     }
@@ -488,12 +462,6 @@ export default function DetailServicePage() {
                             </div>
                           ))}
                         </div>
-
-                        <Link to="https://wa.me/6281239336293">
-                          <button className="w-full mt-8 bg-[#1196A9] text-white py-3 px-6 rounded-md font-semibold text-base hover:bg-cyan-700 transition-colors">
-                            Contact us
-                          </button>
-                        </Link>
                       </div>
                     );
                   })()}
