@@ -205,7 +205,7 @@ export default function ServicesList() {
           >
             {/* Category Header */}
             <div className="mb-8 max-md:mb-6 max-sm:mb-4">
-              <h2 className="text-3xl max-md:text-2xl max-sm:text-xl font-bold text-[#1196A9] mb-4 max-sm:mb-2">
+              <h2 className="text-3xl max-md:text-2xl max-sm:text-xl font-bold text-[#1196A9] mb-4 pt-4 max-sm:mb-2">
                 Visa
               </h2>
             </div>
