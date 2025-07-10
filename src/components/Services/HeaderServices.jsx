@@ -16,9 +16,44 @@ function HeaderServices() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // Calculate header height
+      const header = document.querySelector("header");
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      // Special handling for "services" section
+      if (sectionId === "services") {
+        const additionalOffset = window.innerHeight * 0.001; // Match HomePage.jsx
+
+        const elementPosition =
+          element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition =
+          elementPosition - headerHeight - additionalOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: "smooth",
+        });
+      }
+      // Special handling for "contact" section
+      else if (sectionId === "contact") {
+        const additionalOffset = window.innerHeight * 0.015; // Match HomePage.jsx
+
+        const elementPosition =
+          element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition =
+          elementPosition - headerHeight - additionalOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: "smooth",
+        });
+      } else {
+        // Normal scroll for all other sections (about)
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white w-full z-[100] shadow-sm">
       <div className="flex justify-between items-center px-20 py-2.5 h-[120px] max-md:px-10 max-md:py-2.5 max-sm:px-5 max-sm:py-2.5 max-sm:h-20">

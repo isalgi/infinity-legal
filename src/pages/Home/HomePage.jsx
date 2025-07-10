@@ -11,15 +11,16 @@ import Footer from "../../components/Home/Footer";
 function HomePage() {
   const location = useLocation();
 
-  // Custom scroll function with offset only for services
+  // Custom scroll function with offset for specific sections
   const scrollToSectionWithOffset = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Special handling only for "services" section
+      // Calculate header height
+      const header = document.querySelector("header");
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      // Special handling for "services" section
       if (sectionId === "services") {
-        // Calculate header height
-        const header = document.querySelector("header");
-        const headerHeight = header ? header.offsetHeight : 0;
         const additionalOffset = window.innerHeight * 0.001;
 
         const elementPosition =
@@ -32,11 +33,8 @@ function HomePage() {
           behavior: "smooth",
         });
       }
-      // Special handling only for "services" section
-      if (sectionId === "contact") {
-        // Calculate header height
-        const header = document.querySelector("header");
-        const headerHeight = header ? header.offsetHeight : 0;
+      // Special handling for "contact" section
+      else if (sectionId === "contact") {
         const additionalOffset = window.innerHeight * 0.015;
 
         const elementPosition =
@@ -49,7 +47,7 @@ function HomePage() {
           behavior: "smooth",
         });
       } else {
-        // Normal scroll for all other sections (about, contact)
+        // Normal scroll for all other sections (about)
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
