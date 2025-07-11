@@ -118,7 +118,7 @@ function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/infinity-legal-b66869371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                href="https://www.linkedin.com/in/infinity-legal-indonesia-b66869371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cyan-600 transition-colors duration-200"
@@ -126,7 +126,7 @@ function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://www.instagram.com/infinitylegal.co?igsh=Mm81Mmpla2R6M2tp"
+                href="https://www.instagram.com/infinitylegalindonesia.co?igsh=aDRncncxNzk2Z2Iz&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cyan-600 transition-colors duration-200"
