@@ -215,7 +215,7 @@ export default function DetailServicePage() {
           <div
             className="w-full mb-16 mt-16 relative"
             style={{
-              backgroundImage: `url('/images/new-image.jpg')`,
+              backgroundImage: `url('/images/new-image.webp')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -642,7 +642,7 @@ export default function DetailServicePage() {
               <div
                 className="w-full my-16 relative"
                 style={{
-                  backgroundImage: `url('/images/new-image.jpg')`,
+                  backgroundImage: `url('/images/new-image.webp')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for file in *.jpg *.jpeg *.png)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then cwebp -q 80 \"$file\" -o \"$file%.*.webp\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import infinityLogo from "../../assets/infinity-logo.png";
+import infinityLogo from "../../assets/infinity-logo.webp";
 
 function HeaderContact() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
