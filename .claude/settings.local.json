@@ -9,7 +9,14 @@
       "Bash(node:*)",
       "Bash(npm install:*)",
       "Bash(rm:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(find:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(for:*)",
+      "Bash(npx sharp:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

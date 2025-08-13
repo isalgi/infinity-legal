@@ -1,5 +1,5 @@
 // src/components/Services/ServicesList.jsx
-import { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect, memo, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchAllServices } from "../../services/supabase/serviceService";
@@ -47,7 +47,55 @@ const getLowestPrice = (pricingData) => {
   }
 };
 
-export default function ServicesList() {
+const ServiceCard = memo(({ service, isLast, lastServiceRef }) => {
+  const lowestPrice = useMemo(() => getLowestPrice(service.price), [service.price]);
+
+  return (
+    <Link
+      to={`/services/${service.slug}`}
+      ref={isLast ? lastServiceRef : undefined}
+      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
+    >
+      {/* Image container */}
+      <div className="p-4 max-sm:p-3">
+        <img
+          src={service.image}
+          alt={service.title}
+          className="rounded-2xl h-[180px] max-md:h-[160px] max-sm:h-[140px] w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Content container */}
+      <div className="px-4 pb-4 max-sm:px-3 max-sm:pb-3 flex flex-col flex-grow">
+        {/* Title */}
+        <h3 className="text-lg max-md:text-base max-sm:text-sm font-semibold text-[#1196A9] mb-3 max-sm:mb-2 min-h-[50px] max-md:min-h-[45px] max-sm:min-h-[40px] flex items-start">
+          {service.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-sm max-sm:text-xs text-gray-600 mb-4 max-sm:mb-3 line-clamp-3 min-h-[60px] max-md:min-h-[55px] max-sm:min-h-[45px]">
+          {service.description}
+        </p>
+
+        {/* Price section */}
+        <div className="mt-auto">
+          <p className="text-xs max-sm:text-[10px] text-gray-500 mb-1">
+            Starting From
+          </p>
+          <p className="text-xl max-md:text-lg max-sm:text-base font-bold text-gray-900">
+            {lowestPrice}
+          </p>
+          <p className="text-xs max-sm:text-[10px] text-gray-500 mt-1">
+            All pricing exclude PPN
+          </p>
+        </div>
+      </div>
+    </Link>
+  );
+});
+
+const ServicesList = memo(function ServicesList() {
   const loaderRef = useRef(null);
   const limit = 50; // Increase limit to get more services for grouping
 
@@ -65,6 +113,14 @@ export default function ServicesList() {
   // Flatten all pages of data
   const services = data?.pages.flat() || [];
 
+  // Memoize grouped services to avoid recalculation
+  const groupedServices = useMemo(() => ({
+    visa: services.filter(service => service.category === "visa"),
+    permit: services.filter(service => service.category === "limited stay permit"),
+    company: services.filter(service => service.category === "company set up"),
+    legal: services.filter(service => service.category === "legal services")
+  }), [services]);
+
   // Setup intersection observer for infinite scroll
   const lastServiceRef = useCallback(
     (node) => {
@@ -79,7 +135,6 @@ export default function ServicesList() {
             !isLoading &&
             !isFetchingNextPage
           ) {
-            console.log("Loading next page");
             fetchNextPage();
           }
         },
@@ -136,63 +191,7 @@ export default function ServicesList() {
     );
   }
 
-  // Group services by category in the desired order
-  const visaServices = services.filter(
-    (service) => service.category === "visa"
-  );
-  const permitServices = services.filter(
-    (service) => service.category === "limited stay permit"
-  );
-  const companyServices = services.filter(
-    (service) => service.category === "company set up"
-  );
-  const legalServices = services.filter(
-    (service) => service.category === "legal services"
-  );
-
-  const renderServiceCard = (service, index, isLast = false) => (
-    <Link
-      to={`/services/${service.slug}`}
-      key={service.id}
-      ref={isLast ? lastServiceRef : undefined}
-      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
-    >
-      {/* Image container */}
-      <div className="p-4 max-sm:p-3">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="rounded-2xl h-[180px] max-md:h-[160px] max-sm:h-[140px] w-full object-cover"
-        />
-      </div>
-
-      {/* Content container */}
-      <div className="px-4 pb-4 max-sm:px-3 max-sm:pb-3 flex flex-col flex-grow">
-        {/* Title */}
-        <h3 className="text-lg max-md:text-base max-sm:text-sm font-semibold text-[#1196A9] mb-3 max-sm:mb-2 min-h-[50px] max-md:min-h-[45px] max-sm:min-h-[40px] flex items-start">
-          {service.title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-sm max-sm:text-xs text-gray-600 mb-4 max-sm:mb-3 line-clamp-3 min-h-[60px] max-md:min-h-[55px] max-sm:min-h-[45px]">
-          {service.description}
-        </p>
-
-        {/* Price section */}
-        <div className="mt-auto">
-          <p className="text-xs max-sm:text-[10px] text-gray-500 mb-1">
-            Starting From
-          </p>
-          <p className="text-xl max-md:text-lg max-sm:text-base font-bold text-gray-900">
-            {getLowestPrice(service.price)}
-          </p>
-          <p className="text-xs max-sm:text-[10px] text-gray-500 mt-1">
-            All pricing exclude PPN
-          </p>
-        </div>
-      </div>
-    </Link>
-  );
+  const { visa: visaServices, permit: permitServices, company: companyServices, legal: legalServices } = groupedServices;
 
   return (
     <section className="bg-gray-50 py-12 max-md:py-8 max-sm:py-6">
@@ -212,9 +211,14 @@ export default function ServicesList() {
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
-              {visaServices.map((service, index) =>
-                renderServiceCard(service, index, false)
-              )}
+              {visaServices.map((service, index) => (
+                <ServiceCard 
+                  key={service.id}
+                  service={service} 
+                  isLast={false}
+                  lastServiceRef={lastServiceRef}
+                />
+              ))}
             </div>
           </div>
         )}
@@ -234,9 +238,14 @@ export default function ServicesList() {
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
-              {permitServices.map((service, index) =>
-                renderServiceCard(service, index, false)
-              )}
+              {permitServices.map((service, index) => (
+                <ServiceCard 
+                  key={service.id}
+                  service={service} 
+                  isLast={false}
+                  lastServiceRef={lastServiceRef}
+                />
+              ))}
             </div>
           </div>
         )}
@@ -256,9 +265,14 @@ export default function ServicesList() {
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
-              {companyServices.map((service, index) =>
-                renderServiceCard(service, index, false)
-              )}
+              {companyServices.map((service, index) => (
+                <ServiceCard 
+                  key={service.id}
+                  service={service} 
+                  isLast={false}
+                  lastServiceRef={lastServiceRef}
+                />
+              ))}
             </div>
           </div>
         )}
@@ -278,13 +292,14 @@ export default function ServicesList() {
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:gap-4 max-sm:gap-3">
-              {legalServices.map((service, index) =>
-                renderServiceCard(
-                  service,
-                  index,
-                  index === legalServices.length - 1 // Last service for infinite scroll
-                )
-              )}
+              {legalServices.map((service, index) => (
+                <ServiceCard 
+                  key={service.id}
+                  service={service} 
+                  isLast={index === legalServices.length - 1}
+                  lastServiceRef={lastServiceRef}
+                />
+              ))}
             </div>
           </div>
         )}
@@ -315,4 +330,6 @@ export default function ServicesList() {
       `}</style>
     </section>
   );
-}
+});
+
+export default ServicesList;

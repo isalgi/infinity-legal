@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import infinityLogo from "../../assets/infinity-logo.webp";
 
-function HeaderServices() {
+const HeaderServices = memo(function HeaderServices() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const scrollToTop = () => {
+  const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = useCallback((sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       // Calculate header height
@@ -52,7 +52,7 @@ function HeaderServices() {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  };
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white w-full z-[100] shadow-sm">
@@ -192,6 +192,6 @@ function HeaderServices() {
       </div>
     </header>
   );
-}
+});
 
 export default HeaderServices;
